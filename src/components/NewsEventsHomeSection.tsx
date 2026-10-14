@@ -5,8 +5,8 @@ import { Calendar, ChevronRight, Newspaper } from "lucide-react";
 import { schoolEvents } from "@/data/events";
 
 const NewsEventsHomeSection = () => {
-  // Display exactly 4 featured events with images
-  const latestEvents = schoolEvents.slice(0, 4);
+  // Display exactly 2 featured events with images
+  const latestEvents = schoolEvents.slice(0, 2);
   const tickerEvents = schoolEvents;
 
   return (
