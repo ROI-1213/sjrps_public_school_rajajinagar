@@ -118,7 +118,7 @@ const Infrastructure = () => {
                 <Card className="shadow-lg overflow-hidden">
                   <div className="relative">
                     <img 
-                      src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                      src="/images/Photos/classroom/DSC00825.JPG"
                       alt="Modern Classroom"
                       className="w-full h-48 object-cover"
                     />
@@ -139,7 +139,7 @@ const Infrastructure = () => {
                 <Card className="shadow-lg overflow-hidden">
                   <div className="relative">
                     <img 
-                      src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                      src="/images/Photos/Library/DSC01550.JPG"
                       alt="Library"
                       className="w-full h-48 object-cover"
                     />

@@ -6,10 +6,15 @@ import {
   BookOpen, Palette, Music, Users, Crown, Heart, Trophy, Sparkles,
   ShieldCheck, Lightbulb, MessageCircle, Handshake,
 } from "lucide-react";
-import activitiesImg from "@/assets/life/byc1.jpg";
-import g1 from "@/assets/life/byc2.jpg";
-import g2 from "@/assets/life/byc3.jpg";
-import g3 from "@/assets/life/byc4.jpg";
+const activitiesImg = "/images/Photos/Kids Play Area And Activity/DSC00642.JPG";
+const galleryImages = [
+  { src: "/images/Photos/Music/DSC00997.JPG", label: "Music & Performing Arts" },
+  { src: "/images/Photos/Art and Craft/DSC00861.JPG", label: "Art & Craft Workshop" },
+  { src: "/images/Photos/Sports/DSC01303.JPG", label: "Chess & Mind Sports" },
+  { src: "/images/Photos/Kids Play Area And Activity/DSC00651.JPG", label: "Play Area & Active Learning" },
+  { src: "/images/Photos/Robotics/DSC01674.JPG", label: "Robotics & STEM Activities" },
+  { src: "/images/Photos/Sports/DSC01389.JPG", label: "Athletics & Physical Fitness" },
+];
 
 const activities = [
   { icon: BookOpen, title: "Literary Activities", desc: "Debates, elocution, essay writing, and storytelling that sharpen language, reasoning, and expression." },
@@ -134,8 +139,18 @@ const Activities = () => (
           <div className="mx-auto mt-3 h-1 w-20 bg-indian-green rounded-full" />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[g1, g2, g3].map((src, i) => (
-            <img key={i} src={src} alt={`Activity ${i + 1}`} className="w-full h-[280px] object-cover rounded-xl shadow-md" />
+          {galleryImages.map((item, i) => (
+            <div key={i} className="group overflow-hidden rounded-xl shadow-md border border-indian-green/15 bg-white">
+              <img
+                src={item.src}
+                alt={item.label}
+                className="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="p-3 text-center bg-white border-t border-border/50">
+                <span className="text-sm font-semibold text-foreground/85">{item.label}</span>
+              </div>
+            </div>
           ))}
         </div>
       </div>

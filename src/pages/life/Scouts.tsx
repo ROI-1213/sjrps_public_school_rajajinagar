@@ -3,12 +3,6 @@ import PageHero from "@/components/PageHero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import scoutsGuides1 from "@/assets/life/scouts-guides/scouts-guides-1.jpg";
-import scoutsGuides2 from "@/assets/life/scouts-guides/scouts-guides-2.jpg";
-import scoutsGuides3 from "@/assets/life/scouts-guides/scouts-guides-3.jpg";
-import scoutsGuides4 from "@/assets/life/scouts-guides/scouts-guides-4.jpg";
-import scoutsGuides5 from "@/assets/life/scouts-guides/scouts-guides-5.jpg";
-import scoutsGuides6 from "@/assets/life/scouts-guides/scouts-guides-6.jpg";
 import {
   TreePine,
   Compass,
@@ -69,12 +63,12 @@ const reasons = [
 ];
 
 const galleryImages = [
-  { src: scoutsGuides1, alt: "Scouts and Guides students receiving certificates" },
-  { src: scoutsGuides2, alt: "Scouts and Guides World Environment Day rally" },
-  { src: scoutsGuides3, alt: "Scouts and Guides community awareness activity" },
-  { src: scoutsGuides4, alt: "Scouts and Guides student achievement ceremony" },
-  { src: scoutsGuides5, alt: "Scouts and Guides Foundation Day cycle rally" },
-  { src: scoutsGuides6, alt: "Scouts and Guides students at award ceremony" },
+  { src: "/images/Photos/Cubs and Bul Bul/DSC00576.JPG", alt: "Cubs & Bulbul troop parade and salute formation" },
+  { src: "/images/Photos/Cubs and Bul Bul/DSC00479.JPG", alt: "Scouts and Guides training drills" },
+  { src: "/images/Photos/Cubs and Bul Bul/DSC00501.JPG", alt: "Outdoor scouting activities and discipline" },
+  { src: "/images/Photos/Cubs and Bul Bul/DSC00549.JPG", alt: "Scouts and Guides promise and salute" },
+  { src: "/images/Photos/Cubs and Bul Bul/DSC00579.JPG", alt: "Troop squad inspection and formation" },
+  { src: "/images/Photos/Assembly/DSC00056.JPG", alt: "Morning assembly honor and flag salute" },
 ];
 
 const ScoutsGuides = () => (

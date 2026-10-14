@@ -21,6 +21,15 @@ const sections = [
   { icon: Users, title: "Student Participation", desc: "From organising committees to compering, performing, and speaking, students lead every national event — turning each celebration into a personal act of citizenship." },
 ];
 
+const festivalGallery = [
+  { src: "/images/Photos/Assembly/DSC00056.JPG", title: "National Flag Salute & Morning Assembly" },
+  { src: "/images/Photos/Assembly/DSC00055.JPG", title: "Patriotic Gathering & Tricolour Observance" },
+  { src: "/images/Events/Annual Sports Meet/FB_IMG_1791268754974.jpg", title: "Ceremonial March-Past & Flag Parade" },
+  { src: "/images/Photos/Assembly/DSC00256.JPG", title: "Student Address & National Pledge" },
+  { src: "/images/Events/Annual Sports Meet/FB_IMG_1791268740390.jpg", title: "Cadet Squad Salute & Honours" },
+  { src: "/images/Photos/Assembly/DSC00301.JPG", title: "Solemn National Anthem Recitation" },
+];
+
 const NationalFestivals = () => (
   <Layout>
     <PageHero title="National Festivals" breadcrumbs={[{ label: "Life @ SJRPS-Rajajinagar" }, { label: "National Festivals" }]} />
@@ -81,6 +90,31 @@ const NationalFestivals = () => (
                 </div>
               </CardContent>
             </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Section 4: National Festivals & Flag Ceremony Gallery */}
+    <section className="py-16 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground">National Observances in Action</h2>
+          <div className="mx-auto mt-3 h-1 w-20 bg-indian-green rounded-full" />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {festivalGallery.map((item, i) => (
+            <div key={i} className="group overflow-hidden rounded-xl shadow-md border border-indian-green/15 bg-white">
+              <img
+                src={item.src}
+                alt={item.title}
+                className="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="p-3 text-center bg-white border-t border-border/50">
+                <span className="text-sm font-semibold text-foreground/85">{item.title}</span>
+              </div>
+            </div>
           ))}
         </div>
       </div>

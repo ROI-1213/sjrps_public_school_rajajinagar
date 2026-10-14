@@ -6,10 +6,10 @@ import {
   ShieldCheck, Target, Flame, Award, Users, Crown, Heart, Sparkles,
   Dumbbell, Brain, Handshake, Trophy, Zap, Compass,
 } from "lucide-react";
-import taekwondoImg from "@/assets/life/tkd1.jpg";
-import g1 from "@/assets/life/tkd2.jpg";
-import g2 from "@/assets/life/tkd3.jpg";
-import g3 from "@/assets/life/tkd4.jpg";
+const taekwondoImg = "/images/Photos/Taekwondo/DSC00704.JPG";
+const g1 = "/images/Photos/Taekwondo/DSC00704.JPG";
+const g2 = "/images/Photos/Yoga/DSC00904.JPG";
+const g3 = "/images/Photos/Sports/DSC01389.JPG";
 
 const whyItems = [
   { icon: Award, title: "Certified Coaching", desc: "Trained and certified instructors guide students through authentic Taekwondo techniques and forms." },

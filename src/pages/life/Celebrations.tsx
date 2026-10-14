@@ -3,9 +3,14 @@ import PageHero from "@/components/PageHero";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Star, Baby, GraduationCap, Award, Crown, Music, Trophy, Calendar, Sparkles, Users, Heart } from "lucide-react";
-import g1 from "@/assets/life/celebrations/celebrations3.jpg";
-import g2 from "@/assets/life/celebrations/celebrations2.jpg";
-import g3 from "@/assets/life/celebrations/celebrations1.jpg";
+const celebrationGallery = [
+  { src: "/images/Events/Onam/WhatsApp Image 2026-10-01 at 14.35.20.jpeg", title: "Onam Floral Pookalam Celebration" },
+  { src: "/images/Events/Krishna Janmastmi/WhatsApp Image 2026-10-01 at 14.20.28.jpeg", title: "Krishna Janmashtami Festivities" },
+  { src: "/images/Events/Ganesha Pooja/WhatsApp Image 2026-10-01 at 13.36.42.jpeg", title: "Ganesha Chaturthi Pooja & Rituals" },
+  { src: "/images/Events/Rangoli/WhatsApp Image 2026-10-01 at 13.37.14.jpeg", title: "Traditional Rangoli Competition" },
+  { src: "/images/Events/Annual Sports Meet/FB_IMG_1791268754974.jpg", title: "Annual Sports Meet Parade" },
+  { src: "/images/Events/Onam/WhatsApp Image 2026-10-01 at 14.35.15.jpeg", title: "Festive Cultural Showcase" },
+];
 
 const events = [
   { icon: Star, title: "Annual Day", desc: "The grand showcase of the school year with cultural performances, awards, and student achievements." },
@@ -89,8 +94,18 @@ const Celebrations = () => (
           <div className="mx-auto mt-3 h-1 w-20 bg-indian-green rounded-full" />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[g1, g2, g3].map((src, i) => (
-            <img key={i} src={src} alt={`Celebration ${i + 1}`} className="w-full h-[280px] object-cover rounded-xl shadow-md" />
+          {celebrationGallery.map((item, i) => (
+            <div key={i} className="group overflow-hidden rounded-xl shadow-md border border-indian-green/15 bg-white">
+              <img
+                src={item.src}
+                alt={item.title}
+                className="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="p-3 text-center bg-white border-t border-border/50">
+                <span className="text-sm font-semibold text-foreground/85">{item.title}</span>
+              </div>
+            </div>
           ))}
         </div>
       </div>

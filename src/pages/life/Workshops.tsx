@@ -34,6 +34,15 @@ const workshops = [
   { id: 5, name: "Personality Development Workshop" },
 ];
 
+const workshopImages = [
+  { src: "/images/Photos/Robotics/DSC01674.JPG", label: "Robotics Design & Assembly Workshop" },
+  { src: "/images/Photos/Science Lab/DSC01030.JPG", label: "Hands-on Science Lab Experimentation" },
+  { src: "/images/Photos/Robotics/DSC01539.JPG", label: "STEM Robotics Coding & Automation" },
+  { src: "/images/Photos/Science Lab/DSC00853.JPG", label: "Biology & Chemical Sciences Workshop" },
+  { src: "/images/Photos/Computer lab/DSC00845.JPG", label: "Digital Technology & Computer Lab" },
+  { src: "/images/Photos/Science Lab/DSC00953.JPG", label: "Applied Science & Inquiry Session" },
+];
+
 const Workshops = () => (
   <Layout>
     <PageHero title="Workshops & Enrichment Programs" breadcrumbs={[{ label: "Life @ SJRPS-Rajajinagar" }, { label: "Workshops" }]} />
@@ -98,8 +107,32 @@ const Workshops = () => (
         </div>
       </div>
     </section>
+    {/* Section 4: Workshops Gallery */}
+    <section className="py-16 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Workshops &amp; Practical Learning in Action</h2>
+          <div className="mx-auto mt-3 h-1 w-20 bg-indian-green rounded-full" />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {workshopImages.map((item, i) => (
+            <div key={i} className="group overflow-hidden rounded-xl shadow-md border border-indian-green/15 bg-white">
+              <img
+                src={item.src}
+                alt={item.label}
+                className="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="p-3 text-center bg-white border-t border-border/50">
+                <span className="text-sm font-semibold text-foreground/85">{item.label}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
-    {/* Section 4: Workshop Information Table */}
+    {/* Section 5: Workshop Information Table */}
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-10">
