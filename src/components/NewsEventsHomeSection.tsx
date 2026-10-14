@@ -5,8 +5,8 @@ import { Calendar, ChevronRight, Newspaper } from "lucide-react";
 import { schoolEvents } from "@/data/events";
 
 const NewsEventsHomeSection = () => {
-  // Display all authentic Rajajinagar events with images on the left
-  const latestEvents = schoolEvents;
+  // Display exactly 4 featured events with images
+  const latestEvents = schoolEvents.slice(0, 4);
   const tickerEvents = schoolEvents;
 
   return (
