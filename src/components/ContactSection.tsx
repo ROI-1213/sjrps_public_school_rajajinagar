@@ -146,9 +146,9 @@ const ContactSection = () => {
             <Card className="sm:col-span-2 overflow-hidden border border-indian-green/15 rounded-2xl shadow-md">
               <CardContent className="p-0">
                 <div className="p-3 bg-white flex items-center justify-between border-b border-gray-100">
-                  <span className="text-xs font-semibold text-school-brown flex items-center gap-1.5">
+                  <span className="text-xs font-semibold text-logo-navy flex items-center gap-1.5">
                     <MapPin className="h-3.5 w-3.5 text-indian-green" />
-                    Dr. Rajkumar Road, Rajajinagar Campus
+                    {schoolConfig.name}, Rajajinagar Campus
                   </span>
                   <a 
                     href={schoolConfig.mapUrl} 

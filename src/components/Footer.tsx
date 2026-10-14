@@ -181,9 +181,15 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-white/85">
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-0.5 text-saffron-orange flex-shrink-0" />
-                <span>
+                <a
+                  href={schoolConfig.maps.directionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-golden-yellow transition-colors leading-relaxed"
+                  title="Open SJR Public School on Google Maps"
+                >
                   {schoolConfig.address.fullAddress}
-                </span>
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-4 w-4 mt-0.5 text-saffron-orange flex-shrink-0" />

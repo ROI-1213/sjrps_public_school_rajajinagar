@@ -76,11 +76,11 @@ export const schoolConfig = {
   },
   
   mapUrl: "https://maps.app.goo.gl/p6TK8x1gM61onRTw6",
-  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.892794711863!2d77.55139947598858!3d12.978703414722886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d84da459345%3A0xbce891ec22757ce4!2sSJR%20Public%20School%2C%20Rajajinagar!5e0!3m2!1sen!2sin!4v1728900000000!5m2!1sen!2sin",
+  mapEmbedUrl: "https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1sSJR+Public+School,+1050%2FA,+4th+M+Block,+Dr.+Rajkumar+Road,+Rajajinagar,+Bengaluru!6i17",
   
   maps: {
     directionsUrl: "https://maps.app.goo.gl/p6TK8x1gM61onRTw6",
-    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.892794711863!2d77.55139947598858!3d12.978703414722886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d84da459345%3A0xbce891ec22757ce4!2sSJR%20Public%20School%2C%20Rajajinagar!5e0!3m2!1sen!2sin!4v1728900000000!5m2!1sen!2sin",
+    embedUrl: "https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1sSJR+Public+School,+1050%2FA,+4th+M+Block,+Dr.+Rajkumar+Road,+Rajajinagar,+Bengaluru!6i17",
   },
   
   websiteUrl: "https://sjrpsrajajinagar.edu.in", // TBD by school

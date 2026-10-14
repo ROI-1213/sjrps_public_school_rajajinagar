@@ -244,6 +244,21 @@ const Contact = () => {
             className="overflow-hidden bg-white relative"
             style={{ borderRadius: "20px", boxShadow: "0 10px 30px rgba(0,0,0,0.08)" }}
           >
+            <div className="p-3.5 sm:p-4 bg-white flex flex-wrap items-center justify-between gap-3 border-b border-gray-100">
+              <span className="text-sm font-semibold text-logo-navy flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-indian-green" />
+                {schoolConfig.name} — Dr. Rajkumar Road Campus
+              </span>
+              <a
+                href={schoolConfig.maps.directionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-indian-green text-white hover:bg-forest-green font-semibold text-xs transition-colors shadow-sm"
+              >
+                <span>Open in Google Maps</span>
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            </div>
             <iframe
               title={`${schoolConfig.name} Location Map`}
               src={schoolConfig.maps.embedUrl}
