@@ -1,12 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { BookOpen, GraduationCap, Clock, ChevronRight } from "lucide-react";
-import { teachers } from "@/pages/about/Teachers";
+import { BookOpen, GraduationCap, Clock, ChevronRight, Award } from "lucide-react";
+import { staffMembers } from "@/data/staff";
 
 const HomeFacultySection = () => {
   // Select 4 experienced faculty members from Rajajinagar
-  const featured = teachers.slice(3, 7);
+  const featured = staffMembers.slice(3, 7);
 
   return (
     <section className="py-14 bg-white">
@@ -16,45 +16,52 @@ const HomeFacultySection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-school-brown mt-2 mb-3 leading-tight">
             Meet Our <span className="text-indian-green">Faculty</span>
           </h2>
-          <p className="text-base text-muted-foreground">A dedicated team of 50+ educators at SJRPS-Rajajinagar committed to nurturing every child's potential.</p>
+          <p className="text-base text-muted-foreground">
+            A dedicated team of 50+ educators and 60+ staff members at SJRPS-Rajajinagar committed to nurturing every child's potential.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {featured.map((t) => (
             <Card
-              key={t.name}
+              key={t.id}
               className="rounded-2xl border-none shadow-[0_8px_25px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full bg-white"
             >
-              <div className="aspect-[3/4] overflow-hidden bg-muted">
+              <div className="aspect-[3/4] overflow-hidden bg-muted relative">
                 <img 
-                  src={t.image} 
-                  alt={t.name} 
+                  src={t.photo || "/placeholder.svg"} 
+                  alt={`${t.name} - ${t.designation}`}
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" 
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
                   }}
                 />
+                <div className="absolute top-2.5 left-2.5 bg-black/60 backdrop-blur-md text-white text-[11px] font-mono px-2 py-0.5 rounded-full font-semibold">
+                  #{t.slNo.padStart(2, "0")}
+                </div>
               </div>
-              <CardContent className="p-5 flex flex-col flex-1 text-center">
-                <h3 className="text-lg font-bold text-logo-navy leading-tight">{t.name}</h3>
-                <p className="text-sm font-semibold text-indian-green mt-1">{t.designation}</p>
-                <div className="mt-4 pt-4 border-t space-y-2 text-sm text-foreground/80 text-left">
-                  <div className="flex items-center gap-2">
-                    <BookOpen className="h-4 w-4 text-indian-green flex-shrink-0" />
-                    <span className="line-clamp-1">{t.subject}</span>
+              <CardContent className="p-5 flex flex-col flex-1 text-center justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-logo-navy leading-tight">{t.name}</h3>
+                  <p className="text-sm font-semibold text-indian-green mt-1">{t.designation}</p>
+                  <div className="mt-4 pt-4 border-t space-y-2 text-xs text-foreground/80 text-left">
+                    <div className="flex items-center gap-2">
+                      <BookOpen className="h-3.5 w-3.5 text-indian-green flex-shrink-0" />
+                      <span className="line-clamp-1">{t.subject}</span>
+                    </div>
+                    {t.qualification && (
+                      <div className="flex items-center gap-2">
+                        <GraduationCap className="h-3.5 w-3.5 text-indian-green flex-shrink-0" />
+                        <span className="line-clamp-1">{t.qualification}</span>
+                      </div>
+                    )}
+                    {t.experience && (
+                      <div className="flex items-center gap-2">
+                        <Clock className="h-3.5 w-3.5 text-indian-green flex-shrink-0" />
+                        <span>{t.experience}</span>
+                      </div>
+                    )}
                   </div>
-                  {t.qualification && (
-                    <div className="flex items-center gap-2">
-                      <GraduationCap className="h-4 w-4 text-indian-green flex-shrink-0" />
-                      <span className="line-clamp-1">{t.qualification}</span>
-                    </div>
-                  )}
-                  {t.experience && (
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4 text-indian-green flex-shrink-0" />
-                      <span>{t.experience}</span>
-                    </div>
-                  )}
                 </div>
               </CardContent>
             </Card>
@@ -64,7 +71,7 @@ const HomeFacultySection = () => {
         <div className="text-center mt-10">
           <Button asChild className="bg-indian-green hover:bg-indian-green/90 text-white px-8">
             <Link to="/about/teachers">
-              View All Faculty & Staff
+              View All Faculty & Staff Directory (62)
               <ChevronRight className="ml-1 h-4 w-4" />
             </Link>
           </Button>
