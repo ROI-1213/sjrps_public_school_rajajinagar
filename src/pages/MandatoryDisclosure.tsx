@@ -179,69 +179,57 @@ const MandatoryDisclosure = () => {
             <p className="text-sm text-muted-foreground">Click on any document or the View button to inspect the official PDF certificate.</p>
           </div>
 
-          <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-[#1b6e42] text-white">
-                  <th scope="col" className="py-3.5 px-3 sm:px-5 font-semibold text-xs sm:text-sm w-12 sm:w-20 text-center">
-                    Sl No
-                  </th>
-                  <th scope="col" className="py-3.5 px-3 sm:px-5 font-semibold text-xs sm:text-sm text-left">
-                    Document Name
-                  </th>
-                  <th scope="col" className="py-3.5 px-3 sm:px-5 font-semibold text-xs sm:text-sm w-28 sm:w-36 text-center">
-                    Action
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100 bg-white">
-                {mandatoryDocuments.map((doc, index) => (
-                  <tr
-                    key={doc.id}
-                    className="hover:bg-slate-50 transition-colors"
-                  >
-                    <td className="py-3.5 px-3 sm:px-5 font-bold text-gray-900 text-xs sm:text-sm text-center">
-                      {index + 1}
-                    </td>
-                    <td className="py-3.5 px-3 sm:px-5">
-                      <div className="flex items-center gap-2.5">
-                        <FileText className="h-4 w-4 text-red-500 shrink-0" />
-                        <a
-                          href={doc.pdfUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-medium text-gray-900 hover:text-indian-green hover:underline text-xs sm:text-sm leading-snug"
-                        >
-                          {doc.title}
-                        </a>
-                      </div>
-                    </td>
-                    <td className="py-3.5 px-3 sm:px-5 text-center">
-                      <div className="flex items-center justify-center gap-1.5">
+          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse min-w-[560px]">
+                <thead>
+                  <tr className="bg-[#186a3b] text-white">
+                    <th scope="col" className="py-4 px-6 font-bold text-sm sm:text-base w-20 sm:w-24 text-left">
+                      <div className="leading-tight">Sl</div>
+                      <div className="leading-tight">No</div>
+                    </th>
+                    <th scope="col" className="py-4 px-6 font-bold text-sm sm:text-base text-left">
+                      Document Name
+                    </th>
+                    <th scope="col" className="py-4 px-6 font-bold text-sm sm:text-base text-right pr-8 sm:pr-10">
+                      View
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100 bg-white">
+                  {mandatoryDocuments.map((doc, index) => (
+                    <tr
+                      key={doc.id}
+                      className="hover:bg-emerald-50/40 transition-colors"
+                    >
+                      <td className="py-4 px-6 font-normal text-gray-800 text-sm sm:text-base whitespace-nowrap">
+                        {index + 1}
+                      </td>
+                      <td className="py-4 px-6 text-gray-800 font-normal text-sm sm:text-base">
                         <button
                           type="button"
                           onClick={() => setPreviewPdf({ title: doc.title, url: doc.pdfUrl })}
-                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#1b6e42] hover:bg-[#155a36] text-white text-xs font-semibold transition-all shadow-xs cursor-pointer"
-                          title="Preview document"
+                          className="text-left text-gray-800 hover:text-[#186a3b] hover:underline transition-colors cursor-pointer"
                         >
-                          <Eye className="h-3.5 w-3.5" />
+                          {doc.title}
+                        </button>
+                      </td>
+                      <td className="py-4 px-6 text-right pr-6 sm:pr-8 whitespace-nowrap">
+                        <button
+                          type="button"
+                          onClick={() => setPreviewPdf({ title: doc.title, url: doc.pdfUrl })}
+                          className="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-lg bg-[#186a3b] hover:bg-[#135830] text-white text-sm font-semibold transition-all shadow-xs cursor-pointer"
+                          title={`View ${doc.title}`}
+                        >
+                          <Eye className="h-4 w-4" />
                           <span>View</span>
                         </button>
-                        <a
-                          href={doc.pdfUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-1.5 rounded-lg text-gray-500 hover:text-indian-green hover:bg-indian-green/10 transition-colors hidden sm:inline-flex"
-                          title="Open PDF in new tab"
-                        >
-                          <ExternalLink className="h-3.5 w-3.5" />
-                        </a>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
