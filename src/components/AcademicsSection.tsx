@@ -7,19 +7,19 @@ const AcademicsSection = () => {
   const stages = [
     {
       title: "Pre-Primary",
-      image: "/images/Homepage Photos/Home Page Photo1.jpg",
+      image: "/images/Homepage Photos/pre-primary-stage.jpg",
       description: "Nursery, LKG & UKG — play-based learning that nurtures curiosity, joy, and foundational motor skills.",
       path: "/academics/pre-primary",
     },
     {
       title: "Primary Level",
-      image: "/images/Homepage Photos/Home Page Photo2.jpg",
+      image: "/images/Homepage Photos/primary-level-stage.jpg",
       description: "Grades 1 to 5 — building strong literacy, mathematical fluency, inquiry, and conceptual foundations.",
       path: "/academics/primary-level",
     },
     {
       title: "Secondary Stage",
-      image: "/images/Homepage Photos/Home Page Photo3.jpg",
+      image: "/images/Homepage Photos/secondary-stage.jpg",
       description: "Grades 6 to 10 — preparing students for CBSE board exams, scientific experimentation, and future leadership.",
       path: "/academics/secondary-stage",
     },
