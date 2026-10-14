@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import { X, ChevronLeft, ChevronRight, ZoomIn, Image as ImageIcon } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getPublicContent } from "@/lib/api";
 import { allSchoolPhotos, galleryFilterTabs, GalleryPhotoItem } from "@/data/galleryPhotos";
@@ -128,12 +128,6 @@ const PhotoGallery = () => {
               );
             })}
           </div>
-          <div className="text-center mt-3 text-xs text-muted-foreground font-medium flex items-center justify-center gap-1.5">
-            <ImageIcon className="h-3.5 w-3.5 text-indian-green" />
-            <span>
-              Displaying <strong>{filtered.length}</strong> authentic school photographs
-            </span>
-          </div>
         </div>
       </section>
 
@@ -150,7 +144,7 @@ const PhotoGallery = () => {
                 <div className="relative overflow-hidden bg-slate-100 aspect-[4/3]">
                   <img
                     src={photo.src}
-                    alt={photo.title}
+                    alt={photo.eventTitle || photo.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                     onError={(e) => {
@@ -164,14 +158,9 @@ const PhotoGallery = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-3 bg-white border-t border-slate-100 flex-1 flex flex-col justify-between">
-                  {photo.eventTitle && (
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-indian-green line-clamp-1 mb-0.5">
-                      {photo.eventTitle}
-                    </span>
-                  )}
-                  <h3 className="text-xs font-medium text-school-brown line-clamp-1">
-                    {photo.title}
+                <div className="p-3 bg-white border-t border-slate-100">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-indian-green line-clamp-1">
+                    {photo.eventTitle || photo.title.replace(/\s*—\s*Photo\s*\d+/i, "")}
                   </h3>
                 </div>
               </div>
@@ -240,7 +229,7 @@ const PhotoGallery = () => {
                 }}
               />
               <p className="mt-3 text-center text-xs sm:text-sm text-slate-200 max-w-2xl px-4 line-clamp-2">
-                {filtered[lightboxIndex].title}
+                {filtered[lightboxIndex].eventTitle || filtered[lightboxIndex].title.replace(/\s*—\s*Photo\s*\d+/i, "")}
               </p>
             </div>
 
