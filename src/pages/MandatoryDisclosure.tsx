@@ -1,28 +1,21 @@
-import { useState } from "react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import {
   Building2,
   BadgeCheck,
   MapPin,
   Phone,
   Mail,
-  Globe,
   Users,
   ClipboardList,
   GraduationCap,
   Building,
   Eye,
-  Download,
-  FileText,
   ShieldCheck,
-  CheckCircle2,
-  Calendar,
 } from "lucide-react";
 import { schoolConfig } from "@/schoolConfig";
-import { mandatoryDocuments, MandatoryDocument } from "@/data/disclosures";
+import { mandatoryDocuments } from "@/data/disclosures";
 
 const schoolInfo = [
   { icon: Building2, label: "School Name", value: schoolConfig.name },
@@ -77,16 +70,7 @@ const institutionalInfo = [
   },
 ];
 
-const categories = ["All", "Affiliation & Society", "Safety & Infrastructure", "Academic & Compliance"] as const;
-type Category = (typeof categories)[number];
-
 const MandatoryDisclosure = () => {
-  const [selectedCategory, setSelectedCategory] = useState<Category>("All");
-
-  const filteredDocs =
-    selectedCategory === "All"
-      ? mandatoryDocuments
-      : mandatoryDocuments.filter((d) => d.category === selectedCategory);
 
   return (
     <Layout>
@@ -179,90 +163,61 @@ const MandatoryDisclosure = () => {
         </div>
       </section>
 
-      {/* Mandatory Documents Grid */}
-      <section className="py-16 bg-muted/40">
-        <div className="container mx-auto px-4 max-w-6xl">
+      {/* Mandatory Documents Table */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">
-              Official Certificates & Disclosures
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">
+              Mandatory Documents
             </h2>
-            <div className="mx-auto h-1 w-20 bg-indian-green rounded-full mb-6" />
-            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-              All documents are certified true copies of valid statutory registrations, safety clearances, and academic records.
-            </p>
-
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-full text-xs font-semibold transition-all shadow-sm ${
-                    selectedCategory === cat
-                      ? "bg-indian-green text-white shadow-md"
-                      : "bg-white text-logo-navy hover:bg-emerald-50 border border-gray-200"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
+            <div className="mx-auto h-1 w-16 bg-[#1b6e42] rounded-full mb-10" />
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredDocs.map((doc) => (
-              <Card
-                key={doc.id}
-                className="border-indian-green/10 hover:shadow-xl transition-all duration-300 flex flex-col justify-between bg-white overflow-hidden group"
-              >
-                <CardContent className="p-6 flex flex-col h-full justify-between">
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-saffron-orange bg-saffron-orange/10 px-2.5 py-0.5 rounded-full">
-                        {doc.category}
-                      </span>
-                      <span className="text-xs text-muted-foreground font-mono">
-                        {doc.fileSize}
-                      </span>
-                    </div>
-
-                    <div className="flex items-start gap-3 my-2">
-                      <div className="w-10 h-10 rounded-lg bg-indian-green/10 text-indian-green flex items-center justify-center shrink-0 group-hover:bg-indian-green group-hover:text-white transition-colors">
-                        <FileText className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <h3 className="text-base font-bold text-logo-navy group-hover:text-indian-green transition-colors leading-snug">
-                          {doc.title}
-                        </h3>
-                        <p className="text-xs text-muted-foreground mt-1 line-clamp-3">
-                          {doc.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pt-4 border-t border-gray-100 mt-4 flex items-center gap-2">
-                    <a
-                      href={doc.pdfUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-indian-green text-white text-xs font-semibold hover:bg-forest-green shadow-sm transition-all"
+          <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-[#1b6e42] text-white">
+                    <th scope="col" className="py-4 px-6 font-semibold text-sm sm:text-base w-20 sm:w-24 text-left">
+                      <div className="leading-tight">Sl</div>
+                      <div className="leading-tight">No</div>
+                    </th>
+                    <th scope="col" className="py-4 px-6 font-semibold text-sm sm:text-base text-left">
+                      Document Name
+                    </th>
+                    <th scope="col" className="py-4 px-6 font-semibold text-sm sm:text-base text-right pr-8 sm:pr-10">
+                      View
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100 bg-white">
+                  {mandatoryDocuments.map((doc, index) => (
+                    <tr
+                      key={doc.id}
+                      className="hover:bg-slate-50/80 transition-colors"
                     >
-                      <Eye className="h-3.5 w-3.5" />
-                      <span>View PDF</span>
-                    </a>
-                    <a
-                      href={doc.pdfUrl}
-                      download
-                      className="inline-flex items-center justify-center p-2 rounded-lg border border-indian-green/20 text-indian-green hover:bg-indian-green/10 text-xs transition-all"
-                      title="Download PDF"
-                    >
-                      <Download className="h-4 w-4" />
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                      <td className="py-4 px-6 font-bold text-gray-900 text-sm sm:text-base whitespace-nowrap">
+                        {index + 1}
+                      </td>
+                      <td className="py-4 px-6 text-gray-800 font-medium text-sm sm:text-base">
+                        {doc.title}
+                      </td>
+                      <td className="py-4 px-6 text-right pr-6 sm:pr-8 whitespace-nowrap">
+                        <a
+                          href={doc.pdfUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-[#1b6e42] hover:bg-[#155a36] text-white text-xs sm:text-sm font-semibold transition-all shadow-xs"
+                        >
+                          <Eye className="h-4 w-4" />
+                          <span>View</span>
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>

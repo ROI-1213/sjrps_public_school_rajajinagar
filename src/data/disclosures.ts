@@ -32,7 +32,7 @@ export const mandatoryDocuments: MandatoryDocument[] = [
   },
   {
     id: 3,
-    title: "No Objection Certificate (NOC)",
+    title: "No Objection Certificate",
     category: "Affiliation & Society",
     filename: "3-No Objection Certificate.pdf",
     fileSize: "450 KB",
