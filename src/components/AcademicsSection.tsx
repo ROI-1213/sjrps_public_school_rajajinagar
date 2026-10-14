@@ -44,7 +44,7 @@ const AcademicsSection = () => {
               key={stage.title}
               className="overflow-hidden rounded-2xl border-0 shadow-[0_8px_25px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
-              <div className="h-52 overflow-hidden">
+              <div className="h-52 w-full overflow-hidden shrink-0 relative bg-muted">
                 <img
                   src={stage.image}
                   alt={stage.title}
