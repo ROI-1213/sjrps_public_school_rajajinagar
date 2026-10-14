@@ -11,8 +11,8 @@ const images = [
   { url: "/images/Photos/Computer lab/1.jpg", caption: "Advanced Computer Lab" },
   { url: "/images/Photos/Yoga/1.jpg", caption: "Yoga & Mindfulness Session" },
   { url: "/images/Photos/Robotics/1.jpg", caption: "STEM Robotics Innovation" },
-  { url: "/images/Events/Krishna Janmastmi/1.jpg", caption: "Krishna Janmashtami Festivities" },
-  { url: "/images/Events/Annual Sports Meet/1.jpg", caption: "Annual Sports Meet Athletics" },
+  { url: "/images/Events/Krishna Janmastmi/WhatsApp Image 2026-10-01 at 13.37.09 (1).jpeg", caption: "Krishna Janmashtami Festivities" },
+  { url: "/images/Events/Annual Sports Meet/FB_IMG_1791268754974.jpg", caption: "Annual Sports Meet Athletics" },
 ];
 
 const GallerySection = () => {

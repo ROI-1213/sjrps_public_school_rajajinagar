@@ -3,10 +3,6 @@ import PageHero from "@/components/PageHero";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getPublicContent } from "@/lib/api";
-import event1 from "@/assets/gallery/event1.jpg";
-import event2 from "@/assets/gallery/event2.jpg";
-import event3 from "@/assets/gallery/event3.jpg";
-import event4 from "@/assets/gallery/event4.jpg";
 import labs1 from "@/assets/gallery/labs1.jpg";
 import labs2 from "@/assets/gallery/labs2.jpg";
 import labs3 from "@/assets/gallery/labs3.jpg";
@@ -39,10 +35,14 @@ export type Photo = {
 
 export const photos: Photo[] = [
   // Events
-  { category: "events", title: "Events Photo 1", src: event1 },
-  { category: "events", title: "Events Photo 2", src: event2 },
-  { category: "events", title: "Events Photo 3", src: event3 },
-  { category: "events", title: "Events Photo 4", src: event4 },
+  { category: "events", title: "Investiture Ceremony 2026–27", src: "/images/Events/Investiture ceremony/WhatsApp Image 2026-10-05 at 2.08.27 PM (1).jpeg" },
+  { category: "events", title: "Student Council Election", src: "/images/Events/School Election/WhatsApp Image 2026-10-05 at 2.08.28 PM (1).jpeg" },
+  { category: "events", title: "Krishna Janmashtami Festivities", src: "/images/Events/Krishna Janmastmi/WhatsApp Image 2026-10-01 at 13.37.09 (1).jpeg" },
+  { category: "events", title: "Ganesha Pooja Festivities", src: "/images/Events/Ganesha Pooja/WhatsApp Image 2026-10-01 at 13.37.00.jpeg" },
+  { category: "events", title: "Onam Festival & Pookkalam", src: "/images/Events/Onam/WhatsApp Image 2026-10-01 at 14.35.15.jpeg" },
+  { category: "events", title: "Inter-House Rangoli Competition", src: "/images/Events/Rangoli/WhatsApp Image 2026-10-01 at 13.37.18 (2).jpeg" },
+  { category: "events", title: "Pre-Primary Fruit Identification", src: "/images/Events/Fruits Identification/WhatsApp Image 2026-10-01 at 15.00.25 (1).jpeg" },
+  { category: "events", title: "Annual Sports Meet Athletics", src: "/images/Events/Annual Sports Meet/FB_IMG_1791268754974.jpg" },
   // Labs
   { category: "labs", title: "Labs Photo 1", src: labs1 },
   { category: "labs", title: "Labs Photo 2", src: labs2 },
