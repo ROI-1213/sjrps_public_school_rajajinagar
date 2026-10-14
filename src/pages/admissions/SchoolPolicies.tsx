@@ -156,7 +156,7 @@ const SchoolPolicies = () => {
               className="text-3xl md:text-4xl font-bold text-logo-navy mb-4"
               style={{ fontFamily: "Poppins, sans-serif" }}
             >
-              Code of Conduct
+              School Policies
             </h2>
             <p className="text-base text-muted-foreground max-w-2xl mx-auto">
               Guiding principles that foster mutual respect, responsible conduct, and open
