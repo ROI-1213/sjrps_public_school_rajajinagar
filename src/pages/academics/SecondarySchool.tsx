@@ -42,7 +42,7 @@ const SecondarySchool = () => {
         <PageBanner
           title="Secondary School"
           subtitle="Grades 6-10: Developing critical thinking and academic excellence through specialized learning"
-          backgroundImage={collaborativeLearning}
+          backgroundImage="/images/Homepage Photos/secondary-stage.jpg"
         />
 
         {/* Introduction Section */}

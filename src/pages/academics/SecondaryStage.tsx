@@ -145,9 +145,12 @@ const SecondaryStage = () => {
               className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 h-full"
             >
               <img
-                src={sspImg}
+                src="/images/Homepage Photos/secondary-stage.jpg"
                 alt="Secondary Stage learning at SJRPS-Rajajinagar"
                 className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = sspImg;
+                }}
               />
             </motion.div>
             <motion.div

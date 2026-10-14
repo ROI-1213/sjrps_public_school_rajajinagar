@@ -27,7 +27,7 @@ const PrimaryLevel = () => (
     subtitle="Grades: 1 to 5"
     breadcrumbLabel="Primary Level"
     breadcrumbPath="/academics/primary-level"
-    image={plpImg}
+    image="/images/Homepage Photos/primary-level-stage.jpg"
     intro={[
       "The Primary Level (Grades 1–5) is where joyful early learning meets structured academic study. Children transition gracefully into formal subjects while curiosity and creativity remain at the heart of every classroom.",
       "Our learners build strong foundations in literacy and numeracy, explore the world around them, and develop the confidence to ask questions, share ideas and think for themselves.",

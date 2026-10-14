@@ -42,7 +42,7 @@ const PrimarySchool = () => {
         <PageBanner
           title="Primary School"
           subtitle="Grades 1-5: Building strong foundations for lifelong learning through joyful discovery"
-          backgroundImage={indianStudentsClassroom}
+          backgroundImage="/images/Homepage Photos/primary-level-stage.jpg"
         />
 
         {/* Introduction Section */}

@@ -77,7 +77,7 @@ const StagePage = ({
             >
               <img
                 src={image}
-                alt={`${title} learning at SJRPS-HBR`}
+                alt={`${title} learning at SJRPS-Rajajinagar`}
                 className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto"
               />
             </motion.div>

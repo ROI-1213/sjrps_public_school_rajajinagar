@@ -64,12 +64,15 @@ const PrePrimary = () => (
             className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 h-full"
           >
             <img
-              src={ppp}
+              src="/images/Homepage Photos/pre-primary-stage.jpg"
               alt="Pre-Primary learning at SJRPS-Rajajinagar"
               width={1024}
               height={1024}
               loading="lazy"
               className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = ppp;
+              }}
             />
           </motion.div>
           <motion.div
