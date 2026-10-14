@@ -74,7 +74,7 @@ Founded on the timeless ideals of the SJR Education Society, our school blends a
   principalMessage: {
     author: "Mrs. Poornima N Kagali",
     title: "Principal, SJR Public School, Rajajinagar",
-    photo: "/images/Core Team/1. Mrs. Poornima N Kagali - Principal.jpg",
+    photo: "/images/Principal/principal-poornima-hd.jpg",
     openingQuote: "Education is not merely about preparing a child for examinations; it is about preparing a child for life.",
     vision: "To nurture confident, compassionate and responsible individuals who learn with purpose, live with integrity and grow into capable, resilient and lifelong learners.",
     mission: "We at SJR are committed to provide every child with meaningful learning, strong values and emotional well-being in a safe and supportive environment. We identify and nurture each child’s unique potential, develop character and life skills and prepare for a successful, fulfilling and responsible life.",
@@ -85,7 +85,7 @@ Founded on the timeless ideals of the SJR Education Society, our school blends a
     {
       name: "Mrs. Poornima N Kagali",
       designation: "Principal",
-      photo: "/images/Core Team/1. Mrs. Poornima N Kagali - Principal.jpg",
+      photo: "/images/Principal/principal-poornima-hd.jpg",
     },
     {
       name: "Mrs. Nityashree L N",

@@ -16,11 +16,11 @@ const PrincipalMessageSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-10 lg:items-stretch max-w-6xl mx-auto">
           {/* Image */}
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl min-h-[300px] sm:min-h-[440px]">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl min-h-[340px] sm:min-h-[460px] lg:min-h-[500px] bg-slate-100 flex items-center justify-center">
             <img 
               src={schoolConfig.principal.photo} 
               alt={`${schoolConfig.principal.name} — ${schoolConfig.principal.role}`} 
-              className="absolute inset-0 w-full h-full object-cover object-top" 
+              className="absolute inset-0 w-full h-full object-cover object-center" 
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
               }}
