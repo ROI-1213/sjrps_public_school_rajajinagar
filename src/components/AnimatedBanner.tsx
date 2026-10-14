@@ -36,6 +36,41 @@ const AnimatedBanner = () => {
       description: "Sports, taekwondo, yoga, arts, and values come together for complete, well-rounded development.",
       image: "/images/Photos/Science Lab/1.jpg",
     },
+    {
+      tag: "STEM & Robotics",
+      title: "Innovation & Robotics",
+      subtitle: "Hands-on Experiential Learning",
+      description: "Empowering young innovators with practical robotics, creative problem-solving, and future-ready technology skills.",
+      image: "/images/Banner/banner-robotics-stem.jpg",
+    },
+    {
+      tag: "Digital Excellence",
+      title: "Technology in Education",
+      subtitle: "Modern Computer Laboratory",
+      description: "Equipping students with essential digital literacy, computing competence, and tech-driven academic skills.",
+      image: "/images/Banner/banner-computer-lab.jpg",
+    },
+    {
+      tag: "Sports & Athletics",
+      title: "Champions on the Field",
+      subtitle: "Sportsmanship & Active Life",
+      description: "Fostering physical fitness, agility, and teamwork through dedicated coaching and outdoor sports courts.",
+      image: "/images/Banner/banner-sports-volleyball.jpg",
+    },
+    {
+      tag: "Scientific Inquiry",
+      title: "Discovery & Exploration",
+      subtitle: "Composite Science Laboratories",
+      description: "Cultivating scientific temper and hands-on investigative learning through guided laboratory experiments.",
+      image: "/images/Banner/banner-science-practical.jpg",
+    },
+    {
+      tag: "Foundational Years",
+      title: "Joyful Early Education",
+      subtitle: "Play-Way & Activity Learning",
+      description: "A warm and stimulating environment where pre-primary children learn, play, and grow in confidence every day.",
+      image: "/images/Banner/banner-early-childhood.jpg",
+    },
   ];
 
   const stats = [
