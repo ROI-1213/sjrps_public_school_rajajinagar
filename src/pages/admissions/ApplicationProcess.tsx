@@ -15,6 +15,7 @@ import {
   Camera,
   BookOpen,
   FileBadge,
+  Award,
   Users,
   Sparkles,
   Building2,
@@ -34,14 +35,20 @@ const stepIcons = [
 ];
 
 const documents = [
-  { icon: FileBadge, title: "Birth Certificate", detail: "Government-issued birth certificate copy" },
-  { icon: IdCard, title: "Aadhaar Copy", detail: "Student and parent identity copy" },
-  { icon: Camera, title: "Passport Size Photographs", detail: "Recent colored passport photographs" },
-  { icon: BookOpen, title: "Previous Academic Records", detail: "Report cards/progress records from previous school" },
-  { icon: FileText, title: "Transfer Certificate", detail: "TC counter-signed by competent authority (if applicable)" },
+  { icon: FileBadge, title: "Birth Certificate" },
+  { icon: IdCard, title: "Aadhaar Copy" },
+  { icon: Camera, title: "Passport Size Photographs" },
+  { icon: BookOpen, title: "Previous Academic Records" },
+  { icon: FileText, title: "Transfer Certificate (if applicable)" },
 ];
 
-const whyChooseIcons = [GraduationCap, Sparkles, Users, Heart, Building2];
+const whyChoose = [
+  { icon: GraduationCap, title: "Academic Excellence", desc: "CBSE-aligned rigour with strong fundamentals and consistent results." },
+  { icon: Sparkles, title: "Holistic Development", desc: "Academics, sports, arts, and life skills woven into every day." },
+  { icon: Users, title: "Experienced Faculty", desc: "Mentors who know every child by name and guide with care." },
+  { icon: Heart, title: "Value-Based Education", desc: "Character, integrity, and empathy at the core of learning." },
+  { icon: Building2, title: "Modern Learning Environment", desc: "Smart classrooms, labs, library, and a safe, vibrant campus." },
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -131,87 +138,94 @@ const ApplicationProcess = () => {
       </section>
 
       {/* Required Documents */}
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+      <section className="py-16 lg:py-20 bg-[hsl(38_70%_96%)]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-indian-green mb-3">
               Checklist
             </p>
             <h2
-              className="text-3xl md:text-4xl font-bold text-logo-navy"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-logo-navy mb-4"
               style={{ fontFamily: "Poppins, sans-serif" }}
             >
               Required Documents
             </h2>
-            <p className="text-muted-foreground mt-3 text-sm md:text-base">
-              Please keep the following documents ready for verification during the admissions process.
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Please keep clear copies of the following documents ready at the time of application.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {documents.map((d) => (
-              <Card key={d.title} className="rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow bg-slate-50/50">
-                <CardContent className="p-6 flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-indian-green/10 flex items-center justify-center text-indian-green shrink-0">
-                    <d.icon className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-logo-navy text-base mb-1">{d.title}</h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{d.detail}</p>
-                  </div>
-                </CardContent>
-              </Card>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {documents.map((d, i) => (
+              <motion.div
+                key={d.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
+              >
+                <Card className="rounded-2xl border-none shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 bg-white h-full">
+                  <CardContent className="p-6 flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-indian-green flex items-center justify-center shrink-0 shadow-md">
+                      <d.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="text-base font-semibold text-logo-navy">{d.title}</h3>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Why Choose SJRPS-Rajajinagar */}
-      <section className="py-16 bg-muted/30 border-t">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+      <section className="py-16 lg:py-20 bg-indian-green/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-indian-green mb-3">
               Why SJRPS-Rajajinagar
             </p>
             <h2
-              className="text-3xl md:text-4xl font-bold text-logo-navy"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-logo-navy mb-4"
               style={{ fontFamily: "Poppins, sans-serif" }}
             >
-              {admissionsContent.whyChooseUs.heading}
+              Why Choose SJRPS-Rajajinagar?
             </h2>
-            <p className="text-muted-foreground mt-3 text-base">
-              "{admissionsContent.whyChooseUs.tagline}"
-            </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {admissionsContent.whyChooseUs.pillars.map((item, i) => {
-              const Icon = whyChooseIcons[i] || Sparkles;
-              return (
-                <Card key={item.title} className="rounded-2xl border-none shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 bg-white">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 rounded-xl bg-saffron-orange/10 flex items-center justify-center text-saffron-orange mb-4 mx-auto">
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <h3 className="font-bold text-logo-navy text-sm mb-2">{item.title}</h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyChoose.map((w, i) => (
+              <motion.div
+                key={w.title}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                transition={{ delay: (i % 3) * 0.08 }}
+                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all border border-indian-green/10"
+              >
+                <div className="w-12 h-12 rounded-xl bg-indian-green flex items-center justify-center mb-4 shadow">
+                  <w.icon className="h-6 w-6 text-white" />
+                </div>
+                <h3
+                  className="text-lg font-bold text-logo-navy mb-2"
+                  style={{ fontFamily: "Poppins, sans-serif" }}
+                >
+                  {w.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
+              </motion.div>
+            ))}
           </div>
-        </div>
-      </section>
 
-      {/* Lifelong Partnership Commitment Button */}
-      <section className="py-12 bg-white border-t border-slate-100">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <div className="inline-flex items-center justify-center gap-3 px-6 py-4 sm:px-10 sm:py-5 rounded-full bg-indian-green text-white shadow-xl hover:shadow-2xl transition-all duration-300 max-w-3xl text-center border-2 border-saffron-orange/40 hover:scale-[1.01] select-none">
-            <Sparkles className="h-5 w-5 text-golden-yellow shrink-0 hidden sm:block" />
-            <p className="text-xs sm:text-sm md:text-base font-semibold leading-relaxed tracking-wide">
-              "Admissions at SJRPS-Rajajinagar are not just about enrolment — they are the beginning of a lifelong partnership in your child's growth and success."
-            </p>
-            <Sparkles className="h-5 w-5 text-golden-yellow shrink-0 hidden sm:block" />
+          <div className="max-w-4xl mx-auto mt-14">
+            <div className="relative bg-indian-green text-white rounded-2xl px-8 py-10 lg:px-14 lg:py-12 shadow-xl text-center">
+              <Award className="h-10 w-10 text-golden-yellow mx-auto mb-4" />
+              <p className="text-lg lg:text-xl leading-relaxed italic font-medium">
+                "Admissions at SJRPS-Rajajinagar are not just about enrolment — they are the beginning of a
+                lifelong partnership in your child's growth and success."
+              </p>
+            </div>
           </div>
         </div>
       </section>
