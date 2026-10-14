@@ -176,7 +176,7 @@ const MandatoryDisclosure = () => {
               Mandatory Documents
             </h2>
             <div className="mx-auto h-1 w-16 bg-[#1b6e42] rounded-full mb-4" />
-            <p className="text-sm text-muted-foreground">Click on any document or the View button to inspect the official PDF certificate.</p>
+            <p className="text-sm text-muted-foreground">Click on any document or the View button to open the official PDF certificate in a new tab.</p>
           </div>
 
           <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md">
@@ -218,25 +218,27 @@ const MandatoryDisclosure = () => {
                         {index + 1}
                       </td>
                       <td className="py-4 px-6 text-gray-800 font-medium text-sm sm:text-base">
-                        <button
-                          type="button"
-                          onClick={() => setPreviewPdf({ title: doc.title, url: doc.pdfUrl })}
+                        <a
+                          href={doc.pdfUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-left text-gray-800 hover:text-[#176B3F] hover:underline transition-colors cursor-pointer"
                         >
                           {doc.title}
-                        </button>
+                        </a>
                       </td>
                       <td className="py-4 px-6 text-right pr-6 sm:pr-8 whitespace-nowrap">
-                        <button
-                          type="button"
-                          onClick={() => setPreviewPdf({ title: doc.title, url: doc.pdfUrl })}
+                        <a
+                          href={doc.pdfUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="mandatory-view-btn"
                           style={{ backgroundColor: "#176B3F", color: "#ffffff" }}
-                          title={`View ${doc.title}`}
+                          title={`View ${doc.title} in new tab`}
                         >
                           <Eye className="h-4 w-4 shrink-0" color="#ffffff" style={{ color: "#ffffff" }} />
                           <span style={{ color: "#ffffff" }}>View</span>
-                        </button>
+                        </a>
                       </td>
                     </tr>
                   ))}
