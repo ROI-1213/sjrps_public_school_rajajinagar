@@ -25,17 +25,12 @@ import { schoolConfig } from "@/schoolConfig";
 import HistoricalGallerySection from "@/components/HistoricalGallerySection";
 
 const whyChoose = [
-  { icon: BookOpen, title: "Smart Classrooms", desc: "Interactive digital learning environments with modern AI-enabled flat panel displays and multimedia resources." },
-  { icon: Users, title: "Dedicated Faculty", desc: "Experienced educators (50+ faculty) committed to student success, personal growth, and academic excellence." },
-  { icon: Heart, title: "Value Education", desc: "Character building through comprehensive moral and ethical education grounded in timeless ideals." },
+  { icon: BookOpen, title: "Smart Classrooms", desc: "Interactive digital learning environments with modern technology and multimedia resources." },
+  { icon: Users, title: "Dedicated Faculty", desc: "Experienced educators committed to student success, personal growth, and academic excellence." },
+  { icon: Heart, title: "Value Education", desc: "Character building through comprehensive moral and ethical education programs." },
   { icon: ShieldCheck, title: "Safe Campus", desc: "Comprehensive CCTV surveillance, secure entry, and trained staff ensuring complete student safety." },
-  { icon: Target, title: "Holistic Development", desc: "Balanced focus on academics, robotics, sports, martial arts, visual arts, and personality building." },
-  { icon: Trophy, title: "Proven Track Record", desc: "Consistent 100% CBSE board examination pass results with distinctions and academic milestones." },
-  { icon: GraduationCap, title: "Academic Excellence", desc: "Rigorous NCERT-based CBSE curriculum delivered with depth, clarity, and personalized attention." },
-  { icon: UserCheck, title: "Student-Centric Learning", desc: "Personalized pathways that recognize each learner's unique strengths, pace, and potential." },
-  { icon: Medal, title: "Sports & Martial Arts", desc: "Vibrant athletics calendar featuring Taekwondo self-defense, yoga wellness, and sports leagues." },
-  { icon: Rocket, title: "Future-Ready Skills", desc: "Robotics, Vedic Maths, Abacus, and computational thinking integrated into everyday learning." },
-  { icon: Handshake, title: "Parent-Teacher Synergy", desc: "Active Parent-Teacher Association (PTA) fostering close partnership between home and school." },
+  { icon: Target, title: "Holistic Development", desc: "Balanced focus on academics, sports, cultural arts, and leadership skills." },
+  { icon: Trophy, title: "Proven Track Record", desc: "Consistent 100% CBSE board examination results with distinctions and academic milestones." },
 ];
 
 const philosophy = [
@@ -210,43 +205,43 @@ const Overview = () => {
         </div>
       </section>
 
-      {/* Why Choose SJRPS */}
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="container mx-auto px-4">
+      {/* Why Choose SJRPS — Exact Reference Design */}
+      <section className="py-20 lg:py-24 bg-[#FAF7F2] border-t border-[#EDE8E1]">
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-indian-green mb-3">
-              Why SJRPS-Rajajinagar
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#1b7340] mb-3">
+              WHY US
             </p>
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-logo-navy leading-tight"
+              className="text-3xl md:text-4xl lg:text-[42px] font-bold text-logo-navy leading-tight mb-4"
               style={{ fontFamily: "Poppins, sans-serif" }}
             >
-              Why Choose Our School
+              Why Choose SJRPS-Rajajinagar?
             </h2>
-            <p className="text-muted-foreground mt-4 text-base md:text-lg">
-              Providing a balanced environment where academic rigor, ethical grounding, and future-ready skills flourish together.
+            <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+              Discover what makes SJRPS-Rajajinagar the preferred choice for thousands of families seeking quality education with strong moral foundations.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {whyChoose.map((item) => (
-              <Card
+              <div
                 key={item.title}
-                className="border-none shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-slate-50/70"
+                className="bg-white rounded-3xl p-8 sm:p-9 text-center shadow-[0_4px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_35px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1.5 border border-[#EDE8E1] flex flex-col items-center justify-start group"
               >
-                <CardContent className="p-6">
-                  <div className="h-12 w-12 rounded-xl bg-indian-green/10 flex items-center justify-center text-indian-green mb-4">
-                    <item.icon className="h-6 w-6" />
-                  </div>
-                  <h3
-                    className="text-lg font-bold text-logo-navy mb-2"
-                    style={{ fontFamily: "Poppins, sans-serif" }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-                </CardContent>
-              </Card>
+                <div className="w-16 h-16 rounded-full bg-indian-green text-white flex items-center justify-center mb-6 shadow-sm group-hover:scale-105 transition-transform duration-300">
+                  <item.icon className="h-7 w-7 text-white stroke-[2.2]" />
+                </div>
+                <h3
+                  className="text-xl font-bold text-school-brown mb-3 leading-snug"
+                  style={{ fontFamily: "Poppins, sans-serif" }}
+                >
+                  {item.title}
+                </h3>
+                <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed max-w-xs">
+                  {item.desc}
+                </p>
+              </div>
             ))}
           </div>
         </div>

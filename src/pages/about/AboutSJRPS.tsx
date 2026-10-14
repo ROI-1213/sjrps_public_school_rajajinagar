@@ -164,23 +164,31 @@ const AboutSJRPS = () => {
         />
 
             {/* Why Choose SJRPS-Rajajinagar */}
-            <div className="mb-16">
-              <h2 className="text-4xl font-bold text-school-brown mb-8 text-center">Why Choose SJRPS-Rajajinagar?</h2>
-              <p className="text-lg text-elegant text-center mb-12 max-w-3xl mx-auto">
-                Discover what makes SJRPS-Rajajinagar the preferred choice for thousands of families seeking 
-                quality education with strong moral foundations.
-              </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {features.map((feature, index) => (
-                  <Card key={feature.title} className="text-center hover:shadow-xl transition-all duration-300 hover-scale animate-fade-in bg-gradient-to-br from-amber-50 to-orange-50 group">
-                    <CardContent className="p-8">
-                      <div className="bg-school-gold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <feature.icon className="h-8 w-8 text-white" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-school-brown mb-4">{feature.title}</h3>
-                      <p className="text-elegant-light leading-relaxed">{feature.description}</p>
-                    </CardContent>
-                  </Card>
+            <div className="mb-20 bg-[#FAF7F2] p-8 sm:p-12 rounded-3xl border border-[#EDE8E1]">
+              <div className="text-center max-w-3xl mx-auto mb-12">
+                <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#1b7340] mb-3">
+                  WHY US
+                </p>
+                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-logo-navy mb-4 text-center">
+                  Why Choose SJRPS-Rajajinagar?
+                </h2>
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed text-center max-w-2xl mx-auto">
+                  Discover what makes SJRPS-Rajajinagar the preferred choice for thousands of families seeking 
+                  quality education with strong moral foundations.
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                {features.map((feature) => (
+                  <div
+                    key={feature.title}
+                    className="bg-white rounded-3xl p-8 sm:p-9 text-center shadow-[0_4px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_35px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1.5 border border-[#EDE8E1] flex flex-col items-center justify-start group"
+                  >
+                    <div className="w-16 h-16 rounded-full bg-indian-green text-white flex items-center justify-center mb-6 shadow-sm group-hover:scale-105 transition-transform duration-300">
+                      <feature.icon className="h-7 w-7 text-white stroke-[2.2]" />
+                    </div>
+                    <h3 className="text-xl font-bold text-school-brown mb-3 leading-snug">{feature.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed max-w-xs">{feature.description}</p>
+                  </div>
                 ))}
               </div>
             </div>
