@@ -20,7 +20,7 @@ const NewsEventsHomeSection = () => {
           <p className="text-sm text-muted-foreground mt-2">Latest highlights, celebrations and co-curricular milestones at SJRPS-Rajajinagar.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto lg:items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto lg:items-start">
           {/* Left – Featured Events */}
           <div className="lg:col-span-7 flex flex-col">
             <div className="flex items-center gap-3 mb-5">
@@ -29,10 +29,10 @@ const NewsEventsHomeSection = () => {
               </div>
               <h3 className="text-xl font-bold text-school-brown">Latest News & Highlights</h3>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {latestEvents.map((item) => (
                 <Link key={item.id} to={`/news/${item.id}`} className="block h-full group">
-                  <Card className="overflow-hidden border border-indian-green/15 hover:shadow-xl transition-all duration-300 flex flex-col h-full rounded-2xl group-hover:-translate-y-1">
+                  <Card className="overflow-hidden border border-indian-green/15 hover:shadow-xl transition-all duration-300 flex flex-col h-full rounded-2xl group-hover:-translate-y-1 bg-white">
                     <div className="h-44 overflow-hidden bg-muted">
                       <img 
                         src={item.featuredImage} 
@@ -44,7 +44,7 @@ const NewsEventsHomeSection = () => {
                         }}
                       />
                     </div>
-                    <CardContent className="p-4 flex flex-col flex-1">
+                    <CardContent className="p-4 flex flex-col">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-[11px] font-semibold text-indian-green bg-indian-green/10 px-2.5 py-0.5 rounded-full">
                           {item.date}
@@ -83,7 +83,7 @@ const NewsEventsHomeSection = () => {
               <h3 className="text-xl font-bold text-school-brown">Campus Calendar & Updates</h3>
             </div>
 
-            <div className="relative flex-1 min-h-[380px] overflow-hidden rounded-2xl border border-indian-green/15 bg-gradient-to-b from-indian-green/5 to-white">
+            <div className="relative h-[650px] overflow-hidden rounded-2xl border border-indian-green/15 bg-gradient-to-b from-indian-green/5 to-white">
               <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
               <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 
