@@ -1,5 +1,5 @@
 import MessagePage from "@/components/MessagePage";
-import presidentImg from "@/assets/leadership/treasurer.jpg";
+import presidentImg from "@/assets/leadership/president.jpg";
 
 const PresidentMessage = () => (
   <MessagePage

@@ -4,11 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import vp1Img from "@/assets/leadership/vp1.jpg";
 import vp2Img from "@/assets/leadership/vp2.jpg";
 import maheshHiremathImg from "@/assets/leadership/Mahesh-Hiremath.jpg";
+import presidentImg from "@/assets/leadership/president.jpg";
 import secretaryImg from "@/assets/leadership/secretary.jpg";
 import treasurerImg from "@/assets/leadership/treasurer.jpg";
 
 const bearers = [
-  { name: "Sri S.R.Veerabhadraiah", role: "President", image: treasurerImg },
+  { name: "Sri S.R.Veerabhadraiah", role: "President", image: presidentImg },
   { name: "Sri S.V. Rajendra Prasad", role: "Vice-President", image: vp2Img },
   { name: "Sri Mahesh M.Hiremath", role: "Vice-President", image: maheshHiremathImg },
   { name: "Sri Prabhudev Kalmath", role: "Secretary", image: secretaryImg },
