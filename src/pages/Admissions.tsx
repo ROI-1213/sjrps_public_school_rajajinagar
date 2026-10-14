@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import PageBanner from "@/components/PageBanner";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FileText, CreditCard, Award, Calendar } from "lucide-react";
+import { FileText, CreditCard, Award, Calendar, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import indianSchoolEntrance from "@/assets/indian-school-entrance.jpg";
 
@@ -67,6 +67,19 @@ const Admissions = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Lifelong Partnership Commitment Button */}
+        <section className="pb-16 pt-2 bg-background">
+          <div className="container mx-auto px-4 max-w-4xl text-center">
+            <div className="inline-flex items-center justify-center gap-3 px-6 py-4 sm:px-10 sm:py-5 rounded-full bg-indian-green text-white shadow-xl hover:shadow-2xl transition-all duration-300 max-w-3xl text-center border-2 border-saffron-orange/40 hover:scale-[1.01] select-none">
+              <Sparkles className="h-5 w-5 text-golden-yellow shrink-0 hidden sm:block" />
+              <p className="text-xs sm:text-sm md:text-base font-semibold leading-relaxed tracking-wide">
+                "Admissions at SJRPS-Rajajinagar are not just about enrolment — they are the beginning of a lifelong partnership in your child's growth and success."
+              </p>
+              <Sparkles className="h-5 w-5 text-golden-yellow shrink-0 hidden sm:block" />
             </div>
           </div>
         </section>
