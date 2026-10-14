@@ -78,10 +78,10 @@ const HomeFacultySection = () => {
         </div>
 
         <div className="text-center mt-10">
-          <Button asChild className="bg-indian-green hover:bg-indian-green/90 text-white px-8">
+          <Button asChild className="bg-indian-green hover:bg-indian-green/90 text-white px-8 font-semibold rounded-xl">
             <Link to="/about/teachers">
-              View All Faculty & Staff Directory (62)
-              <ChevronRight className="ml-1 h-4 w-4" />
+              View All
+              <ChevronRight className="ml-1.5 h-4 w-4" />
             </Link>
           </Button>
         </div>
