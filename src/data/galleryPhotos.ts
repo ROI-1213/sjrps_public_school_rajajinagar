@@ -15,14 +15,14 @@ export interface GalleryPhotoItem {
 }
 
 export const galleryFilterTabs = [
-  { id: "all", label: "All Photos (174)" },
-  { id: "events", label: "Events (69)" },
-  { id: "campus", label: "Campus & Facilities (19)" },
-  { id: "classroom", label: "Classrooms (5)" },
-  { id: "labs", label: "Labs & STEM (21)" },
-  { id: "sports", label: "Sports & Activities (28)" },
-  { id: "cultural", label: "Cultural & Arts (25)" },
-  { id: "heritage", label: "Our Heritage (7)" },
+  { id: "all", label: "All Photos" },
+  { id: "events", label: "Events" },
+  { id: "campus", label: "Campus & Facilities" },
+  { id: "classroom", label: "Classrooms" },
+  { id: "labs", label: "Labs & STEM" },
+  { id: "sports", label: "Sports & Activities" },
+  { id: "cultural", label: "Cultural & Arts" },
+  { id: "heritage", label: "Our Heritage" },
 ];
 
 export const allSchoolPhotos: GalleryPhotoItem[] = [

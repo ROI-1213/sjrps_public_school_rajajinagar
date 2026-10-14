@@ -61,7 +61,7 @@ const PhotoGallery = () => {
     if (adminPhotos && adminPhotos.length > 0) {
       const categories = Array.from(new Set(adminPhotos.map((p) => p.category)));
       return [
-        { id: "all", label: `All Photos (${adminPhotos.length})` },
+        { id: "all", label: "All Photos" },
         ...categories.map((c) => ({
           id: c,
           label: c.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase()),
