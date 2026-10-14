@@ -11,7 +11,7 @@ Founded on the timeless ideals of the SJR Education Society, our school blends a
       { label: "Faculty", value: "50+", subtext: "Dedicated educators" },
       { label: "Results", value: "100%", subtext: "CBSE Board excellence" },
     ],
-    buildingImage: "/images/Photos/School Building/school-building-main-gate.jpg",
+    buildingImage: "/images/Photos/School Building/school-building-hd-gate.jpg",
   },
   
   history: {

@@ -18,11 +18,11 @@ const AboutOurSchoolSection = () => {
 
               <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5]">
                 <img
-                  src={schoolConfig.assetPaths.schoolBuilding}
-                  alt={`${schoolConfig.fullName} Campus`}
-                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  src="/images/Photos/School Building/school-building-hd-gate.jpg"
+                  alt={`${schoolConfig.fullName} Campus Gate & Building`}
+                  className="absolute inset-0 w-full h-full object-cover object-[center_20%]"
                   onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = "/images/Photos/School Building/School Building1.jpg";
+                    (e.currentTarget as HTMLImageElement).src = "/images/Photos/School Building/school-building-main-gate.jpg";
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-school-brown/80 via-school-brown/10 to-transparent" />
