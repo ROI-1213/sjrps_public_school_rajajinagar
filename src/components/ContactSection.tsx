@@ -86,7 +86,7 @@ const ContactSection = () => {
           <p className="text-base text-muted-foreground">We welcome your enquiries regarding admissions, academics, or campus visits.</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 w-full mx-auto">
           {/* Form */}
           <Card className="border-t-4 border-indian-green shadow-xl rounded-2xl">
             <CardContent className="p-7">

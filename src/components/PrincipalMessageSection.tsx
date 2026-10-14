@@ -14,7 +14,7 @@ const PrincipalMessageSection = () => {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10 lg:items-stretch max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-10 lg:items-stretch w-full mx-auto">
           {/* Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl min-h-[340px] sm:min-h-[460px] lg:min-h-[500px] bg-slate-100 flex items-center justify-center">
             <img 

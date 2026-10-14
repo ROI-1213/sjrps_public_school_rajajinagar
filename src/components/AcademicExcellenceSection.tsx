@@ -40,7 +40,7 @@ const AcademicExcellenceSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="max-w-6xl mx-auto mb-10">
+        <div className="w-full mx-auto mb-10">
           <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)]">
             <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-slate-200">
               {stats.map((s, i) => (
@@ -65,7 +65,7 @@ const AcademicExcellenceSection = () => {
         </div>
 
         {/* Pillars */}
-        <div className="max-w-6xl mx-auto">
+        <div className="w-full mx-auto">
           <div className="flex items-end justify-between mb-4 px-1">
             <div>
               <p className="text-indian-green text-[11px] uppercase tracking-[0.25em] font-semibold mb-1">

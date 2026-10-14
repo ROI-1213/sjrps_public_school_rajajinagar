@@ -20,7 +20,7 @@ const NewsEventsHomeSection = () => {
           <p className="text-sm text-muted-foreground mt-1.5">Latest highlights, celebrations and co-curricular milestones at SJRPS-Rajajinagar.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto lg:items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full mx-auto lg:items-stretch">
           {/* Left – Featured Events */}
           <div className="lg:col-span-7 flex flex-col">
             <div className="flex items-center gap-3 mb-4">

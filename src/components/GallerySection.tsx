@@ -54,7 +54,7 @@ const GallerySection = () => {
           <p className="text-base text-muted-foreground">A glimpse into the vibrant campus life and milestones at Rajajinagar.</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mx-auto">
           {images.map((item, i) => (
             <button
               key={i}
