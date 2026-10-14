@@ -89,9 +89,8 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-5">
               <img
                 src={footerLogo}
-                alt="SJRPS-Rajajinagar Logo"
-                className="h-20 w-28 object-contain bg-white rounded-lg p-1"
-                style={{ boxShadow: "0 0 0 1px #ffffff, 0 10px 15px -3px rgba(0,0,0,0.1)" }}
+                alt="Sri Jagadguru Renukacharya Education Society Logo"
+                className="h-20 w-20 object-contain bg-white rounded-full p-1 shadow-md ring-2 ring-white/90 shrink-0"
                 onError={(e) => {
                   (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
                 }}
