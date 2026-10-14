@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { BookOpen, GraduationCap, Clock, ChevronRight, UserCheck } from "lucide-react";
+import { BookOpen, GraduationCap, Clock, ChevronRight } from "lucide-react";
 import { staffMembers } from "@/data/staff";
 
 const HomeFacultySection = () => {
@@ -51,43 +51,26 @@ const HomeFacultySection = () => {
 
                   <div className="mt-4 pt-3 border-t border-gray-100 space-y-2 text-xs text-foreground/80">
                     {t.subject && (
-                      <div className="flex items-start gap-2">
-                        <BookOpen className="h-3.5 w-3.5 text-indian-green flex-shrink-0 mt-0.5" />
-                        <div>
-                          <span className="text-muted-foreground text-[10px] block uppercase font-medium">Subject / Area</span>
-                          <span className="font-medium text-foreground line-clamp-1">{t.subject}</span>
-                        </div>
+                      <div className="flex items-center gap-2">
+                        <BookOpen className="h-3.5 w-3.5 text-indian-green flex-shrink-0" />
+                        <span className="font-medium text-foreground line-clamp-1">{t.subject}</span>
                       </div>
                     )}
 
                     {t.qualification && (
-                      <div className="flex items-start gap-2">
-                        <GraduationCap className="h-3.5 w-3.5 text-indian-green flex-shrink-0 mt-0.5" />
-                        <div>
-                          <span className="text-muted-foreground text-[10px] block uppercase font-medium">Qualification</span>
-                          <span className="font-medium text-foreground line-clamp-1">{t.qualification}</span>
-                        </div>
+                      <div className="flex items-center gap-2">
+                        <GraduationCap className="h-3.5 w-3.5 text-indian-green flex-shrink-0" />
+                        <span className="font-medium text-foreground line-clamp-1">{t.qualification}</span>
                       </div>
                     )}
 
                     {t.experience && (
-                      <div className="flex items-start gap-2">
-                        <Clock className="h-3.5 w-3.5 text-indian-green flex-shrink-0 mt-0.5" />
-                        <div>
-                          <span className="text-muted-foreground text-[10px] block uppercase font-medium">Experience</span>
-                          <span className="font-medium text-foreground">{t.experience}</span>
-                        </div>
+                      <div className="flex items-center gap-2">
+                        <Clock className="h-3.5 w-3.5 text-indian-green flex-shrink-0" />
+                        <span className="font-medium text-foreground">{t.experience}</span>
                       </div>
                     )}
                   </div>
-                </div>
-
-                <div className="mt-4 pt-2.5 border-t border-dashed border-gray-100 flex items-center justify-between text-[11px] text-muted-foreground">
-                  <span className="inline-flex items-center gap-1 text-indian-green font-medium">
-                    <UserCheck className="h-3 w-3" />
-                    Verified Record
-                  </span>
-                  <span className="font-mono text-[10px]">AY 2026–27</span>
                 </div>
               </CardContent>
             </Card>

@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, GraduationCap, Clock, Search, UserCheck, ShieldCheck, Info } from "lucide-react";
+import { BookOpen, GraduationCap, Clock, Search, ShieldCheck, Info } from "lucide-react";
 import { staffMembers, type StaffMember, type StaffCategory, STAFF_CATEGORIES } from "@/data/staff";
 
 // Backwards compatibility export if other components import Teacher interface
@@ -242,48 +242,28 @@ const Teachers = () => {
                     <div className="mt-4 pt-3 border-t border-gray-100 space-y-2 text-xs text-foreground/80">
                       {/* Subject or Area of Responsibility */}
                       {staff.subject && (
-                        <div className="flex items-start gap-2">
-                          <BookOpen className="h-3.5 w-3.5 text-indian-green flex-shrink-0 mt-0.5" />
-                          <div>
-                            <span className="text-muted-foreground text-[10px] block uppercase font-medium">Subject / Area</span>
-                            <span className="font-medium text-foreground line-clamp-1">{staff.subject}</span>
-                          </div>
+                        <div className="flex items-center gap-2">
+                          <BookOpen className="h-3.5 w-3.5 text-indian-green flex-shrink-0" />
+                          <span className="font-medium text-foreground line-clamp-1">{staff.subject}</span>
                         </div>
                       )}
 
                       {/* Qualification */}
                       {staff.qualification && (
-                        <div className="flex items-start gap-2">
-                          <GraduationCap className="h-3.5 w-3.5 text-indian-green flex-shrink-0 mt-0.5" />
-                          <div>
-                            <span className="text-muted-foreground text-[10px] block uppercase font-medium">Qualification</span>
-                            <span className="font-medium text-foreground line-clamp-1">{staff.qualification}</span>
-                          </div>
+                        <div className="flex items-center gap-2">
+                          <GraduationCap className="h-3.5 w-3.5 text-indian-green flex-shrink-0" />
+                          <span className="font-medium text-foreground line-clamp-1">{staff.qualification}</span>
                         </div>
                       )}
 
                       {/* Experience */}
                       {staff.experience && (
-                        <div className="flex items-start gap-2">
-                          <Clock className="h-3.5 w-3.5 text-indian-green flex-shrink-0 mt-0.5" />
-                          <div>
-                            <span className="text-muted-foreground text-[10px] block uppercase font-medium">Experience</span>
-                            <span className="font-medium text-foreground">{staff.experience}</span>
-                          </div>
+                        <div className="flex items-center gap-2">
+                          <Clock className="h-3.5 w-3.5 text-indian-green flex-shrink-0" />
+                          <span className="font-medium text-foreground">{staff.experience}</span>
                         </div>
                       )}
                     </div>
-                  </div>
-
-                  {/* Verification pill */}
-                  <div className="mt-4 pt-2.5 border-t border-dashed border-gray-100 flex items-center justify-between text-[11px] text-muted-foreground">
-                    <span className="inline-flex items-center gap-1 text-indian-green font-medium">
-                      <UserCheck className="h-3 w-3" />
-                      Verified Record
-                    </span>
-                    <span className="text-[10px] font-mono text-gray-400">
-                      AY 2026-27
-                    </span>
                   </div>
                 </CardContent>
               </Card>
