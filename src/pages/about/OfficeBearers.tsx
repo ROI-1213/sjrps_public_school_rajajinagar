@@ -13,7 +13,7 @@ const bearers = [
   { name: "Sri S.V. Rajendra Prasad", role: "Vice-President", image: vp2Img },
   { name: "Sri Mahesh M.Hiremath", role: "Vice-President", image: maheshHiremathImg },
   { name: "Sri Prabhudev Kalmath", role: "Secretary", image: secretaryImg },
-  { name: "Sri M.Kotreshappa", role: "Treasurer", image: vp1Img },
+  { name: "Sri M.Kotreshappa", role: "Treasurer", image: treasurerImg },
 ];
 
 const OfficeBearers = () => (
