@@ -13,8 +13,8 @@ const AboutOurSchoolSection = () => {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="lg:col-span-5 relative">
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-full h-full rounded-3xl border-2 border-indian-green/30" />
-              <div className="absolute -bottom-4 -right-4 w-full h-full rounded-3xl border-2 border-saffron-orange/30" />
+              <div className="hidden sm:block absolute -top-4 -left-4 w-full h-full rounded-3xl border-2 border-indian-green/30" />
+              <div className="hidden sm:block absolute -bottom-4 -right-4 w-full h-full rounded-3xl border-2 border-saffron-orange/30" />
 
               <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5]">
                 <img

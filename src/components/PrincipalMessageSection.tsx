@@ -16,7 +16,7 @@ const PrincipalMessageSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-10 lg:items-stretch max-w-6xl mx-auto">
           {/* Image */}
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl min-h-[440px]">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl min-h-[300px] sm:min-h-[440px]">
             <img 
               src={schoolConfig.principal.photo} 
               alt={`${schoolConfig.principal.name} — ${schoolConfig.principal.role}`} 
@@ -33,7 +33,7 @@ const PrincipalMessageSection = () => {
           </div>
 
           {/* Content */}
-          <div className="flex flex-col justify-center bg-gradient-to-br from-indian-green/5 to-tricolor-orange/5 p-8 rounded-2xl border border-indian-green/10">
+          <div className="flex flex-col justify-center bg-gradient-to-br from-indian-green/5 to-tricolor-orange/5 p-5 sm:p-8 rounded-2xl border border-indian-green/10">
             <Quote className="h-10 w-10 text-indian-green mb-4" />
             <p className="text-xl font-serif italic text-school-brown leading-snug mb-4">
               "{schoolConfig.principal.quote}"

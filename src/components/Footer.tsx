@@ -213,7 +213,7 @@ const Footer = () => {
 
       {/* Bottom strip */}
       <div className="relative bg-saffron-orange text-white">
-        <div className="container mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm font-medium">
+        <div className="container mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm font-medium text-center sm:text-left">
           <p>
             © {new Date().getFullYear()} {schoolConfig.fullName}. All rights reserved.
           </p>

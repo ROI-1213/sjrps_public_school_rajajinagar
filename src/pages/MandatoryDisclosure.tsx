@@ -178,14 +178,14 @@ const MandatoryDisclosure = () => {
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="bg-[#1b6e42] text-white">
-                    <th scope="col" className="py-4 px-6 font-semibold text-sm sm:text-base w-20 sm:w-24 text-left">
+                    <th scope="col" className="py-3 sm:py-4 px-3 sm:px-6 font-semibold text-xs sm:text-base w-14 sm:w-24 text-left">
                       <div className="leading-tight">Sl</div>
                       <div className="leading-tight">No</div>
                     </th>
-                    <th scope="col" className="py-4 px-6 font-semibold text-sm sm:text-base text-left">
+                    <th scope="col" className="py-3 sm:py-4 px-3 sm:px-6 font-semibold text-xs sm:text-base text-left">
                       Document Name
                     </th>
-                    <th scope="col" className="py-4 px-6 font-semibold text-sm sm:text-base text-right pr-8 sm:pr-10">
+                    <th scope="col" className="py-3 sm:py-4 px-3 sm:px-6 font-semibold text-xs sm:text-base text-right pr-4 sm:pr-10">
                       View
                     </th>
                   </tr>
@@ -196,20 +196,20 @@ const MandatoryDisclosure = () => {
                       key={doc.id}
                       className="hover:bg-slate-50/80 transition-colors"
                     >
-                      <td className="py-4 px-6 font-bold text-gray-900 text-sm sm:text-base whitespace-nowrap">
+                      <td className="py-3 sm:py-4 px-3 sm:px-6 font-bold text-gray-900 text-xs sm:text-base whitespace-nowrap">
                         {index + 1}
                       </td>
-                      <td className="py-4 px-6 text-gray-800 font-medium text-sm sm:text-base">
+                      <td className="py-3 sm:py-4 px-3 sm:px-6 text-gray-800 font-medium text-xs sm:text-base">
                         {doc.title}
                       </td>
-                      <td className="py-4 px-6 text-right pr-6 sm:pr-8 whitespace-nowrap">
+                      <td className="py-3 sm:py-4 px-3 sm:px-6 text-right pr-3 sm:pr-8 whitespace-nowrap">
                         <a
                           href={doc.pdfUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-[#1b6e42] hover:bg-[#155a36] text-white text-xs sm:text-sm font-semibold transition-all shadow-xs"
+                          className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 rounded-lg bg-[#1b6e42] hover:bg-[#155a36] text-white text-xs sm:text-sm font-semibold transition-all shadow-xs"
                         >
-                          <Eye className="h-4 w-4" />
+                          <Eye className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                           <span>View</span>
                         </a>
                       </td>

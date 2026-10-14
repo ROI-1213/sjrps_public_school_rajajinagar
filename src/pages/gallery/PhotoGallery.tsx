@@ -108,7 +108,7 @@ const PhotoGallery = () => {
       />
 
       {/* Category Filter Pills */}
-      <section className="py-8 bg-slate-50/60 border-b border-slate-200/80 sticky top-0 z-20 backdrop-blur-md bg-white/90">
+      <section className="py-6 sm:py-8 bg-slate-50/60 border-b border-slate-200/80">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
             {filters.map((f) => {

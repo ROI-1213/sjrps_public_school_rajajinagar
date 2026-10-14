@@ -1,6 +1,7 @@
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import sjreLogo from "@/assets/sjre.png";
 
 type SubItem = { title: string; path: string };
 type MenuItem = { title: string; path: string; submenu?: SubItem[]; alignRight?: boolean };
@@ -98,7 +99,26 @@ const Header = () => {
   return (
     <header className="bg-indian-green text-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between py-1 lg:py-0">
+          {/* Mobile brand header (visible on < lg) */}
+          <Link
+            to="/"
+            onClick={() => setIsMenuOpen(false)}
+            className="lg:hidden flex items-center gap-2.5 py-1.5 focus:outline-none"
+          >
+            <img
+              src={sjreLogo}
+              alt="SJRPS Logo"
+              className="h-8 w-8 object-contain bg-white/10 rounded-full p-0.5 border border-white/20"
+            />
+            <div className="flex flex-col">
+              <span className="font-bold text-xs sm:text-sm text-white tracking-tight leading-tight">
+                SJR Public School
+              </span>
+              <span className="text-[10px] text-white/80 leading-tight">Rajajinagar, Bengaluru</span>
+            </div>
+          </Link>
+
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center justify-center w-full gap-1 xl:gap-2 py-1">
             {menuItems.map((item) => (
@@ -142,7 +162,7 @@ const Header = () => {
 
           {/* Mobile toggle */}
           <button
-            className="lg:hidden text-white ml-auto py-2 hover:text-golden-yellow transition-colors duration-200"
+            className="lg:hidden text-white p-2 rounded-lg hover:bg-white/10 hover:text-golden-yellow transition-colors duration-200"
             aria-label="Toggle menu"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >

@@ -57,8 +57,8 @@ const TestimonialsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="bg-indian-green hover:bg-indian-green/90 text-white border-0 -left-4 sm:-left-12" />
-          <CarouselNext className="bg-indian-green hover:bg-indian-green/90 text-white border-0 -right-4 sm:-right-12" />
+          <CarouselPrevious className="hidden sm:flex bg-indian-green hover:bg-indian-green/90 text-white border-0 -left-4 sm:-left-12" />
+          <CarouselNext className="hidden sm:flex bg-indian-green hover:bg-indian-green/90 text-white border-0 -right-4 sm:-right-12" />
         </Carousel>
       </div>
     </section>

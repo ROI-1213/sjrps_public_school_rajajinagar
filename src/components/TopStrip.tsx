@@ -4,15 +4,15 @@ import { SCHOOL_EMAILS, SCHOOL_LANDLINES } from "@/lib/siteInfo";
 const TopStrip = () => {
   return (
     <div className="bg-saffron-orange text-white text-[11px] sm:text-xs font-medium">
-      <div className="container mx-auto px-2 sm:px-4 py-1.5 flex flex-nowrap items-center justify-center sm:justify-between gap-x-2 sm:gap-x-4 whitespace-nowrap overflow-hidden">
+      <div className="container mx-auto px-2 sm:px-4 py-1.5 flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-between gap-x-3 gap-y-1">
         {/* Left: Contact */}
-        <div className="flex flex-nowrap items-center justify-center gap-x-2 sm:gap-x-4">
+        <div className="flex items-center justify-center gap-x-2 sm:gap-x-4">
           <a
             href={`mailto:${SCHOOL_EMAILS[0]}`}
             className="inline-flex items-center gap-1 sm:gap-1.5 hover:text-logo-navy transition-colors duration-200"
           >
             <Mail className="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" />
-            <span>{SCHOOL_EMAILS[0]}</span>
+            <span className="truncate max-w-[220px] sm:max-w-none">{SCHOOL_EMAILS[0]}</span>
           </a>
           <span className="hidden sm:inline opacity-50">|</span>
           {SCHOOL_LANDLINES.map((phone) => (
@@ -28,8 +28,7 @@ const TopStrip = () => {
         </div>
 
         {/* Right: Portals */}
-        <div className="flex flex-nowrap items-center gap-x-2 sm:gap-x-4">
-          <span className="sm:hidden opacity-50">|</span>
+        <div className="flex items-center gap-x-3 sm:gap-x-4">
           <a
             href="https://sjres.myclassboard.com/"
             target="_blank"

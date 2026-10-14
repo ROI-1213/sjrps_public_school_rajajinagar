@@ -104,15 +104,15 @@ const LogoSection = () => {
             <img src={g2Logo} alt="School Crest" className="h-10 w-10 object-contain" />
           </div>
           <h1
-            className="text-base sm:text-lg font-bold text-logo-navy leading-none whitespace-nowrap"
+            className="text-base sm:text-lg font-bold text-logo-navy leading-snug px-1"
             style={{ fontFamily: "Poppins, sans-serif" }}
           >
             {SCHOOL_NAME}
           </h1>
-          <p className="text-[10px] sm:text-[11px] text-logo-maroon font-normal mt-0.5 leading-tight px-2">
+          <p className="text-[10px] sm:text-[11px] text-logo-maroon font-normal mt-1 leading-snug px-2 break-words">
             {AFFILIATION}
           </p>
-          <p className="text-[10px] sm:text-[11px] text-logo-maroon font-normal leading-tight px-2">
+          <p className="text-[10px] sm:text-[11px] text-logo-maroon font-normal leading-snug px-2">
             {AFFILIATION_LEVEL}
           </p>
         </div>
