@@ -19,6 +19,8 @@ import {
   Brain,
   Globe2,
   Crown,
+  Quote,
+  Award,
 } from "lucide-react";
 import { aboutContent } from "@/content/about";
 import { schoolConfig } from "@/schoolConfig";
@@ -248,41 +250,60 @@ const Overview = () => {
       </section>
 
       {/* Educational Philosophy */}
-      <section className="py-16 lg:py-20 bg-muted/30 border-t">
+      <section className="py-16 lg:py-20 bg-indian-green/5">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-indian-green mb-3">
-              Our Ethos
+              Our Approach
             </p>
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-logo-navy leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-logo-navy mb-4"
               style={{ fontFamily: "Poppins, sans-serif" }}
             >
-              Educational Philosophy
+              Our Educational Philosophy
             </h2>
-            <p className="text-muted-foreground mt-4 text-base md:text-lg">
-              The fundamental principles that guide every classroom, lesson, and interaction at SJRPS-Rajajinagar.
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Eight guiding principles that shape every classroom, every conversation, and every child's
+              journey at SJRPS-Rajajinagar.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {philosophy.map((item) => (
-              <div
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+            {philosophy.map((item, i) => (
+              <motion.div
                 key={item.title}
-                className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:border-indian-green/30 hover:shadow-md transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: (i % 4) * 0.06 }}
+                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all border border-indian-green/10"
               >
-                <div className="h-12 w-12 rounded-xl bg-saffron-orange/10 flex items-center justify-center text-saffron-orange mb-4">
-                  <item.icon className="h-6 w-6" />
+                <div className="w-12 h-12 rounded-xl bg-indian-green flex items-center justify-center mb-4 shadow">
+                  <item.icon className="h-6 w-6 text-white" />
                 </div>
                 <h3
-                  className="text-base font-bold text-logo-navy mb-2"
+                  className="text-lg font-bold text-logo-navy mb-2"
                   style={{ fontFamily: "Poppins, sans-serif" }}
                 >
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
-              </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </motion.div>
             ))}
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="relative bg-indian-green text-white rounded-2xl px-8 py-10 lg:px-14 lg:py-12 shadow-xl overflow-hidden">
+              <Quote className="absolute -top-2 -left-2 h-24 w-24 text-white/10" />
+              <p className="relative text-lg lg:text-xl leading-relaxed text-center italic font-medium">
+                "We believe education is not merely the acquisition of knowledge, but the development of
+                character, confidence, creativity, and compassion that prepares students for life."
+              </p>
+              <div className="relative mt-6 flex items-center justify-center gap-2 text-golden-yellow text-sm font-semibold tracking-wider uppercase">
+                <Award className="h-4 w-4" />
+                <span>SJRPS-Rajajinagar Philosophy</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
