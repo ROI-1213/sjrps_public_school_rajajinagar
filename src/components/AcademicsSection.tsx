@@ -8,19 +8,19 @@ const AcademicsSection = () => {
     {
       title: "Pre-Primary",
       image: "/images/Homepage Photos/pre-primary-stage.jpg",
-      description: "Nursery, LKG & UKG — play-based learning that nurtures curiosity, joy, and foundational motor skills.",
+      description: "Nursery, LKG & UKG — play-based learning nurturing curiosity, joy, and foundational motor skills.",
       path: "/academics/pre-primary",
     },
     {
       title: "Primary Level",
       image: "/images/Homepage Photos/primary-level-stage.jpg",
-      description: "Grades 1 to 5 — building strong literacy, mathematical fluency, inquiry, and conceptual foundations.",
+      description: "Grades 1 to 5 — building strong literacy, numeracy, scientific inquiry, and conceptual foundations.",
       path: "/academics/primary-level",
     },
     {
       title: "Secondary Stage",
       image: "/images/Homepage Photos/secondary-stage.jpg",
-      description: "Grades 6 to 10 — preparing students for CBSE board exams, scientific experimentation, and future leadership.",
+      description: "Grades 6 to 10 — preparing students for CBSE board exams, scientific inquiry, and future leadership.",
       path: "/academics/secondary-stage",
     },
   ];
@@ -56,18 +56,20 @@ const AcademicsSection = () => {
               </div>
               <CardContent className="p-5 flex flex-col flex-1">
                 <h3 className="text-xl font-bold text-school-brown mb-2">{stage.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-5 flex-1">
+                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 h-[2.75rem] min-h-[2.75rem] max-h-[2.75rem] overflow-hidden mb-5">
                   {stage.description}
                 </p>
-                <Button
-                  asChild
-                  className="w-full bg-indian-green hover:bg-indian-green/90 text-white font-medium"
-                >
-                  <Link to={stage.path}>
-                    View Details
-                    <ChevronRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </Button>
+                <div className="mt-auto">
+                  <Button
+                    asChild
+                    className="w-full bg-indian-green hover:bg-indian-green/90 text-white font-medium"
+                  >
+                    <Link to={stage.path}>
+                      View Details
+                      <ChevronRight className="ml-1 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}
