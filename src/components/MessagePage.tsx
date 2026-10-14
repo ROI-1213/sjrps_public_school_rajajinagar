@@ -13,8 +13,9 @@ interface MessagePageProps {
   paragraphs: ReactNode[];
   hideProfileCard?: boolean;
   compactImage?: boolean;
+  imageAspectRatio?: string;
+  imageClassName?: string;
   signature?: ReactNode;
-
 }
 
 const MessagePage = ({
@@ -28,8 +29,9 @@ const MessagePage = ({
   paragraphs,
   hideProfileCard = false,
   compactImage = false,
+  imageAspectRatio,
+  imageClassName,
   signature,
-
 }: MessagePageProps) => {
   return (
     <Layout>
@@ -47,11 +49,11 @@ const MessagePage = ({
             {/* Portrait */}
             <div className={`lg:col-span-2 flex ${compactImage ? "lg:self-start" : ""}`}>
               <div className="rounded-2xl overflow-hidden shadow-xl border bg-white flex flex-col w-full">
-                <div className={compactImage ? "bg-muted aspect-[4/5]" : "flex-1 bg-muted"}>
+                <div className={compactImage ? (imageAspectRatio || "bg-muted aspect-[4/3]") : "flex-1 bg-muted"}>
                   <img
                     src={imageUrl}
                     alt={name}
-                    className="w-full h-full object-cover object-center"
+                    className={imageClassName || `w-full h-full object-cover ${compactImage ? "object-top" : "object-center"}`}
                   />
                 </div>
 
