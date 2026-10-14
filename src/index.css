@@ -7129,3 +7129,8 @@ html {
   opacity: 0.95 !important;
   transform: translateY(-1px) !important;
 }
+
+html, body {
+  overflow-x: clip;
+}
+

@@ -12,13 +12,13 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="min-h-screen bg-background w-full overflow-x-hidden flex flex-col">
+    <div className="min-h-screen bg-background w-full flex flex-col">
       <TopStrip />
       <LogoSection />
       <Header />
       
       {/* Main Content */}
-      <main className="flex-1 w-full overflow-x-hidden">{children}</main>
+      <main className="flex-1 w-full">{children}</main>
       
       <Footer />
       <FloatingContactButtons />
