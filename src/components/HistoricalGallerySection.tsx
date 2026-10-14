@@ -1,29 +1,22 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { X, ChevronLeft, ChevronRight, ZoomIn, ArrowRight, History } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, ZoomIn, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { historicalPhotos, HistoricalPhoto } from "@/data/historicalPhotos";
+import { historicalPhotos } from "@/data/historicalPhotos";
 
 interface HistoricalGallerySectionProps {
   limit?: number;
   showViewAllButton?: boolean;
 }
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
-
 export const HistoricalGallerySection: React.FC<HistoricalGallerySectionProps> = ({
   limit,
   showViewAllButton = true,
 }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [isExpanded, setIsExpanded] = useState(false);
 
-  const displayPhotos = limit && !isExpanded ? historicalPhotos.slice(0, limit) : historicalPhotos;
+  const displayPhotos = limit ? historicalPhotos.slice(0, limit) : historicalPhotos;
 
   const handleClose = useCallback(() => setSelectedIndex(null), []);
   const handlePrev = useCallback(() => {
@@ -58,89 +51,53 @@ export const HistoricalGallerySection: React.FC<HistoricalGallerySectionProps> =
   }, [selectedIndex]);
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-white via-amber-50/20 to-white border-t border-slate-100 relative overflow-hidden">
-      {/* Decorative background blurs */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-indian-green/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-saffron-orange/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 pointer-events-none" />
-
-      <div className="container mx-auto px-4 max-w-6xl relative">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeUp}
-          className="text-center max-w-3xl mx-auto mb-12 lg:mb-16"
-        >
-          <div className="inline-flex items-center gap-2 bg-indian-green/10 text-indian-green px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.25em] mb-4">
-            <History className="h-3.5 w-3.5" />
-            OUR HERITAGE
-          </div>
+    <section className="py-16 bg-white border-t border-slate-100">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-school-brown leading-tight mb-4"
+            className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-3"
             style={{ fontFamily: "Poppins, sans-serif" }}
           >
-            Glimpses of Our <span className="text-indian-green">Glorious Past</span>
+            Glimpses of Our Glorious Past
           </h2>
-          <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-4">
+          <div className="mx-auto h-1 w-20 bg-indian-green rounded-full mb-4" />
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
             A visual journey through the cherished memories, milestones and enduring legacy of SJR Public School, Rajajinagar.
           </p>
-          <div className="mx-auto h-1 w-20 bg-indian-green rounded-full mb-6" />
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed italic border-l-2 md:border-l-0 md:border-y border-indian-green/20 py-3 px-4 bg-white/60 rounded-xl shadow-xs">
-            “Every photograph tells a story of our school's journey, its people, traditions and cherished memories. These archival images celebrate the foundations of the institution and the generations who have been part of its growth.”
-          </p>
-        </motion.div>
+        </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-start">
-          {displayPhotos.map((photo, index) => {
-            const isLandscape = photo.orientation === "landscape";
-            return (
-              <motion.div
-                key={photo.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.45, delay: index * 0.06 }}
-                className={isLandscape && index === 0 ? "sm:col-span-2 lg:col-span-2" : ""}
-              >
-                <Card
-                  onClick={() => setSelectedIndex(index)}
-                  className="group cursor-pointer overflow-hidden rounded-2xl bg-white border border-slate-200/90 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-indian-green/30"
-                  style={{ boxShadow: "0 8px 24px rgba(0,0,0,0.06)" }}
-                >
-                  <div
-                    className={`relative overflow-hidden bg-slate-100 flex items-center justify-center ${
-                      isLandscape && index === 0 ? "aspect-[16/10]" : "aspect-[4/3]"
-                    }`}
-                  >
-                    <img
-                      src={photo.src}
-                      alt={photo.alt}
-                      loading="lazy"
-                      className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-school-brown/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="bg-white/95 text-school-brown rounded-full p-2.5 shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300 flex items-center gap-1.5 text-xs font-semibold px-3.5">
-                        <ZoomIn className="h-4 w-4 text-indian-green" />
-                        <span>Enlarge</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-4 bg-white border-t border-slate-100">
-                    <p className="text-xs uppercase tracking-wider text-indian-green font-semibold mb-1">
-                      Archival Photograph
-                    </p>
-                    <h3 className="text-sm font-semibold text-school-brown line-clamp-1 leading-snug">
-                      {photo.caption}
-                    </h3>
-                  </div>
-                </Card>
-              </motion.div>
-            );
-          })}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {displayPhotos.map((photo, index) => (
+            <div
+              key={photo.id}
+              onClick={() => setSelectedIndex(index)}
+              className="group cursor-pointer overflow-hidden rounded-xl bg-white border border-gray-200/90 shadow-xs hover:shadow-md transition-all duration-300"
+            >
+              <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                  }}
+                />
+                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 text-gray-800 text-xs font-semibold shadow-md">
+                    <ZoomIn className="h-3.5 w-3.5 text-indian-green" />
+                    View Photo
+                  </span>
+                </div>
+              </div>
+              <div className="p-3.5 bg-white border-t border-gray-100">
+                <h3 className="text-sm font-semibold text-gray-800 line-clamp-1 leading-snug">
+                  {photo.caption}
+                </h3>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* View All Button */}
