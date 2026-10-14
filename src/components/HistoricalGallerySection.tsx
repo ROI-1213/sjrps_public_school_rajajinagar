@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
-import { X, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { historicalPhotos } from "@/data/historicalPhotos";
 
 interface HistoricalGallerySectionProps {
@@ -51,23 +49,10 @@ export const HistoricalGallerySection: React.FC<HistoricalGallerySectionProps> =
   }, [selectedIndex]);
 
   return (
-    <section className="py-16 bg-white border-t border-slate-100">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <h2
-            className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-3"
-            style={{ fontFamily: "Poppins, sans-serif" }}
-          >
-            Glimpses of Our Glorious Past
-          </h2>
-          <div className="mx-auto h-1 w-20 bg-indian-green rounded-full mb-4" />
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-            A visual journey through the cherished memories, milestones and enduring legacy of SJR Public School, Rajajinagar.
-          </p>
-        </div>
-
+    <section className="py-12 bg-white border-t border-slate-100">
+      <div className="container mx-auto px-4 w-full">
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {displayPhotos.map((photo, index) => (
             <div
               key={photo.id}
@@ -86,21 +71,6 @@ export const HistoricalGallerySection: React.FC<HistoricalGallerySectionProps> =
             </div>
           ))}
         </div>
-
-        {/* View All Button */}
-        {showViewAllButton && limit && historicalPhotos.length > limit && (
-          <div className="mt-12 text-center">
-            <Button
-              asChild
-              className="bg-indian-green hover:bg-indian-green/90 text-white font-semibold px-8 py-3 h-12 rounded-xl shadow-md hover:shadow-lg transition-all group"
-            >
-              <Link to="/about/our-heritage">
-                View All Historical Photos
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-        )}
       </div>
 
       {/* Lightbox Modal */}
