@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { aboutContent } from "@/content/about";
 import { schoolConfig } from "@/schoolConfig";
+import HistoricalGallerySection from "@/components/HistoricalGallerySection";
 
 const whyChoose = [
   { icon: BookOpen, title: "Smart Classrooms", desc: "Interactive digital learning environments with modern AI-enabled flat panel displays and multimedia resources." },
@@ -158,33 +159,12 @@ const Overview = () => {
                 <p key={i}>{para}</p>
               ))}
             </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-5 lg:gap-6 mt-10">
-              {aboutContent.history.oldPhotos.map((photo, i) => (
-                <div
-                  key={i}
-                  className="group overflow-hidden rounded-2xl bg-slate-100 shadow-sm ring-1 ring-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                >
-                  <div className="h-60 overflow-hidden bg-slate-200">
-                    <img
-                      src={photo.url}
-                      alt={photo.caption}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
-                      }}
-                    />
-                  </div>
-                  <div className="p-3 bg-white border-t border-slate-100">
-                    <p className="text-xs text-school-brown font-medium line-clamp-1">{photo.caption}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>
+
+      {/* Glimpses of Our Glorious Past — Historical Gallery */}
+      <HistoricalGallerySection limit={6} showViewAllButton={true} />
 
       {/* Our Journey Timeline */}
       <section className="py-16 bg-muted/40 border-y">

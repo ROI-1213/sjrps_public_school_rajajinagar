@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 import AboutSJRPS from "./pages/about/AboutSJRPS";
 import Overview from "./pages/about/Overview";
+import OurHeritage from "./pages/about/OurHeritage";
 import VisionMission from "./pages/about/VisionMission";
 import ChiefPatronMessage from "./pages/about/ChiefPatronMessage";
 import PresidentMessage from "./pages/about/PresidentMessage";
@@ -88,6 +89,7 @@ const App = () => (
           <Route path="/about/sjrc" element={<AboutSJRPS />} />
           <Route path="/about/vision-mission" element={<VisionMission />} />
           <Route path="/about/overview" element={<Overview />} />
+          <Route path="/about/our-heritage" element={<OurHeritage />} />
           <Route path="/about/chief-patron-message" element={<ChiefPatronMessage />} />
           <Route path="/about/chief-patron" element={<Navigate to="/about/chief-patron-message" replace />} />
           <Route path="/about/presidents-message" element={<PresidentMessage />} />
