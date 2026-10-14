@@ -1,8 +1,10 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Video as VideoIcon, Images } from "lucide-react";
 import { useEffect, useState, useMemo } from "react";
 import { getPublicContent } from "@/lib/api";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export type Video = {
   id: string;
@@ -14,17 +16,7 @@ export type Video = {
   thumbnail?: string;
 };
 
-export const videos: Video[] = [
-  {
-    id: "sjrps-rajajinagar-showcase",
-    title: "SJR Public School, Rajajinagar — Official Campus Showcase",
-    description: "Comprehensive campus video showcasing SJR Public School, Rajajinagar — classroom learning, laboratory experimentation, sports activities, cultural celebrations, and campus life.",
-    category: "Campus Tour",
-    date: "Academic Year 2026–27",
-    videoUrl: "/videos/sjrps-rajajinagar.mp4",
-    thumbnail: "/images/Photos/School Building/school-building-main-gate.jpg",
-  },
-];
+export const videos: Video[] = [];
 
 function getYoutubeId(value: unknown) {
   const text = typeof value === "string" ? value.trim() : "";
@@ -77,8 +69,7 @@ const VideoGallery = () => {
         breadcrumbs={[{ label: "Gallery" }, { label: "Videos" }]}
       />
 
-      {/* Featured Video Showcase */}
-      {featuredVideo && (
+      {featuredVideo ? (
         <section className="py-12 lg:py-16 bg-gradient-to-b from-slate-50 to-white">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-8">
@@ -118,6 +109,29 @@ const VideoGallery = () => {
                 />
               )}
             </div>
+          </div>
+        </section>
+      ) : (
+        <section className="py-20 lg:py-24 bg-gradient-to-b from-slate-50 to-white">
+          <div className="container mx-auto px-4 max-w-xl text-center">
+            <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-indian-green/10 flex items-center justify-center text-indian-green">
+              <VideoIcon className="h-8 w-8" />
+            </div>
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-school-brown mb-3"
+              style={{ fontFamily: "Poppins, sans-serif" }}
+            >
+              Video Gallery Coming Soon
+            </h2>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-8">
+              Campus tour videos, student achievements, and cultural celebration films will be published here soon.
+            </p>
+            <Button asChild className="bg-indian-green hover:bg-indian-green/90 text-white font-medium px-6 py-2.5 rounded-full shadow-md">
+              <Link to="/gallery/photos" className="inline-flex items-center gap-2">
+                <Images className="h-4 w-4" />
+                Explore Photo Gallery
+              </Link>
+            </Button>
           </div>
         </section>
       )}
