@@ -1,9 +1,8 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import { Card, CardContent } from "@/components/ui/card";
 import { admissionsContent } from "@/content/admissions";
 import { schoolConfig } from "@/schoolConfig";
-import { CreditCard, FileText, Info, AlertCircle, Download, ExternalLink, ShieldCheck } from "lucide-react";
+import { CreditCard, FileText, Info, AlertCircle } from "lucide-react";
 
 const FeeStructure = () => {
   const { feeStructure } = admissionsContent;
@@ -28,44 +27,11 @@ const FeeStructure = () => {
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-logo-navy mb-5"
             style={{ fontFamily: "Poppins, sans-serif" }}
           >
-            Fee Structure ({feeStructure.academicYear})
+            Fee Structure
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
             {feeStructure.intro}
           </p>
-        </div>
-      </section>
-
-      {/* Official AY 2026-27 Document Banner */}
-      <section className="pb-12">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="bg-gradient-to-r from-indian-green/10 via-amber-50 to-saffron-orange/10 border border-indian-green/20 rounded-2xl p-6 lg:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-indian-green text-white flex items-center justify-center shrink-0 shadow-md">
-                <FileText className="h-6 w-6" />
-              </div>
-              <div>
-                <span className="inline-block bg-indian-green/10 text-indian-green text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full mb-1">
-                  Latest Approved Schedule
-                </span>
-                <h3 className="text-xl font-bold text-logo-navy">
-                  Fee Structure AY 2026–27 (Mandatory Disclosure)
-                </h3>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Official notification approved under CBSE Mandatory Disclosure norms for {schoolConfig.name}.
-                </p>
-              </div>
-            </div>
-            <a
-              href={feeStructure.mandatoryPdfLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-indian-green text-white font-semibold hover:bg-forest-green shadow-md hover:shadow-lg transition-all shrink-0"
-            >
-              <Download className="h-4 w-4" />
-              <span>Download PDF</span>
-            </a>
-          </div>
         </div>
       </section>
 
@@ -81,7 +47,7 @@ const FeeStructure = () => {
                 className="text-2xl md:text-3xl font-bold text-logo-navy"
                 style={{ fontFamily: "Poppins, sans-serif" }}
               >
-                New Admission Fees ({feeStructure.academicYear})
+                New Admission Fees
               </h2>
             </div>
             <p className="text-xs text-muted-foreground">
@@ -141,7 +107,7 @@ const FeeStructure = () => {
                 className="text-2xl md:text-3xl font-bold text-logo-navy"
                 style={{ fontFamily: "Poppins, sans-serif" }}
               >
-                Re-Admission Fees ({feeStructure.academicYear})
+                Re-Admission Fees
               </h2>
             </div>
             <p className="text-xs text-muted-foreground">
