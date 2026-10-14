@@ -187,42 +187,44 @@ const SchoolPolicies = () => {
       </section>
 
       <section className="pb-20 bg-[hsl(38_70%_96%)] py-16 mt-16">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2
-            className="text-3xl md:text-4xl font-bold text-logo-navy text-center mb-10"
-            style={{ fontFamily: "Poppins, sans-serif" }}
-          >
-            Frequently Asked Questions
-          </h2>
-          <Accordion type="single" collapsible className="space-y-3">
-            <AccordionItem value="q1" className="bg-white rounded-xl border px-5">
-              <AccordionTrigger className="text-left text-logo-navy font-semibold">
-                Where can I view the complete school handbook?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                The detailed school handbook is shared with parents at the time of admission and is
-                also available on request at the school office.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="q2" className="bg-white rounded-xl border px-5">
-              <AccordionTrigger className="text-left text-logo-navy font-semibold">
-                How are policy violations addressed?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Each case is handled with care through counselling, parent involvement, and
-                disciplinary committee review where required.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="q3" className="bg-white rounded-xl border px-5">
-              <AccordionTrigger className="text-left text-logo-navy font-semibold">
-                How can parents report a safety or bullying concern?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Concerns can be raised directly with the class teacher, school counsellor, or the
-                principal's office. All reports are treated with confidentiality and urgency.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2
+              className="text-3xl md:text-4xl font-bold text-logo-navy text-center mb-10"
+              style={{ fontFamily: "Poppins, sans-serif" }}
+            >
+              Frequently Asked Questions
+            </h2>
+            <Accordion type="single" collapsible className="space-y-3">
+              <AccordionItem value="q1" className="bg-white rounded-xl border px-5 shadow-sm">
+                <AccordionTrigger className="text-left text-logo-navy font-semibold">
+                  Where can I view the complete school handbook?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  The detailed school handbook is shared with parents at the time of admission and is
+                  also available on request at the school office.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="q2" className="bg-white rounded-xl border px-5 shadow-sm">
+                <AccordionTrigger className="text-left text-logo-navy font-semibold">
+                  How are policy violations addressed?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Each case is handled with care through counselling, parent involvement, and
+                  disciplinary committee review where required.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="q3" className="bg-white rounded-xl border px-5 shadow-sm">
+                <AccordionTrigger className="text-left text-logo-navy font-semibold">
+                  How can parents report a safety or bullying concern?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Concerns can be raised directly with the class teacher, school counsellor, or the
+                  principal's office. All reports are treated with confidentiality and urgency.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </div>
       </section>
     </Layout>
