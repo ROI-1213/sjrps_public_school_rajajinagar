@@ -61,13 +61,9 @@ const NewsEventsHomeSection = () => {
                       <h4 className="font-bold text-school-brown text-sm sm:text-[15px] leading-snug mb-1.5 line-clamp-2 group-hover:text-indian-green transition-colors">
                         {item.title}
                       </h4>
-                      <p className="text-muted-foreground text-xs leading-relaxed line-clamp-3 mb-3">
+                      <p className="text-muted-foreground text-xs leading-relaxed line-clamp-3">
                         {item.summary}
                       </p>
-                      <div className="mt-auto pt-2.5 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-indian-green group-hover:text-indian-green/80">
-                        <span>Read Full Story</span>
-                        <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                      </div>
                     </CardContent>
                   </Card>
                 </Link>
