@@ -44,7 +44,7 @@ const About = () => {
         <PageBanner
           title="About Our School"
           subtitle={`Discover the story, values, and vision that drive ${schoolConfig.name}`}
-          backgroundImage="/images/School Building/1.jpg"
+          backgroundImage="/images/Banner/banner-school-building.jpg"
         />
 
         {/* About Sections */}
