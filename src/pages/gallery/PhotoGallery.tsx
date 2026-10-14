@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getPublicContent } from "@/lib/api";
 import { allSchoolPhotos, galleryFilterTabs, GalleryPhotoItem } from "@/data/galleryPhotos";
@@ -139,30 +139,17 @@ const PhotoGallery = () => {
               <div
                 key={`${photo.src}-${index}`}
                 onClick={() => setLightboxIndex(index)}
-                className="group cursor-pointer overflow-hidden rounded-2xl bg-white border border-slate-200/80 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-indian-green/30 flex flex-col"
+                className="group cursor-pointer overflow-hidden rounded-2xl bg-slate-100 border border-slate-200/80 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-indian-green/40 aspect-[4/3]"
               >
-                <div className="relative overflow-hidden bg-slate-100 aspect-[4/3]">
-                  <img
-                    src={photo.src}
-                    alt={photo.eventTitle || photo.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-school-brown/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="bg-white/95 text-school-brown rounded-full px-3.5 py-1.5 shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300 flex items-center gap-1.5 text-xs font-semibold">
-                      <ZoomIn className="h-3.5 w-3.5 text-indian-green" />
-                      <span>View</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-3 bg-white border-t border-slate-100">
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-indian-green line-clamp-1">
-                    {photo.eventTitle || photo.title.replace(/\s*—\s*Photo\s*\d+/i, "")}
-                  </h3>
-                </div>
+                <img
+                  src={photo.src}
+                  alt={photo.eventTitle || photo.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                  }}
+                />
               </div>
             ))}
           </div>

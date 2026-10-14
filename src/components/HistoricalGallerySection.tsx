@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { X, ChevronLeft, ChevronRight, ZoomIn, ArrowRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { historicalPhotos } from "@/data/historicalPhotos";
 
@@ -72,30 +72,17 @@ export const HistoricalGallerySection: React.FC<HistoricalGallerySectionProps> =
             <div
               key={photo.id}
               onClick={() => setSelectedIndex(index)}
-              className="group cursor-pointer overflow-hidden rounded-xl bg-white border border-gray-200/90 shadow-xs hover:shadow-md transition-all duration-300"
+              className="group cursor-pointer overflow-hidden rounded-2xl bg-slate-100 border border-gray-200/90 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 aspect-[4/3]"
             >
-              <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
-                  }}
-                />
-                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 text-gray-800 text-xs font-semibold shadow-md">
-                    <ZoomIn className="h-3.5 w-3.5 text-indian-green" />
-                    View Photo
-                  </span>
-                </div>
-              </div>
-              <div className="p-3.5 bg-white border-t border-gray-100">
-                <h3 className="text-sm font-semibold text-gray-800 line-clamp-1 leading-snug">
-                  {photo.caption}
-                </h3>
-              </div>
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                }}
+              />
             </div>
           ))}
         </div>
