@@ -1,0 +1,120 @@
+import Layout from "@/components/Layout";
+import PageHero from "@/components/PageHero";
+import { motion } from "framer-motion";
+import {
+  Baby,
+  GraduationCap,
+  BookOpen,
+  Repeat,
+  FileCheck2,
+  Globe2,
+  ClipboardCheck,
+  Sparkles,
+} from "lucide-react";
+
+const sections = [
+  {
+    icon: Baby,
+    title: "Age Eligibility Guidelines",
+    desc: "Age criteria are aligned with CBSE norms and the academic calendar. Parents are requested to refer to the grade-wise age chart before applying.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Grade-wise Admission Criteria",
+    desc: "Admissions are offered from Pre KG through Class 12. Eligibility for each grade is determined by age, prior schooling, and an age-appropriate assessment.",
+  },
+  {
+    icon: BookOpen,
+    title: "Academic Requirements",
+    desc: "Applicants are expected to demonstrate basic academic readiness for the grade applied to. Performance in the previous class is considered for higher grades.",
+  },
+  {
+    icon: Repeat,
+    title: "Transfer Admission Requirements",
+    desc: "Students transferring from other schools must submit a valid Transfer Certificate (TC) and previous academic reports for evaluation.",
+  },
+  {
+    icon: FileCheck2,
+    title: "Documentation Requirements",
+    desc: "All originals must be produced at the time of admission, along with self-attested copies. Incomplete documentation may delay the admission process.",
+  },
+  {
+    icon: Globe2,
+    title: "International / Outstation Student Guidelines",
+    desc: "Students relocating from other states or countries must submit equivalence and migration documents as per CBSE / state board norms.",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Admission Assessment Process",
+    desc: "A friendly interaction or a written assessment, appropriate to the applicant's grade, is conducted to understand the child's learning readiness.",
+  },
+];
+
+const EligibilityCriteria = () => {
+  return (
+    <Layout>
+      <PageHero
+        title="Eligibility Criteria"
+        breadcrumbs={[
+          { label: "Admissions", path: "/admissions" },
+          { label: "Eligibility Criteria" },
+        ]}
+      />
+
+      <section className="py-16 lg:py-20">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-indian-green mb-3">
+            Who Can Apply
+          </p>
+          <h2
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-logo-navy mb-5"
+            style={{ fontFamily: "Poppins, sans-serif" }}
+          >
+            Eligibility & Admission Guidelines
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            SJRPS-HBR follows a transparent, age-appropriate, and merit-based eligibility framework
+            aligned with CBSE standards.
+          </p>
+        </div>
+      </section>
+
+      <section className="pb-16">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {sections.map((s, i) => (
+              <motion.div
+                key={s.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
+                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all border border-indian-green/10"
+              >
+                <div className="w-12 h-12 rounded-xl bg-indian-green flex items-center justify-center mb-4 shadow">
+                  <s.icon className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-logo-navy mb-2">{s.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="relative bg-indian-green text-white rounded-2xl px-8 py-10 lg:px-14 lg:py-12 shadow-xl text-center overflow-hidden">
+            <Sparkles className="absolute -top-2 -left-2 h-24 w-24 text-white/10" />
+            <p className="relative text-lg lg:text-xl leading-relaxed italic font-medium">
+              "SJRPS-HBR welcomes students who demonstrate a willingness to learn, participate actively,
+              and uphold the values and standards of the institution."
+            </p>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default EligibilityCriteria;

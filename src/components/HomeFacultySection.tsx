@@ -1,0 +1,77 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { BookOpen, GraduationCap, Clock, ChevronRight } from "lucide-react";
+import { teachers } from "@/pages/about/Teachers";
+
+const HomeFacultySection = () => {
+  // Select 4 experienced faculty members from Rajajinagar
+  const featured = teachers.slice(3, 7);
+
+  return (
+    <section className="py-14 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-10 max-w-3xl mx-auto">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-indian-green">Faculty</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-school-brown mt-2 mb-3 leading-tight">
+            Meet Our <span className="text-indian-green">Faculty</span>
+          </h2>
+          <p className="text-base text-muted-foreground">A dedicated team of 50+ educators at SJRPS-Rajajinagar committed to nurturing every child's potential.</p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {featured.map((t) => (
+            <Card
+              key={t.name}
+              className="rounded-2xl border-none shadow-[0_8px_25px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full bg-white"
+            >
+              <div className="aspect-[3/4] overflow-hidden bg-muted">
+                <img 
+                  src={t.image} 
+                  alt={t.name} 
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" 
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                  }}
+                />
+              </div>
+              <CardContent className="p-5 flex flex-col flex-1 text-center">
+                <h3 className="text-lg font-bold text-logo-navy leading-tight">{t.name}</h3>
+                <p className="text-sm font-semibold text-indian-green mt-1">{t.designation}</p>
+                <div className="mt-4 pt-4 border-t space-y-2 text-sm text-foreground/80 text-left">
+                  <div className="flex items-center gap-2">
+                    <BookOpen className="h-4 w-4 text-indian-green flex-shrink-0" />
+                    <span className="line-clamp-1">{t.subject}</span>
+                  </div>
+                  {t.qualification && (
+                    <div className="flex items-center gap-2">
+                      <GraduationCap className="h-4 w-4 text-indian-green flex-shrink-0" />
+                      <span className="line-clamp-1">{t.qualification}</span>
+                    </div>
+                  )}
+                  {t.experience && (
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4 text-indian-green flex-shrink-0" />
+                      <span>{t.experience}</span>
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <Button asChild className="bg-indian-green hover:bg-indian-green/90 text-white px-8">
+            <Link to="/about/teachers">
+              View All Faculty & Staff
+              <ChevronRight className="ml-1 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HomeFacultySection;

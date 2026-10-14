@@ -1,0 +1,552 @@
+[
+  {
+    "id": 1,
+    "slNo": "1",
+    "section": "Staff details for the acadmic year 2026-27",
+    "name": "Mrs. Poornima N Kagali",
+    "role": "tt",
+    "qualification": "",
+    "experience": "",
+    "photo": "/images/Staff photo/1. Mrs. Poornima N Kagali.jpg"
+  },
+  {
+    "id": 2,
+    "slNo": "2",
+    "section": "Secondary and High School",
+    "name": "Mrs. Nityashree L N",
+    "role": "Secondary Co-ordinatort",
+    "qualification": "",
+    "experience": "",
+    "photo": "/images/Staff photo/2. Mrs. Nityashree L N.jpg"
+  },
+  {
+    "id": 3,
+    "slNo": "3",
+    "section": "Secondary and High School",
+    "name": "Mrs. Savitha Devappa",
+    "role": "High school Co-ordinatort",
+    "qualification": "",
+    "experience": "",
+    "photo": "/images/Staff photo/3. Mrs. Savitha Devappa.jpg"
+  },
+  {
+    "id": 4,
+    "slNo": "4",
+    "section": "Secondary and High School",
+    "name": "Mr. Vasanth Kumar N",
+    "role": "TGT  IT/CS",
+    "qualification": "M.Sc.",
+    "experience": "22 years",
+    "photo": "/images/Staff photo/4. Mr. Vasanth Kumar N.jpg"
+  },
+  {
+    "id": 5,
+    "slNo": "5",
+    "section": "Secondary and High School",
+    "name": "Mr.Nagarajaiah C S",
+    "role": "TGT Kannada",
+    "qualification": "M.A., B.Ed. NET",
+    "experience": "22 years",
+    "photo": "/images/Staff photo/5. Mr.Nagarajaiah C S.jpg"
+  },
+  {
+    "id": 6,
+    "slNo": "6",
+    "section": "Secondary and High School",
+    "name": "Mrs. Lakshmi S",
+    "role": "TGT Social, English",
+    "qualification": "B.A., B.Ed.",
+    "experience": "22 years",
+    "photo": "/images/Staff photo/6. Mrs. Lakshmi S.jpg"
+  },
+  {
+    "id": 7,
+    "slNo": "7",
+    "section": "Secondary and High School",
+    "name": "Mrs. Kavitha S",
+    "role": "TGT Kannada",
+    "qualification": "M.A B.Ed",
+    "experience": "16 years",
+    "photo": "/images/Staff photo/7. Mrs. Kavitha S.jpg"
+  },
+  {
+    "id": 8,
+    "slNo": "8",
+    "section": "Secondary and High School",
+    "name": "Mrs. Vyjayanthimala K G",
+    "role": "TGT Science",
+    "qualification": "M.Sc, B.Ed",
+    "experience": "13 years",
+    "photo": "/images/Staff photo/8. Mrs. Vyjayanthimala K G.jpg"
+  },
+  {
+    "id": 9,
+    "slNo": "9",
+    "section": "Secondary and High School",
+    "name": "Mrs. Saroja.H.Gadad",
+    "role": "TGT Social Sc & English",
+    "qualification": "M.A.,B.Ed.",
+    "experience": "12 years",
+    "photo": "/images/Staff photo/9. Mrs. Saroja.H.Gadad.jpg"
+  },
+  {
+    "id": 10,
+    "slNo": "10",
+    "section": "Secondary and High School",
+    "name": "Mrs. Bhavani K.",
+    "role": "TGT Social Sc & English",
+    "qualification": "M.A., B.Ed.",
+    "experience": "8 years",
+    "photo": "/images/Staff photo/10. Mrs. Bhavani K..jpg"
+  },
+  {
+    "id": 11,
+    "slNo": "11",
+    "section": "Secondary and High School",
+    "name": "Ms. Jahnavi B",
+    "role": "TGT Science",
+    "qualification": "M.Sc Bed",
+    "experience": "7 years",
+    "photo": "/images/Staff photo/11. Ms. Jahnavi B.jpg"
+  },
+  {
+    "id": 12,
+    "slNo": "12",
+    "section": "Secondary and High School",
+    "name": "Mrs. Amrutha Saranya C.H.",
+    "role": "TGT English",
+    "qualification": "M.A., B.Ed.",
+    "experience": "5 years",
+    "photo": "/images/Staff photo/12. Mrs. Amrutha Saranya C.H..jpg"
+  },
+  {
+    "id": 13,
+    "slNo": "13",
+    "section": "Secondary and High School",
+    "name": "Mr.Chandrashekaraiah Hiremath",
+    "role": "TGT Social",
+    "qualification": "M.A., B.Ed.",
+    "experience": "5 years",
+    "photo": "/images/Staff photo/13. Mr.Chandrashekaraiah Hiremath.jpg"
+  },
+  {
+    "id": 14,
+    "slNo": "14",
+    "section": "Secondary and High School",
+    "name": "Mrs. Prabhavathi C",
+    "role": "TGT Science",
+    "qualification": "M.Sc., B.Ed.",
+    "experience": "4 years",
+    "photo": "/images/Staff photo/14. Mrs. Prabhavathi C.jpg"
+  },
+  {
+    "id": 15,
+    "slNo": "16",
+    "section": "Secondary and High School",
+    "name": "Mrs. Shaila S Koppal",
+    "role": "TGT Mathematics",
+    "qualification": "B.Sc B.Ed",
+    "experience": "31+2years",
+    "photo": "/images/Staff photo/15. Mrs. Shaila S Koppal.jpg"
+  },
+  {
+    "id": 16,
+    "slNo": "17",
+    "section": "Primary section",
+    "name": "Mrs. Tejeshwari J.",
+    "role": "Primary Co-ordinatort",
+    "qualification": "",
+    "experience": "",
+    "photo": "/images/Staff photo/16. Mrs. Tejeshwari J..jpg"
+  },
+  {
+    "id": 17,
+    "slNo": "18",
+    "section": "Primary section",
+    "name": "Mrs. Mamata V Purohith",
+    "role": "Primary Co-ordinatort",
+    "qualification": "",
+    "experience": "",
+    "photo": "/images/Staff photo/17. Mrs. Mamata V Purohith.jpg"
+  },
+  {
+    "id": 18,
+    "slNo": "19",
+    "section": "Primary section",
+    "name": "Mrs. Savitha C S",
+    "role": "PRT Yoga Teacher",
+    "qualification": "B.A",
+    "experience": "30 years",
+    "photo": "/images/Staff photo/18. Mrs. Savitha C S.jpg"
+  },
+  {
+    "id": 19,
+    "slNo": "20",
+    "section": "Primary section",
+    "name": "Mrs. Mamatha Jagadeesha",
+    "role": "PRT EVS, Math",
+    "qualification": "B.Sc NTT B.Ed",
+    "experience": "26 years",
+    "photo": "/images/Staff photo/19. Mrs. Mamatha Jagadeesha.jpg"
+  },
+  {
+    "id": 20,
+    "slNo": "21",
+    "section": "Primary section",
+    "name": "Mr.Anjaneya E",
+    "role": "Physical Educator",
+    "qualification": "B.A C.PEd, B.Ped",
+    "experience": "21 years",
+    "photo": "/images/Staff photo/20. Mr.Anjaneya E.jpg"
+  },
+  {
+    "id": 21,
+    "slNo": "22",
+    "section": "Primary section",
+    "name": "Mrs. Priya P",
+    "role": "PRT Math",
+    "qualification": "B.com. B.Ed.",
+    "experience": "19 years",
+    "photo": "/images/Staff photo/21. Mrs. Priya P.jpg"
+  },
+  {
+    "id": 22,
+    "slNo": "23",
+    "section": "Primary section",
+    "name": "Mrs. Bindu Kadam K.",
+    "role": "PRT Eng, EVS",
+    "qualification": "B.Sc., B.Ed",
+    "experience": "17 years",
+    "photo": "/images/Staff photo/22. Mrs. Bindu Kadam K..jpg"
+  },
+  {
+    "id": 23,
+    "slNo": "24",
+    "section": "Primary section",
+    "name": "Mrs. Vanitha G S",
+    "role": "PRT Social Sc",
+    "qualification": "BA, D.Ed, B.Ed",
+    "experience": "12 years",
+    "photo": "/images/Staff photo/23. Mrs. Vanitha G S.jpg"
+  },
+  {
+    "id": 24,
+    "slNo": "25",
+    "section": "Primary section",
+    "name": "Mrs. Akshatha T Y",
+    "role": "PRT EVS, Math",
+    "qualification": "B.Sc NTT, B.Ed",
+    "experience": "7 years",
+    "photo": "/images/Staff photo/24. Mrs. Akshatha T Y.jpg"
+  },
+  {
+    "id": 25,
+    "slNo": "26",
+    "section": "Primary section",
+    "name": "Mrs. Roopadevi V",
+    "role": "PRT Social Sc",
+    "qualification": "M.A., B.Ed.",
+    "experience": "6 years",
+    "photo": "/images/Staff photo/25. Mrs. Roopadevi V.jpg"
+  },
+  {
+    "id": 26,
+    "slNo": "27",
+    "section": "Primary section",
+    "name": "Mrs. Lavanya B.K",
+    "role": "PRT Math",
+    "qualification": "B.Sc., B.Ed",
+    "experience": "5 years",
+    "photo": "/images/Staff photo/26. Mrs. Lavanya B.K.jpg"
+  },
+  {
+    "id": 27,
+    "slNo": "28",
+    "section": "Primary section",
+    "name": "Mr.Sunil Kumar A P",
+    "role": "PRT Kannada",
+    "qualification": "M.A., B.Ed.",
+    "experience": "5 years",
+    "photo": "/images/Staff photo/27. Mr.Sunil Kumar A P.jpg"
+  },
+  {
+    "id": 28,
+    "slNo": "29",
+    "section": "Primary section",
+    "name": "Mrs. Sudha T P",
+    "role": "PRT Hindi",
+    "qualification": "B.A., B.Ed.",
+    "experience": "5 years",
+    "photo": "/images/Staff photo/28. Mrs. Sudha T P.jpg"
+  },
+  {
+    "id": 29,
+    "slNo": "30",
+    "section": "Primary section",
+    "name": "Mrs. Rajeshwari Todinnavar",
+    "role": "PRT Kannada",
+    "qualification": "M.A., B.Ed.",
+    "experience": "5 years",
+    "photo": "/images/Staff photo/29. Mrs. Rajeshwari Todinnavar.jpg"
+  },
+  {
+    "id": 30,
+    "slNo": "31",
+    "section": "Primary section",
+    "name": "Mrs. Suma K R",
+    "role": "PRT Kannada",
+    "qualification": "M.A, B.Ed",
+    "experience": "3 years",
+    "photo": "/images/Staff photo/30. Mrs. Suma K R.jpg"
+  },
+  {
+    "id": 31,
+    "slNo": "32",
+    "section": "Primary section",
+    "name": "Ms. Sudha T",
+    "role": "Physical Educator",
+    "qualification": "B.Com, B.PEd, M.Ped",
+    "experience": "3 years",
+    "photo": "/images/Staff photo/31. Ms. Sudha T.jpg"
+  },
+  {
+    "id": 32,
+    "slNo": "33",
+    "section": "Primary section",
+    "name": "Mrs. Sumana",
+    "role": "PRT English",
+    "qualification": "PUC NTT",
+    "experience": "2 years",
+    "photo": "/images/Staff photo/32. Mrs. Sumana.jpg"
+  },
+  {
+    "id": 33,
+    "slNo": "35",
+    "section": "Primary section",
+    "name": "Mrs. Chaithra M",
+    "role": "PRT Science",
+    "qualification": "B.Sc, B.Ed",
+    "experience": "2 years",
+    "photo": "/images/Staff photo/33. Mrs. Chaithra M.jpg"
+  },
+  {
+    "id": 34,
+    "slNo": "36",
+    "section": "Primary section",
+    "name": "Mrs. Chaitra B G",
+    "role": "PRT English",
+    "qualification": "B.Com., B.Ed.",
+    "experience": "2 years",
+    "photo": "/images/Staff photo/34. Mrs. Chaitra B G.jpg"
+  },
+  {
+    "id": 35,
+    "slNo": "37",
+    "section": "Primary section",
+    "name": "Mrs. Saritha J",
+    "role": "PRT English, CS",
+    "qualification": "B.E",
+    "experience": "2 years",
+    "photo": "/images/Staff photo/35. Mrs. Saritha J.jpg"
+  },
+  {
+    "id": 36,
+    "slNo": "38",
+    "section": "Primary section",
+    "name": "Mr. Shivaramu",
+    "role": "PRT Art & Craft",
+    "qualification": "M.V.A",
+    "experience": "1.4 years",
+    "photo": "/images/Staff photo/36. Mr. Shivaramu.jpg"
+  },
+  {
+    "id": 37,
+    "slNo": "39",
+    "section": "Primary section",
+    "name": "Mrs. Ambika C Pujari",
+    "role": "PRT Math",
+    "qualification": "B.Sc, B.Ed",
+    "experience": "1.4 year",
+    "photo": "/images/Staff photo/37. Mrs. Ambika C Pujari.jpg"
+  },
+  {
+    "id": 38,
+    "slNo": "40",
+    "section": "Primary section",
+    "name": "Mrs. Jyothi Joshi",
+    "role": "PRT Hindi",
+    "qualification": "M.A, B.Ed",
+    "experience": "1.4 years",
+    "photo": "/images/Staff photo/38. Mrs. Jyothi Joshi.jpg"
+  },
+  {
+    "id": 39,
+    "slNo": "41",
+    "section": "Primary section",
+    "name": "Ms. Revanambi M S Surgimatta",
+    "role": "PRT Math",
+    "qualification": "M.Sc, B.Ed.",
+    "experience": "5 Months",
+    "photo": "/images/Staff photo/39. Ms. Revanambi M S Surgimatta.jpg"
+  },
+  {
+    "id": 40,
+    "slNo": "42",
+    "section": "Primary section",
+    "name": "Ms. Gowthami M",
+    "role": "PRT Art & Craft",
+    "qualification": "M.V.A",
+    "experience": "4 Months",
+    "photo": "/images/Staff photo/40. Ms. Gowthami M.jpg"
+  },
+  {
+    "id": 41,
+    "slNo": "43",
+    "section": "Primary section",
+    "name": "Mrs. Vanishri",
+    "role": "PRT Music",
+    "qualification": "B.A, Music Junior",
+    "experience": "4 Months",
+    "photo": "/images/Staff photo/41. Mrs. Vanishri.jpg"
+  },
+  {
+    "id": 42,
+    "slNo": "44",
+    "section": "Primary section",
+    "name": "Ms. Nayanashree",
+    "role": "PRT Math",
+    "qualification": "M.Sc, B.Ed.",
+    "experience": "3 Months",
+    "photo": "/images/Staff photo/42. Ms. Nayanashree.jpg"
+  },
+  {
+    "id": 43,
+    "slNo": "45",
+    "section": "Pre-Primary section",
+    "name": "Mrs. Bindhu R",
+    "role": "Pre-Primary Co-ordinatort",
+    "qualification": "",
+    "experience": "",
+    "photo": "/images/Staff photo/43. Mrs. Bindhu R.jpg"
+  },
+  {
+    "id": 44,
+    "slNo": "46",
+    "section": "Pre-Primary section",
+    "name": "Mrs. Pushpa Vijayan",
+    "role": "Pre-Primary Teacher",
+    "qualification": "All Subjects",
+    "experience": "MA NTT",
+    "photo": "/images/Staff photo/44. Mrs. Pushpa Vijayan.jpg"
+  },
+  {
+    "id": 45,
+    "slNo": "47",
+    "section": "Pre-Primary section",
+    "name": "Mrs. Sandhya Sachidananda",
+    "role": "Pre-Primary Teacher",
+    "qualification": "All Subjects",
+    "experience": "PUC NTT",
+    "photo": "/images/Staff photo/45. Mrs. Sandhya Sachidananda.jpg"
+  },
+  {
+    "id": 46,
+    "slNo": "48",
+    "section": "Pre-Primary section",
+    "name": "Mrs. Usha G. D.",
+    "role": "Pre-Primary Teacher",
+    "qualification": "All Subjects",
+    "experience": "B.A DNTT",
+    "photo": "/images/Staff photo/46. Mrs. Usha G. D..jpg"
+  },
+  {
+    "id": 47,
+    "slNo": "49",
+    "section": "Pre-Primary section",
+    "name": "Mrs. K Dhivya Girish",
+    "role": "Pre-Primary Teacher",
+    "qualification": "All Subjects",
+    "experience": "M.Com NTT",
+    "photo": "/images/Staff photo/47. Mrs. K Dhivya Girish.jpg"
+  },
+  {
+    "id": 48,
+    "slNo": "50",
+    "section": "Pre-Primary section",
+    "name": "Mrs. Madhu Priya N",
+    "role": "Pre-Primary Teacher",
+    "qualification": "All Subjects",
+    "experience": "SSLC NTT",
+    "photo": "/images/Staff photo/48. Mrs. Madhu Priya N.jpg"
+  },
+  {
+    "id": 49,
+    "slNo": "51",
+    "section": "Pre-Primary section",
+    "name": "Mrs. Padmini Bai R",
+    "role": "Pre-Primary Teacher",
+    "qualification": "All Subjects",
+    "experience": "B.Com (NTT)",
+    "photo": "/images/Staff photo/49. Mrs. Padmini Bai R.jpg"
+  },
+  {
+    "id": 50,
+    "slNo": "52",
+    "section": "Pre-Primary section",
+    "name": "Mrs. S Sumathi",
+    "role": "Pre-Primary Teacher",
+    "qualification": "All Subjects",
+    "experience": "PUC NTT",
+    "photo": "/images/Staff photo/50. Mrs. S Sumathi.jpg"
+  },
+  {
+    "id": 51,
+    "slNo": "53",
+    "section": "Pre-Primary section",
+    "name": "t-Continue after Superannuation",
+    "role": "Librarian",
+    "qualification": "B.Com., B.Lib.",
+    "experience": "18+2 years",
+    "photo": "/images/Staff photo/51. t-Continue after Superannuation.jpg"
+  },
+  {
+    "id": 52,
+    "slNo": "55",
+    "section": "Office Saff",
+    "name": "Mrs. Umadevi .B.V.",
+    "role": "Faculty",
+    "qualification": "",
+    "experience": "",
+    "photo": "/images/Staff photo/52. Mrs. Umadevi .B.V..jpg"
+  },
+  {
+    "id": 53,
+    "slNo": "57",
+    "section": "Office Saff",
+    "name": "Mrs. Jayanthi S.",
+    "role": "Off.Asst.tB.Com",
+    "qualification": "5 years",
+    "experience": "",
+    "photo": "/images/Staff photo/53. Mrs. Jayanthi S..jpg"
+  },
+  {
+    "id": 54,
+    "slNo": "58",
+    "section": "Office Saff",
+    "name": "Mr.Nagabhushan J B",
+    "role": "tB.Com",
+    "qualification": "4",
+    "experience": "",
+    "photo": "/images/Staff photo/54. Mr.Nagabhushan J B.jpg"
+  },
+  {
+    "id": 55,
+    "slNo": "62",
+    "section": "Supporting Staff",
+    "name": "Mrs. Rathnamma .H",
+    "role": "Class D",
+    "qualification": "S.S.L.C",
+    "experience": "32 years",
+    "photo": "/images/Staff photo/55. Mrs. Rathnamma .H.jpg"
+  }
+]
