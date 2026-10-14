@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,6 +14,9 @@ import {
   Building,
   Eye,
   ShieldCheck,
+  FileText,
+  ExternalLink,
+  X,
 } from "lucide-react";
 import { schoolConfig } from "@/schoolConfig";
 import { mandatoryDocuments } from "@/data/disclosures";
@@ -71,6 +75,7 @@ const institutionalInfo = [
 ];
 
 const MandatoryDisclosure = () => {
+  const [previewPdf, setPreviewPdf] = useState<{ title: string; url: string } | null>(null);
 
   return (
     <Layout>
@@ -170,57 +175,127 @@ const MandatoryDisclosure = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">
               Mandatory Documents
             </h2>
-            <div className="mx-auto h-1 w-16 bg-[#1b6e42] rounded-full mb-10" />
+            <div className="mx-auto h-1 w-16 bg-[#1b6e42] rounded-full mb-4" />
+            <p className="text-sm text-muted-foreground">Click on any document or the View button to inspect the official PDF certificate.</p>
           </div>
 
-          <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="bg-[#1b6e42] text-white">
-                    <th scope="col" className="py-3 sm:py-4 px-3 sm:px-6 font-semibold text-xs sm:text-base w-14 sm:w-24 text-left">
-                      <div className="leading-tight">Sl</div>
-                      <div className="leading-tight">No</div>
-                    </th>
-                    <th scope="col" className="py-3 sm:py-4 px-3 sm:px-6 font-semibold text-xs sm:text-base text-left">
-                      Document Name
-                    </th>
-                    <th scope="col" className="py-3 sm:py-4 px-3 sm:px-6 font-semibold text-xs sm:text-base text-right pr-4 sm:pr-10">
-                      View
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100 bg-white">
-                  {mandatoryDocuments.map((doc, index) => (
-                    <tr
-                      key={doc.id}
-                      className="hover:bg-slate-50/80 transition-colors"
-                    >
-                      <td className="py-3 sm:py-4 px-3 sm:px-6 font-bold text-gray-900 text-xs sm:text-base whitespace-nowrap">
-                        {index + 1}
-                      </td>
-                      <td className="py-3 sm:py-4 px-3 sm:px-6 text-gray-800 font-medium text-xs sm:text-base">
-                        {doc.title}
-                      </td>
-                      <td className="py-3 sm:py-4 px-3 sm:px-6 text-right pr-3 sm:pr-8 whitespace-nowrap">
+          <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-[#1b6e42] text-white">
+                  <th scope="col" className="py-3.5 px-3 sm:px-5 font-semibold text-xs sm:text-sm w-12 sm:w-20 text-center">
+                    Sl No
+                  </th>
+                  <th scope="col" className="py-3.5 px-3 sm:px-5 font-semibold text-xs sm:text-sm text-left">
+                    Document Name
+                  </th>
+                  <th scope="col" className="py-3.5 px-3 sm:px-5 font-semibold text-xs sm:text-sm w-28 sm:w-36 text-center">
+                    Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100 bg-white">
+                {mandatoryDocuments.map((doc, index) => (
+                  <tr
+                    key={doc.id}
+                    className="hover:bg-slate-50 transition-colors"
+                  >
+                    <td className="py-3.5 px-3 sm:px-5 font-bold text-gray-900 text-xs sm:text-sm text-center">
+                      {index + 1}
+                    </td>
+                    <td className="py-3.5 px-3 sm:px-5">
+                      <div className="flex items-center gap-2.5">
+                        <FileText className="h-4 w-4 text-red-500 shrink-0" />
                         <a
                           href={doc.pdfUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 rounded-lg bg-[#1b6e42] hover:bg-[#155a36] text-white text-xs sm:text-sm font-semibold transition-all shadow-xs"
+                          className="font-medium text-gray-900 hover:text-indian-green hover:underline text-xs sm:text-sm leading-snug"
                         >
-                          <Eye className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                          <span>View</span>
+                          {doc.title}
                         </a>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-3 sm:px-5 text-center">
+                      <div className="flex items-center justify-center gap-1.5">
+                        <button
+                          type="button"
+                          onClick={() => setPreviewPdf({ title: doc.title, url: doc.pdfUrl })}
+                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#1b6e42] hover:bg-[#155a36] text-white text-xs font-semibold transition-all shadow-xs cursor-pointer"
+                          title="Preview document"
+                        >
+                          <Eye className="h-3.5 w-3.5" />
+                          <span>View</span>
+                        </button>
+                        <a
+                          href={doc.pdfUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-1.5 rounded-lg text-gray-500 hover:text-indian-green hover:bg-indian-green/10 transition-colors hidden sm:inline-flex"
+                          title="Open PDF in new tab"
+                        >
+                          <ExternalLink className="h-3.5 w-3.5" />
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
+
+      {/* PDF Preview Modal */}
+      {previewPdf && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6"
+          onClick={() => setPreviewPdf(null)}
+        >
+          <div
+            className="bg-white rounded-2xl overflow-hidden shadow-2xl max-w-5xl w-full h-[88vh] flex flex-col animate-fade-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="bg-[#1b6e42] text-white px-5 py-3.5 flex items-center justify-between">
+              <div className="flex items-center gap-2.5 min-w-0">
+                <FileText className="h-5 w-5 text-white shrink-0" />
+                <h3 className="font-bold text-sm sm:text-base truncate">
+                  {previewPdf.title}
+                </h3>
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <a
+                  href={previewPdf.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors"
+                >
+                  <ExternalLink className="h-3.5 w-3.5" />
+                  <span>Open in New Tab</span>
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setPreviewPdf(null)}
+                  className="rounded-lg p-1.5 text-white/80 hover:text-white hover:bg-white/20 transition-colors cursor-pointer"
+                  aria-label="Close preview"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* PDF Embedded Viewer */}
+            <div className="flex-1 bg-slate-100 relative">
+              <iframe
+                src={`${previewPdf.url}#view=FitH`}
+                className="w-full h-full border-0"
+                title={previewPdf.title}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </Layout>
   );
 };
