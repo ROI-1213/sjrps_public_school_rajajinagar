@@ -6,6 +6,8 @@
  */
 
 export const schoolConfig = {
+  // Common Name variations
+  name: "SJR Public School, Rajajinagar",
   fullName: "SJR Public School, Rajajinagar",
   kannadaName: "ಎಸ್‌ಜೆಆರ್ ಪಬ್ಲಿಕ್ ಸ್ಕೂಲ್, ರಾಜಾಜಿನಗರ",
   shortName: "SJRPS-Rajajinagar",
@@ -13,21 +15,28 @@ export const schoolConfig = {
   parentSocietyKannada: "ಶ್ರೀ ಜಗದ್ಗುರು ರೇಣುಕಾಚಾರ್ಯ ಎಜುಕೇಷನ್ ಸೊಸೈಟಿ ®",
   
   // CBSE Credentials
+  affiliationNo: "831136",
   affiliationNumber: "831136",
   schoolCode: "46766",
   diseCode: "29280234402",
+  affiliatedTo: "Secondary Level",
   affiliationLevel: "Affiliated to Secondary Level",
   affiliationLine: "Affiliation Number - 831136 | School Code - 46766 | DISE Code - 29280234402",
   
   // Campus Address & Contacts
   address: {
+    street: '#1050/A, 4th "M" Block',
     line1: '#1050/A, 4th "M" Block',
+    landmark: "Dr. Rajkumar Road",
+    area: "Rajajinagar",
     line2: "Dr. Rajkumar Road, Rajajinagar",
     city: "Bengaluru",
     state: "Karnataka",
-    postalCode: "560010", // Primary canonical PIN code; subject to school sign-off
-    alternativePostalCodeNote: "Note: Home doc lists 560043 (HBR code), authoritative campus address is 560010",
+    pincode: "560010",
+    postalCode: "560010",
+    full: '#1050/A, 4th "M" Block, Dr. Rajkumar Road, Rajajinagar, Bengaluru – 560010',
     fullAddress: '#1050/A, 4th "M" Block, Dr. Rajkumar Road, Rajajinagar, Bengaluru – 560010',
+    alternativePostalCodeNote: "Note: Home doc lists 560043 (HBR code), authoritative campus address is 560010",
   },
   
   phones: [
@@ -36,6 +45,29 @@ export const schoolConfig = {
   ],
   
   email: "principalsjrphs@gmail.com",
+  
+  // Contact object for components expecting schoolConfig.contact.*
+  contact: {
+    primaryEmail: "principalsjrphs@gmail.com",
+    email: "principalsjrphs@gmail.com",
+    landlines: ["080-23388765", "080-23102070"],
+    landline1: "080-23388765",
+    landline2: "080-23102070",
+    phones: ["080-23388765", "080-23102070"],
+  },
+  
+  timings: {
+    office: {
+      weekdays: "8:30 AM – 4:00 PM",
+      saturday: "8:30 AM – 1:00 PM",
+      sunday: "Closed",
+    },
+    school: {
+      prePrimary: "8:45 AM – 12:30 PM",
+      primary: "8:30 AM – 3:15 PM",
+      secondary: "8:30 AM – 3:30 PM",
+    }
+  },
   
   officeHours: {
     weekdays: "Monday – Friday: 8:30 AM – 4:00 PM",
@@ -46,6 +78,11 @@ export const schoolConfig = {
   mapUrl: "https://maps.app.goo.gl/p6TK8x1gM61onRTw6",
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.892794711863!2d77.55139947598858!3d12.978703414722886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d84da459345%3A0xbce891ec22757ce4!2sSJR%20Public%20School%2C%20Rajajinagar!5e0!3m2!1sen!2sin!4v1728900000000!5m2!1sen!2sin",
   
+  maps: {
+    directionsUrl: "https://maps.app.goo.gl/p6TK8x1gM61onRTw6",
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.892794711863!2d77.55139947598858!3d12.978703414722886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d84da459345%3A0xbce891ec22757ce4!2sSJR%20Public%20School%2C%20Rajajinagar!5e0!3m2!1sen!2sin!4v1728900000000!5m2!1sen!2sin",
+  },
+  
   websiteUrl: "https://sjrpsrajajinagar.edu.in", // TBD by school
   portalUrls: {
     parentPortal: "https://sjres.myclassboard.com/",
@@ -55,11 +92,21 @@ export const schoolConfig = {
   principal: {
     name: "Mrs. Poornima N Kagali",
     role: "Principal, SJR Public School, Rajajinagar",
+    designation: "Principal, SJR Public School, Rajajinagar",
     photo: "/images/Core Team/1. Mrs. Poornima N Kagali - Principal.jpg",
     quote: "Education is not merely about preparing a child for examinations; it is about preparing a child for life.",
     vision: "To nurture confident, compassionate and responsible individuals who learn with purpose, live with integrity and grow into capable, resilient and lifelong learners.",
     mission: "We at SJR are committed to provide every child with meaningful learning, strong values and emotional well-being in a safe and supportive environment. We identify and nurture each child’s unique potential, develop character and life skills and prepare for a successful, fulfilling and responsible life.",
     tagline: "Every Child Matters, Every Journey Matters, Every Future Matters.",
+  },
+
+  leadership: {
+    principal: {
+      name: "Mrs. Poornima N Kagali",
+      designation: "Principal, SJR Public School, Rajajinagar",
+      role: "Principal, SJR Public School, Rajajinagar",
+      photo: "/images/Core Team/1. Mrs. Poornima N Kagali - Principal.jpg",
+    }
   },
   
   // Hero & Academic Metrics
