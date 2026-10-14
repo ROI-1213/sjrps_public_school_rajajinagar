@@ -27,14 +27,17 @@ const NewsEventsHomeSection = () => {
               <div className="bg-indian-green w-10 h-10 rounded-full flex items-center justify-center shrink-0">
                 <Newspaper className="h-5 w-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-school-brown">Latest News & Highlights</h3>
+              <div>
+                <h3 className="text-xl font-bold text-school-brown">Latest News & Highlights</h3>
+                <p className="text-xs text-muted-foreground">Featured campus stories and milestones</p>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {latestEvents.map((item) => (
                 <Link key={item.id} to={`/news/${item.id}`} className="block h-full group">
-                  <Card className="overflow-hidden border border-indian-green/15 hover:shadow-xl transition-all duration-300 flex flex-col h-full rounded-2xl group-hover:-translate-y-1 bg-white">
-                    <div className="h-36 overflow-hidden bg-muted">
+                  <Card className="overflow-hidden border border-indian-green/20 hover:border-indian-green/40 hover:shadow-lg transition-all duration-300 flex flex-col h-full rounded-2xl group-hover:-translate-y-1 bg-white">
+                    <div className="h-36 sm:h-38 overflow-hidden bg-muted relative">
                       <img 
                         src={item.featuredImage} 
                         alt={item.title} 
@@ -45,21 +48,26 @@ const NewsEventsHomeSection = () => {
                         }}
                       />
                     </div>
-                    <CardContent className="p-3.5 flex flex-col flex-1">
-                      <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-[10px] font-semibold text-indian-green bg-indian-green/10 px-2.5 py-0.5 rounded-full">
-                          {item.date}
-                        </span>
-                        <span className="text-[9px] uppercase font-bold tracking-wider text-muted-foreground">
+                    <CardContent className="p-4 flex flex-col flex-1">
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <span className="inline-flex items-center text-[11px] font-semibold px-2 py-0.5 rounded-md bg-indian-green/10 text-indian-green border border-indian-green/15">
                           {item.category}
                         </span>
+                        <span className="text-[11px] text-muted-foreground flex items-center gap-1 font-medium">
+                          <Calendar className="h-3 w-3 text-indian-green shrink-0" />
+                          {item.date}
+                        </span>
                       </div>
-                      <h4 className="font-bold text-school-brown text-sm leading-snug mb-1 line-clamp-2 group-hover:text-indian-green transition-colors">
+                      <h4 className="font-bold text-school-brown text-sm sm:text-[15px] leading-snug mb-1.5 line-clamp-2 group-hover:text-indian-green transition-colors">
                         {item.title}
                       </h4>
-                      <p className="text-muted-foreground text-xs leading-relaxed line-clamp-2">
+                      <p className="text-muted-foreground text-xs leading-relaxed line-clamp-3 mb-3">
                         {item.summary}
                       </p>
+                      <div className="mt-auto pt-2.5 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-indian-green group-hover:text-indian-green/80">
+                        <span>Read Full Story</span>
+                        <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                      </div>
                     </CardContent>
                   </Card>
                 </Link>
@@ -73,7 +81,10 @@ const NewsEventsHomeSection = () => {
               <div className="bg-indian-green w-10 h-10 rounded-full flex items-center justify-center shrink-0">
                 <Calendar className="h-5 w-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-school-brown">Campus Calendar & Updates</h3>
+              <div>
+                <h3 className="text-xl font-bold text-school-brown">Campus Calendar & Updates</h3>
+                <p className="text-xs text-muted-foreground">Rolling campus schedule & circulars</p>
+              </div>
             </div>
 
             <div className="relative flex-1 min-h-[380px] lg:min-h-0">
