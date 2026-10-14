@@ -1,13 +1,16 @@
 import FacilityPage from "@/components/FacilityPage";
 import { Trophy, Dribbble, Activity, Medal, Users, Heart, ShieldCheck, Crown } from "lucide-react";
 import { schoolConfig } from "@/schoolConfig";
+import { getFacilityById } from "@/data/infrastructure";
+
+const sportsData = getFacilityById("sports");
 
 const SportsRoom = () => (
   <FacilityPage
     title="Sports & Physical Education"
     breadcrumbLabel="Sports"
     introHeading="Holistic Development Through Sports & Physical Fitness"
-    introImage="/images/Events/Annual Sports Meet/1.jpg"
+    introImage={sportsData?.coverImage || "/images/Photos/Sports/DSC01269.JPG"}
     introImageAlt={`${schoolConfig.shortName} sports facility`}
     introParagraphs={[
       "Sports are at the heart of our school's commitment to holistic education. Our sports grounds, dedicated indoor play arena and trained coaches give every child the opportunity to play, compete and develop lifelong fitness.",
@@ -28,10 +31,11 @@ const SportsRoom = () => (
       { icon: Crown, title: "Leadership", description: "House captains, squad leaders, and tournament roles develop responsibility." },
       { icon: ShieldCheck, title: "Discipline", description: "Regular routines, coach guidance, and respect for game rules." },
     ]}
-    gallery={[
-      { src: "/images/Events/Annual Sports Meet/1.jpg", alt: "Annual sports meet march past" },
-      { src: "/images/Events/Annual Sports Meet/2.jpg", alt: "Students participating in track events" },
-      { src: "/images/Events/Annual Sports Meet/3.jpg", alt: "Sports victory ceremony" },
+    gallery={sportsData?.galleryImages || [
+      { src: "/images/Photos/Sports/DSC01276.JPG", alt: "Indoor sports arena and games area" },
+      { src: "/images/Photos/Sports/DSC01303.JPG", alt: "Table tennis and physical training hall" },
+      { src: "/images/Photos/Sports/DSC01309.JPG", alt: "Sports equipment and fitness arena" },
+      { src: "/images/Photos/Sports/DSC01346.JPG", alt: "Volleyball and team sports equipment" },
     ]}
     whyItMattersBody="A child who plays is a child who learns. Sports build the body, sharpen the mind and strengthen the spirit — teaching young people how to win with grace, lose with dignity and rise stronger from every challenge."
     whyItMattersPoints={[

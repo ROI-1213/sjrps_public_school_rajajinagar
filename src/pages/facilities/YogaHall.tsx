@@ -1,13 +1,16 @@
 import FacilityPage from "@/components/FacilityPage";
 import { Flower2, Wind, Brain, HeartPulse, Sparkles, Sun, Smile, Focus, Activity, Leaf } from "lucide-react";
 import { schoolConfig } from "@/schoolConfig";
+import { getFacilityById } from "@/data/infrastructure";
+
+const yogaData = getFacilityById("yoga");
 
 const YogaHall = () => (
   <FacilityPage
     title="Yoga & Wellness"
     breadcrumbLabel="Yoga Hall"
     introHeading="Nurturing Body, Mind & Spirit"
-    introImage="/images/School Building/2.jpg"
+    introImage={yogaData?.coverImage || "/images/Photos/Yoga/Yoga.JPG"}
     introImageAlt={`Students practising yoga at ${schoolConfig.name}`}
     introParagraphs={[
       "Our Yoga & Wellness Hall is a calm, dedicated space where students learn the ancient art of yoga in a modern, structured way. Daily practice helps children develop flexibility, balance and inner stillness.",
@@ -28,10 +31,11 @@ const YogaHall = () => (
       { icon: Activity, title: "Physical Flexibility", description: "Correct spinal posture, joint flexibility and overall vitality." },
       { icon: Leaf, title: "Stress Management", description: "Effective breathing techniques to handle peer and academic pressures." },
     ]}
-    gallery={[
-      { src: "/images/School Building/2.jpg", alt: "Yoga hall space" },
-      { src: "/images/Events/Investiture ceremony/1.jpg", alt: "School assembly" },
-      { src: "/images/Events/Annual Sports Meet/1.jpg", alt: "Physical wellness activities" },
+    gallery={yogaData?.galleryImages || [
+      { src: "/images/Photos/Yoga/Y2.JPG", alt: "Students practicing yoga asanas" },
+      { src: "/images/Photos/Yoga/Y3.JPG", alt: "Guided pranayama and breathing exercises" },
+      { src: "/images/Photos/Yoga/Y4.JPG", alt: "Group yoga sessions for focus and posture" },
+      { src: "/images/Photos/Yoga/Y5.JPG", alt: "Mindfulness and wellness practice" },
     ]}
     whyItMattersBody="In a fast-paced world, children too need tools to slow down, breathe and reconnect. Yoga teaches our students that true success comes from a calm mind and a strong, balanced self — gifts they will carry for the rest of their lives."
     whyItMattersPoints={[

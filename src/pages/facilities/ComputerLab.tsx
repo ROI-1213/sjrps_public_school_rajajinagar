@@ -1,13 +1,16 @@
 import FacilityPage from "@/components/FacilityPage";
 import { Monitor, Wifi, Code2, BookOpen, Cpu, Keyboard, Rocket, Lightbulb, Brain, GraduationCap } from "lucide-react";
 import { schoolConfig } from "@/schoolConfig";
+import { getFacilityById } from "@/data/infrastructure";
+
+const compData = getFacilityById("computer-lab");
 
 const ComputerLab = () => (
   <FacilityPage
     title="Advanced Computer Laboratory"
     breadcrumbLabel="Computer Lab"
     introHeading="Preparing Students for the Digital World"
-    introImage="/images/School Building/3.jpg"
+    introImage={compData?.coverImage || "/images/Photos/Computer lab/DSC00838.JPG"}
     introImageAlt={`Modern computer laboratory at ${schoolConfig.name}`}
     introParagraphs={[
       "Our Computer Laboratory is a future-ready learning space where students gain hands-on exposure to technology, coding and digital tools that define today's world.",
@@ -28,10 +31,11 @@ const ComputerLab = () => (
       { icon: Lightbulb, title: "Innovation Mindset", description: "Encourages analytical problem-solving through technology." },
       { icon: GraduationCap, title: "Digital Competency", description: "Responsible, ethical use of computers and the internet." },
     ]}
-    gallery={[
-      { src: "/images/School Building/3.jpg", alt: "Computer lab workstations" },
-      { src: "/images/Infrastructure/1.jpg", alt: "Students engaged in computer session" },
-      { src: "/images/Infrastructure/2.jpg", alt: "Interactive IT learning" },
+    gallery={compData?.galleryImages || [
+      { src: "/images/Photos/Computer lab/DSC00841.JPG", alt: "Individual computer terminals for students" },
+      { src: "/images/Photos/Computer lab/DSC00845.JPG", alt: "IT curriculum and programming workstation setup" },
+      { src: "/images/Photos/Computer lab/DSC00854.JPG", alt: "Digital literacy and educational software room" },
+      { src: "/images/Photos/Computer lab/DSC00858.JPG", alt: "Modern high-speed networked student systems" },
     ]}
     whyItMattersBody="In a world powered by software and data, digital fluency is no longer optional. Our computer lab equips every student with the skills, confidence and ethical awareness needed to thrive in the digital age."
     whyItMattersPoints={[

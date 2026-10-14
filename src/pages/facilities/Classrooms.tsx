@@ -1,13 +1,16 @@
 import FacilityPage from "@/components/FacilityPage";
 import { Maximize2, Armchair, Wind, Sun, Users, Heart, Brain, Smile, HandHeart, Lightbulb } from "lucide-react";
 import { schoolConfig } from "@/schoolConfig";
+import { getFacilityById } from "@/data/infrastructure";
+
+const classroomData = getFacilityById("classrooms");
 
 const Classrooms = () => (
   <FacilityPage
     title="Modern Classrooms"
     breadcrumbLabel="Modern Classrooms"
     introHeading="Spacious, Student-Friendly Learning Spaces"
-    introImage="/images/School Building/1.jpg"
+    introImage={classroomData?.coverImage || "/images/Photos/classroom/DSC00683.JPG"}
     introImageAlt={`Modern classrooms at ${schoolConfig.name}`}
     introParagraphs={[
       "Our classrooms are thoughtfully designed as vibrant centres of learning — spacious, well-ventilated, and filled with natural light. Every detail, from furniture height to wall colour, supports focus, comfort and curiosity.",
@@ -28,11 +31,11 @@ const Classrooms = () => (
       { icon: Smile, title: "Comfortable Learning", description: "Ergonomic, well-lit rooms make study hours enjoyable." },
       { icon: Heart, title: "Collaborative Learning", description: "Group-friendly seating fosters teamwork and shared discovery." },
     ]}
-    gallery={[
-      { src: "/images/School Building/1.jpg", alt: "Classroom learning environment" },
-      { src: "/images/School Building/2.jpg", alt: "Students engaged during lesson" },
-      { src: "/images/Infrastructure/1.jpg", alt: "Active learning session" },
-      { src: "/images/Infrastructure/2.jpg", alt: "Interactive group discussion" },
+    gallery={classroomData?.galleryImages || [
+      { src: "/images/Photos/classroom/DSC00689.JPG", alt: "Active learning session in classroom" },
+      { src: "/images/Photos/classroom/DSC00825.JPG", alt: "Interactive smart panel teaching environment" },
+      { src: "/images/Photos/classroom/DSC00828.JPG", alt: "Ergonomic seating and classroom desks" },
+      { src: "/images/Photos/classroom/DSC00830.JPG", alt: "Well-ventilated student learning hall" },
     ]}
     whyItMattersBody="A classroom is far more than four walls — it is the daily environment that shapes how a child learns, feels and grows. Our purpose-built classrooms reduce distractions, encourage healthy posture and create the conditions for deep, joyful learning."
     whyItMattersPoints={[

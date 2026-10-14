@@ -1,13 +1,16 @@
 import FacilityPage from "@/components/FacilityPage";
 import { Users, Volume2, Lightbulb, Calendar, Mic2, Theater, Crown, Sparkles, Award, MessageCircle } from "lucide-react";
 import { schoolConfig } from "@/schoolConfig";
+import { getFacilityById } from "@/data/infrastructure";
+
+const audData = getFacilityById("auditorium");
 
 const Auditorium = () => (
   <FacilityPage
     title="State-of-the-Art Auditorium"
     breadcrumbLabel="Auditorium"
     introHeading="The Cultural Heart of Our Campus"
-    introImage="/images/School Building/2.jpg"
+    introImage={audData?.coverImage || "/images/Photos/Auditorium/DSC01238.JPG"}
     introImageAlt={`${schoolConfig.shortName} auditorium and event hall`}
     introParagraphs={[
       "Our spacious, modern auditorium is where the school comes alive — hosting cultural celebrations, academic seminars, talent shows, assemblies and student performances throughout the year.",
@@ -28,10 +31,9 @@ const Auditorium = () => (
       { icon: Award, title: "Leadership Opportunities", description: "Anchoring, organizing and leading school events." },
       { icon: MessageCircle, title: "Public Speaking Skills", description: "Practice expressing ideas clearly before large audiences." },
     ]}
-    gallery={[
-      { src: "/images/Events/Investiture ceremony/1.jpg", alt: "Investiture ceremony on auditorium stage" },
-      { src: "/images/Events/Krishna Janmastmi/1.jpg", alt: "Cultural celebration on stage" },
-      { src: "/images/Events/Ganesha Pooja/1.jpg", alt: "School event gathering" },
+    gallery={audData?.galleryImages || [
+      { src: "/images/Photos/Auditorium/DSC01249.JPG", alt: "Auditorium stage and seating arrangement" },
+      { src: "/images/Photos/Auditorium/DSC01238.JPG", alt: "Multipurpose campus auditorium" },
     ]}
     whyItMattersBody="A school auditorium is where shy children find their voice and natural performers find their stage. Every annual day rehearsal, every elocution and every cultural evening here builds confidence, teamwork and a lifelong appreciation for the arts."
     whyItMattersPoints={[

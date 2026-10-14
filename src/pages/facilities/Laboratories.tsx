@@ -1,13 +1,16 @@
 import FacilityPage from "@/components/FacilityPage";
 import { FlaskConical, Atom, Microscope, ShieldCheck, Beaker, TestTubes, Brain, Search, Lightbulb, GraduationCap } from "lucide-react";
 import { schoolConfig } from "@/schoolConfig";
+import { getFacilityById } from "@/data/infrastructure";
+
+const labData = getFacilityById("laboratories");
 
 const Laboratories = () => (
   <FacilityPage
     title="Science Laboratories"
     breadcrumbLabel="Laboratories"
     introHeading="Where Theory Meets Hands-On Discovery"
-    introImage="/images/Infrastructure/1.jpg"
+    introImage={labData?.coverImage || "/images/Photos/Science Lab/DSC00853.JPG"}
     introImageAlt={`Science laboratory at ${schoolConfig.name}`}
     introParagraphs={[
       "Our Physics, Chemistry and Biology laboratories are designed to transform textbook concepts into real, observable experiences. Students don't just read about science — they perform it.",
@@ -28,10 +31,11 @@ const Laboratories = () => (
       { icon: Lightbulb, title: "Research Mindset", description: "Encourages students to investigate, innovate and explore deeper." },
       { icon: GraduationCap, title: "Practical Knowledge", description: "Strengthens concept retention through real, hands-on experience." },
     ]}
-    gallery={[
-      { src: "/images/Infrastructure/1.jpg", alt: "Lab equipment and instruments" },
-      { src: "/images/Infrastructure/2.jpg", alt: "Students performing experiments" },
-      { src: "/images/Infrastructure/3.jpg", alt: "Science laboratory activity" },
+    gallery={labData?.galleryImages || [
+      { src: "/images/Photos/Science Lab/DSC00884.JPG", alt: "Chemistry and physics lab demonstration tables" },
+      { src: "/images/Photos/Science Lab/DSC00908.JPG", alt: "Composite science lab workstations and apparatus" },
+      { src: "/images/Photos/Science Lab/DSC00928.JPG", alt: "Supervised science practical setup" },
+      { src: "/images/Photos/Science Lab/DSC00953.JPG", alt: "Microscopes and biology study equipment" },
     ]}
     whyItMattersBody="Science is best understood when it is experienced. Our laboratories give students the rare privilege of testing what they learn, discovering laws of nature first-hand and developing the disciplined curiosity that defines true scientists, engineers and innovators."
     whyItMattersPoints={[

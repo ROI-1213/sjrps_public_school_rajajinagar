@@ -1,13 +1,16 @@
 import FacilityPage from "@/components/FacilityPage";
 import { Bot, Cpu, Code2, Cog, Puzzle, Wrench, Rocket, Brain, Lightbulb, GraduationCap } from "lucide-react";
 import { schoolConfig } from "@/schoolConfig";
+import { getFacilityById } from "@/data/infrastructure";
+
+const roboticsData = getFacilityById("robotics");
 
 const RoboticsLab = () => (
   <FacilityPage
     title="Robotics & Innovation Lab"
     breadcrumbLabel="Robotics Lab"
     introHeading="Where Young Innovators Build the Future"
-    introImage="/images/Infrastructure/1.jpg"
+    introImage={roboticsData?.coverImage || "/images/Photos/Robotics/DSC01539.JPG"}
     introImageAlt={`Students working in the robotics lab at ${schoolConfig.name}`}
     introParagraphs={[
       "Our Robotics & Innovation Lab is a creative maker-space where curiosity meets practical engineering. Here, students design, build and program robotic kits — turning theoretical ideas into working machines.",
@@ -28,10 +31,11 @@ const RoboticsLab = () => (
       { icon: GraduationCap, title: "Early STEM Grounding", description: "Practical appreciation for mechanical and electronic fundamentals." },
       { icon: Rocket, title: "Future Tech Readiness", description: "Prepares students for future pursuits in computing and automation." },
     ]}
-    gallery={[
-      { src: "/images/Infrastructure/1.jpg", alt: "Robotics lab and components" },
-      { src: "/images/Infrastructure/2.jpg", alt: "Students collaborating on robotic build" },
-      { src: "/images/School Building/3.jpg", alt: "Innovation lab programming area" },
+    gallery={roboticsData?.galleryImages || [
+      { src: "/images/Photos/Robotics/DSC01547.JPG", alt: "Hands-on robotics kit assembly" },
+      { src: "/images/Photos/Robotics/DSC01661.JPG", alt: "Students programming educational robotics" },
+      { src: "/images/Photos/Robotics/DSC01674.JPG", alt: "STEM innovation lab projects and sensors" },
+      { src: "/images/Photos/Robotics/DSC01698.JPG", alt: "Robotics coding and practical testing" },
     ]}
     whyItMattersBody="Tomorrow's world will be shaped by those who can think, code and create. Our Robotics Lab gives students an early advantage — turning them from consumers of technology into confident creators and innovators."
     whyItMattersPoints={[

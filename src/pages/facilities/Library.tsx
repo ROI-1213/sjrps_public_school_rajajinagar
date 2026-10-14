@@ -1,13 +1,16 @@
 import FacilityPage from "@/components/FacilityPage";
 import { BookOpen, BookMarked, Newspaper, Armchair, Search, Monitor, BookHeart, Compass, GraduationCap } from "lucide-react";
 import { schoolConfig } from "@/schoolConfig";
+import { getFacilityById } from "@/data/infrastructure";
+
+const libraryData = getFacilityById("library");
 
 const Library = () => (
   <FacilityPage
     title="Knowledge Resource Centre"
     breadcrumbLabel="Library"
     introHeading="A Gateway to Knowledge, Imagination & Discovery"
-    introImage="/images/School Building/2.jpg"
+    introImage={libraryData?.coverImage || "/images/Photos/Library/DSC01550.JPG"}
     introImageAlt={`${schoolConfig.shortName} Knowledge Resource Centre`}
     introParagraphs={[
       "Our Knowledge Resource Centre is the intellectual heart of the school — a calm, welcoming space where every student can travel through pages, explore new ideas and discover the joy of independent learning.",
@@ -28,11 +31,11 @@ const Library = () => (
       { icon: Search, title: "Research Skills", description: "Hands-on practice in gathering, evaluating and synthesizing information." },
       { icon: GraduationCap, title: "Academic Excellence", description: "Stronger vocabulary, comprehension and subject mastery." },
     ]}
-    gallery={[
-      { src: "/images/School Building/2.jpg", alt: "School library reading area" },
-      { src: "/images/Infrastructure/1.jpg", alt: "Students reading in the library" },
-      { src: "/images/Infrastructure/2.jpg", alt: "Curated book collection" },
-      { src: "/images/School Building/1.jpg", alt: "Resource centre study space" },
+    gallery={libraryData?.galleryImages || [
+      { src: "/images/Photos/Library/DSC01557.JPG", alt: "Organized library bookshelves and reference section" },
+      { src: "/images/Photos/Library/DSC01566.JPG", alt: "Quiet reading area for students" },
+      { src: "/images/Photos/Library/DSC01567.JPG", alt: "Extensive book stacks and curriculum reference materials" },
+      { src: "/images/Photos/Library/DSC01575.JPG", alt: "Student research and reading section" },
     ]}
     whyItMattersBody="Libraries shape thinkers. By placing students at the centre of a rich, well-curated collection, our library transforms reading from a school task into a personal adventure — fuelling curiosity, building empathy and laying the foundation for lifelong intellectual growth."
     whyItMattersPoints={[

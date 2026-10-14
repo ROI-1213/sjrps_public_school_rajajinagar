@@ -1,13 +1,16 @@
 import FacilityPage from "@/components/FacilityPage";
 import { Tv, PlayCircle, Layers, Presentation, Sparkles, Wand2, Eye, Users, Brain, GraduationCap } from "lucide-react";
 import { schoolConfig } from "@/schoolConfig";
+import { getFacilityById } from "@/data/infrastructure";
+
+const smartData = getFacilityById("smart-class");
 
 const SmartClass = () => (
   <FacilityPage
     title="Smart Classrooms"
     breadcrumbLabel="Smart Class"
     introHeading="Technology-Integrated Learning That Inspires"
-    introImage="/images/School Building/1.jpg"
+    introImage={smartData?.coverImage || "/images/Photos/classroom/DSC00825.JPG"}
     introImageAlt={`Smart classroom at ${schoolConfig.name}`}
     introParagraphs={[
       "Our Smart Classrooms blend traditional pedagogical warmth with modern multimedia, making every lesson more engaging, visual and easy to understand.",
@@ -28,10 +31,11 @@ const SmartClass = () => (
       { icon: Users, title: "Interactive Participation", description: "Encourages active discussion from every learner." },
       { icon: GraduationCap, title: "Enhanced Retention", description: "Students remember what they see, hear and interact with." },
     ]}
-    gallery={[
-      { src: "/images/School Building/1.jpg", alt: "Smart classroom interactive board" },
-      { src: "/images/Infrastructure/1.jpg", alt: "Digital teaching environment" },
-      { src: "/images/Infrastructure/2.jpg", alt: "Interactive learning technology" },
+    gallery={smartData?.galleryImages || [
+      { src: "/images/Photos/classroom/DSC00828.JPG", alt: "Smart panel interactive classroom view" },
+      { src: "/images/Photos/classroom/DSC00830.JPG", alt: "Multimedia audio-visual teaching display" },
+      { src: "/images/Photos/Computer lab/VIrtual Reality Kit1.jpg", alt: "Virtual Reality interactive learning tools" },
+      { src: "/images/Photos/Computer lab/Virtual Reality Kit2.jpg", alt: "Next-gen immersive learning equipment" },
     ]}
     whyItMattersBody="Modern learners are visual, curious and digitally native. Smart classrooms meet them where they are — using engaging media to clarify, captivate and inspire, turning every lesson into a richer learning experience."
     whyItMattersPoints={[

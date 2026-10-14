@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Monitor, FlaskConical, Utensils, Cpu, Shield, Heart, Music, Palette, Activity, Camera, MapPin, Phone } from "lucide-react";
+import { Monitor, FlaskConical, Cpu, Shield, Heart, Music, Palette, Activity, MapPin, Phone } from "lucide-react";
 import PageBanner from "@/components/PageBanner";
 import { Link } from "react-router-dom";
 import { schoolConfig } from "@/schoolConfig";
@@ -13,7 +13,7 @@ const Facilities = () => {
       icon: Monitor, 
       description: "Interactive smart boards, high-definition projectors, and modern multimedia learning tools for engaging digital education.",
       features: ["Interactive Digital Panels", "High-Speed Internet", "Audio-Visual Equipment", "Ergonomic Seating"],
-      image: "/images/School Building/1.jpg",
+      image: "/images/Photos/classroom/DSC00825.JPG",
       color: "bg-blue-50"
     },
     { 
@@ -21,7 +21,7 @@ const Facilities = () => {
       icon: FlaskConical, 
       description: "Well-equipped laboratories for hands-on experimental learning in Physics, Chemistry, Biology, and foundational science.",
       features: ["Latest Apparatus", "Strict Safety Protocols", "Individual Workstations", "Faculty Supervision"],
-      image: "/images/Infrastructure/1.jpg",
+      image: "/images/Photos/Science Lab/DSC00853.JPG",
       color: "bg-green-50"
     },
     { 
@@ -29,7 +29,7 @@ const Facilities = () => {
       icon: Cpu, 
       description: "Modern computer terminal suite with high-speed internet, coding software, and digital literacy tools.",
       features: ["1:1 Student Computer Ratio", "High-Speed Broadband", "Curriculum Coding Software", "Cyber-Safety Filtering"],
-      image: "/images/School Building/3.jpg",
+      image: "/images/Photos/Computer lab/DSC00838.JPG",
       color: "bg-indigo-50"
     },
     { 
@@ -37,7 +37,7 @@ const Facilities = () => {
       icon: Music, 
       description: "Acoustically treated auditorium and activity hall for cultural performances, school assemblies, and guest seminars.",
       features: ["Spacious Seating", "Professional Sound System", "Stage Lighting", "Ventilated Hall"],
-      image: "/images/School Building/2.jpg",
+      image: "/images/Photos/Auditorium/DSC01238.JPG",
       color: "bg-purple-50"
     },
     { 
@@ -45,7 +45,7 @@ const Facilities = () => {
       icon: Palette, 
       description: "Rich collection of over 4,500 titles covering literature, sciences, reference encyclopedias, and children's periodicals.",
       features: ["4500+ Books & Periodicals", "Silent Reading Room", "Digital Cataloguing", "Reference Section"],
-      image: "/images/School Building/1.jpg",
+      image: "/images/Photos/Library/DSC01550.JPG",
       color: "bg-amber-50"
     },
     { 
@@ -53,7 +53,7 @@ const Facilities = () => {
       icon: Activity, 
       description: "Dedicated sports room and martial arts training area promoting physical endurance, discipline, and agile sportsmanship.",
       features: ["Taekwondo Training", "Table Tennis & Chess", "Carrom & Indoor Games", "Physical Fitness Drills"],
-      image: "/images/Events/Annual Sports Meet/1.jpg",
+      image: "/images/Photos/Sports/DSC01269.JPG",
       color: "bg-emerald-50"
     },
     {
@@ -61,7 +61,7 @@ const Facilities = () => {
       icon: Shield,
       description: "Comprehensive campus security system with round-the-clock CCTV surveillance and trained security guards.",
       features: ["24/7 CCTV Monitoring", "Security Guards at Gates", "Strict Visitor Verification", "Fire Safety Compliance"],
-      image: "/images/School Building/1.jpg",
+      image: "/images/Photos/School Building/DSC01515.JPG",
       color: "bg-red-50"
     },
     {
@@ -69,7 +69,7 @@ const Facilities = () => {
       icon: Heart,
       description: "First aid medical station for prompt attention to student health, wellness, and minor sports care.",
       features: ["First Aid Supplies", "Doctor-on-Call Network", "Periodic Health Checks", "Clean Rest Areas"],
-      image: "/images/School Building/2.jpg",
+      image: "/images/Photos/classroom/DSC00683.JPG",
       color: "bg-teal-50"
     }
   ];
@@ -87,7 +87,7 @@ const Facilities = () => {
         <PageBanner
           title="Campus Infrastructure"
           subtitle={`Thoughtfully designed learning spaces at ${schoolConfig.name} promoting academic focus, physical vigour, and creativity`}
-          backgroundImage="/images/School Building/1.jpg"
+          backgroundImage="/images/Photos/School Building/A7400869.JPG"
         />
 
         {/* Quick Stats */}
@@ -124,6 +124,9 @@ const Facilities = () => {
                         src={facility.image} 
                         alt={facility.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                        }}
                       />
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
                       <div className="absolute top-4 right-4 bg-indian-green p-2 rounded-xl text-white shadow">
