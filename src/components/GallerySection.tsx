@@ -5,14 +5,14 @@ import { ChevronRight, ChevronLeft, X } from "lucide-react";
 import { schoolConfig } from "@/schoolConfig";
 
 const images = [
-  { url: "/images/Photos/School Building/School Building1.jpg", caption: "Rajajinagar Campus Building" },
-  { url: "/images/Photos/classroom/DSC00683.JPG", caption: "Interactive Classroom" },
-  { url: "/images/Photos/Science Lab/DSC00884.JPG", caption: "Composite Science Laboratory" },
-  { url: "/images/Photos/Computer lab/DSC00838.JPG", caption: "Advanced Computer Lab" },
-  { url: "/images/Photos/Yoga/Yoga.JPG", caption: "Yoga & Mindfulness Session" },
-  { url: "/images/Photos/Robotics/DSC01539.JPG", caption: "STEM Robotics Innovation" },
-  { url: "/images/Events/Krishna Janmastmi/WhatsApp Image 2026-10-01 at 13.37.09 (1).jpeg", caption: "Krishna Janmashtami Festivities" },
-  { url: "/images/Events/Annual Sports Meet/FB_IMG_1791268754974.jpg", caption: "Annual Sports Meet Athletics" },
+  { url: "/images/Photos/Assembly/DSC00056.JPG", caption: "Morning Assembly & Campus Gathering" },
+  { url: "/images/Photos/Library/DSC01566.JPG", caption: "Reference & Reading in Campus Library" },
+  { url: "/images/Photos/Music/DSC00997.JPG", caption: "Music & Instrumental Keyboard Training" },
+  { url: "/images/Photos/Cubs and Bul Bul/DSC00576.JPG", caption: "Cubs & Bulbul Scouts Discipline" },
+  { url: "/images/Photos/Kids Play Area And Activity/DSC00642.JPG", caption: "Junior Expressions & Stage Performance" },
+  { url: "/images/Photos/Taekwondo/DSC00704.JPG", caption: "Taekwondo & Self-Defence Training" },
+  { url: "/images/Photos/Sports/DSC01303.JPG", caption: "Chess & Strategic Mind Sports" },
+  { url: "/images/Events/School Election/WhatsApp Image 2026-10-05 at 2.08.28 PM (1).jpeg", caption: "Student Council Democratic Elections" },
 ];
 
 const GallerySection = () => {
