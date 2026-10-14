@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, GraduationCap, Clock, Search, ShieldCheck, Info } from "lucide-react";
+import { BookOpen, GraduationCap, Clock, Search, Info } from "lucide-react";
 import { staffMembers, type StaffMember, type StaffCategory, STAFF_CATEGORIES } from "@/data/staff";
 
 // Backwards compatibility export if other components import Teacher interface
@@ -104,16 +104,9 @@ const Teachers = () => {
       <section className="py-16 bg-slate-50/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indian-green/10 text-indian-green text-xs font-semibold uppercase tracking-wider mb-3">
-              <ShieldCheck className="h-4 w-4" />
-              Official Staff Directory • Academic Year 2026–27
-            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-logo-navy" style={{ fontFamily: "Poppins, sans-serif" }}>
               Meet Our Educators & Dedicated Staff
             </h2>
-            <p className="text-muted-foreground mt-3 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-              Every staff member at SJR Public School, Rajajinagar is committed to providing meaningful learning, strong values, and emotional well-being in a safe and supportive CBSE environment.
-            </p>
 
             {/* Quick Metrics Bar */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl mx-auto bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
