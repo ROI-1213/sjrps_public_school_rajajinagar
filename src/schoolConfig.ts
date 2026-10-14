@@ -135,7 +135,7 @@ export const schoolConfig = {
   },
   
   assetPaths: {
-    schoolBuilding: "/images/Photos/School Building/School Building1.jpg",
+    schoolBuilding: "/images/Photos/School Building/school-building-main-gate.jpg",
     oldPhotos: "/images/Old photos/",
     staffPhotos: "/images/Staff photo/",
     coreTeamPhotos: "/images/Core Team/",

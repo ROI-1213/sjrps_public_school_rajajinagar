@@ -20,7 +20,10 @@ const AboutOurSchoolSection = () => {
                 <img
                   src={schoolConfig.assetPaths.schoolBuilding}
                   alt={`${schoolConfig.fullName} Campus`}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = "/images/Photos/School Building/School Building1.jpg";
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-school-brown/80 via-school-brown/10 to-transparent" />
 
