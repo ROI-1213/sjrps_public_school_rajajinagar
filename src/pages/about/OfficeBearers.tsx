@@ -1,7 +1,6 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import { Card, CardContent } from "@/components/ui/card";
-import vp1Img from "@/assets/leadership/vp1.jpg";
 import vp2Img from "@/assets/leadership/vp2.jpg";
 import maheshHiremathImg from "@/assets/leadership/Mahesh-Hiremath.jpg";
 import presidentImg from "@/assets/leadership/president.jpg";
