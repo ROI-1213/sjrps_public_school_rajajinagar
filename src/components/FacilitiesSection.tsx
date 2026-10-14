@@ -18,44 +18,43 @@ const FacilitiesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {facilitiesData.map((f) => {
             const Icon = f.iconComponent;
             return (
               <Card
                 key={f.id}
-                className="group flex flex-col overflow-hidden border border-indian-green/15 hover:border-indian-green/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white rounded-2xl"
+                className="group flex flex-col overflow-hidden border border-indian-green/15 hover:border-indian-green/50 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 bg-white rounded-2xl"
               >
-                <div className="relative h-48 overflow-hidden bg-slate-100">
+                <div className="relative h-56 sm:h-60 overflow-hidden bg-slate-100">
                   <img
                     src={f.coverImage}
                     alt={f.coverImageAlt}
                     loading="lazy"
-                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500"
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute top-3 right-3 bg-indian-green w-10 h-10 rounded-full flex items-center justify-center shadow-md z-10">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute top-3.5 right-3.5 bg-indian-green w-11 h-11 rounded-full flex items-center justify-center shadow-lg z-10 ring-2 ring-white/80">
                     <Icon className="h-5 w-5 text-white" />
                   </div>
                 </div>
-                <CardContent className="p-5 flex flex-col flex-1">
-                  <h3 className="text-lg font-bold text-school-brown mb-1.5 group-hover:text-indian-green transition-colors">
+                <CardContent className="p-6 flex flex-col flex-1">
+                  <h3 className="text-xl font-bold text-school-brown mb-2 group-hover:text-indian-green transition-colors">
                     {f.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 mb-4 flex-1">
+                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2 mb-5 flex-1">
                     {f.description}
                   </p>
                   <Button
                     asChild
-                    size="sm"
-                    className="bg-indian-green hover:bg-indian-green/90 text-white w-full"
+                    className="bg-indian-green hover:bg-indian-green/90 text-white w-full font-semibold py-2.5 rounded-xl shadow-xs"
                   >
                     <Link to={f.route}>
                       Explore Facility
-                      <ChevronRight className="ml-1 h-3.5 w-3.5" />
+                      <ChevronRight className="ml-1.5 h-4 w-4" />
                     </Link>
                   </Button>
                 </CardContent>

@@ -54,23 +54,23 @@ const GallerySection = () => {
           <p className="text-base text-muted-foreground">A glimpse into the vibrant campus life and milestones at Rajajinagar.</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {images.map((item, i) => (
             <button
               key={i}
               onClick={() => setOpenIndex(i)}
-              className="group relative aspect-[4/3] overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
+              className="group relative h-56 sm:h-64 w-full overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 focus:outline-none"
             >
               <img
                 src={item.url}
                 alt={item.caption}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
                 onError={(e) => {
                   (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
                 }}
               />
-              <div className="absolute inset-0 bg-indian-green/0 group-hover:bg-indian-green/30 transition-colors duration-300 flex items-end p-3">
-                <span className="text-white text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity drop-shadow">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <span className="text-white text-xs sm:text-sm font-semibold leading-snug drop-shadow-md text-left">
                   {item.caption}
                 </span>
               </div>
