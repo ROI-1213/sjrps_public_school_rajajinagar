@@ -107,13 +107,7 @@ export const admissionsContent = {
       { slNo: 3, transition: "UKG to Grade I", fee: 59700 },
       { slNo: 4, transition: "Grade I to Grade II", fee: 59700 },
       { slNo: 5, transition: "Grade II to Grade III", fee: 59700 },
-      { 
-        slNo: 6, 
-        transition: "Grade III to Grade I", 
-        fee: 59700, 
-        flag: "NEEDS_APPROVAL", 
-        flagNote: "Source document lists 'Grade III to Grade I' — likely typographical error for 'Grade III to Grade IV'. Preserved exactly as supplied pending school confirmation."
-      },
+      { slNo: 6, transition: "Grade III to Grade IV", fee: 59700 },
       { slNo: 7, transition: "Grade IV to Grade V", fee: 59700 },
       { slNo: 8, transition: "Grade V to Grade VI", fee: 66900 },
       { slNo: 9, transition: "Grade VI to Grade VII", fee: 66900 },

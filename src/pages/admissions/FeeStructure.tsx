@@ -169,30 +169,14 @@ const FeeStructure = () => {
                   <tr
                     key={row.slNo}
                     className={`transition-colors hover:bg-emerald-50/50 ${
-                      row.flag ? "bg-amber-50/60" : i % 2 === 0 ? "bg-white" : "bg-[hsl(38_70%_98%)]"
+                      i % 2 === 0 ? "bg-white" : "bg-[hsl(38_70%_98%)]"
                     }`}
                   >
                     <td className="px-6 py-4 text-sm font-semibold text-muted-foreground">
                       {row.slNo}
                     </td>
                     <td className="px-6 py-4 font-semibold text-logo-navy">
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                        <span>{row.transition}</span>
-                        {row.flag && (
-                          <span
-                            className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-900 border border-amber-300"
-                            title={row.flagNote}
-                          >
-                            <AlertCircle className="w-3 h-3 text-amber-700" />
-                            [NEEDS_APPROVAL: Source doc text preserved]
-                          </span>
-                        )}
-                      </div>
-                      {row.flagNote && (
-                        <p className="text-xs text-amber-800 mt-1 italic font-normal">
-                          {row.flagNote}
-                        </p>
-                      )}
+                      {row.transition}
                     </td>
                     <td className="px-6 py-4 text-right font-bold text-indian-green text-lg">
                       ₹{row.fee.toLocaleString("en-IN")}
