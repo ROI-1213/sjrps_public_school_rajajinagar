@@ -22,89 +22,92 @@ const NewsEventsHomeSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto lg:items-stretch">
           {/* Left – Featured Events */}
-          <div className="lg:col-span-7 flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-indian-green w-10 h-10 rounded-full flex items-center justify-center">
-                  <Newspaper className="h-5 w-5 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-school-brown">Latest News & Highlights</h3>
+          <div className="lg:col-span-7 flex flex-col">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bg-indian-green w-10 h-10 rounded-full flex items-center justify-center shrink-0">
+                <Newspaper className="h-5 w-5 text-white" />
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {latestEvents.map((item) => (
-                  <Link key={item.id} to={`/news/${item.id}`} className="block h-full group">
-                    <Card className="overflow-hidden border border-indian-green/15 hover:shadow-xl transition-all duration-300 flex flex-col h-full rounded-2xl group-hover:-translate-y-1 bg-white">
-                      <div className="h-36 overflow-hidden bg-muted">
-                        <img 
-                          src={item.featuredImage} 
-                          alt={item.title} 
-                          loading="lazy"
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                          onError={(e) => {
-                            (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
-                          }}
-                        />
-                      </div>
-                      <CardContent className="p-3.5 flex flex-col">
-                        <div className="flex items-center justify-between mb-1.5">
-                          <span className="text-[10px] font-semibold text-indian-green bg-indian-green/10 px-2.5 py-0.5 rounded-full">
-                            {item.date}
-                          </span>
-                          <span className="text-[9px] uppercase font-bold tracking-wider text-muted-foreground">
-                            {item.category}
-                          </span>
-                        </div>
-                        <h4 className="font-bold text-school-brown text-sm leading-snug mb-1 line-clamp-2 group-hover:text-indian-green transition-colors">
-                          {item.title}
-                        </h4>
-                        <p className="text-muted-foreground text-xs leading-relaxed line-clamp-2">
-                          {item.summary}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                ))}
-              </div>
+              <h3 className="text-xl font-bold text-school-brown">Latest News & Highlights</h3>
             </div>
-            <div className="mt-4 pt-1">
-              <Button asChild className="bg-indian-green hover:bg-indian-green/90 text-white">
-                <Link to="/news">
-                  View All News & Events
-                  <ChevronRight className="ml-1 h-4 w-4" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {latestEvents.map((item) => (
+                <Link key={item.id} to={`/news/${item.id}`} className="block h-full group">
+                  <Card className="overflow-hidden border border-indian-green/15 hover:shadow-xl transition-all duration-300 flex flex-col h-full rounded-2xl group-hover:-translate-y-1 bg-white">
+                    <div className="h-36 overflow-hidden bg-muted">
+                      <img 
+                        src={item.featuredImage} 
+                        alt={item.title} 
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                        }}
+                      />
+                    </div>
+                    <CardContent className="p-3.5 flex flex-col flex-1">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className="text-[10px] font-semibold text-indian-green bg-indian-green/10 px-2.5 py-0.5 rounded-full">
+                          {item.date}
+                        </span>
+                        <span className="text-[9px] uppercase font-bold tracking-wider text-muted-foreground">
+                          {item.category}
+                        </span>
+                      </div>
+                      <h4 className="font-bold text-school-brown text-sm leading-snug mb-1 line-clamp-2 group-hover:text-indian-green transition-colors">
+                        {item.title}
+                      </h4>
+                      <p className="text-muted-foreground text-xs leading-relaxed line-clamp-2">
+                        {item.summary}
+                      </p>
+                    </CardContent>
+                  </Card>
                 </Link>
-              </Button>
+              ))}
             </div>
           </div>
 
-          {/* Right – Events ticker */}
+          {/* Right – Events ticker (strictly matches height of 4 cards beside it) */}
           <div className="lg:col-span-5 flex flex-col">
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-indian-green w-10 h-10 rounded-full flex items-center justify-center">
+              <div className="bg-indian-green w-10 h-10 rounded-full flex items-center justify-center shrink-0">
                 <Calendar className="h-5 w-5 text-white" />
               </div>
               <h3 className="text-xl font-bold text-school-brown">Campus Calendar & Updates</h3>
             </div>
 
-            <div className="relative flex-1 min-h-[380px] max-h-[560px] overflow-hidden rounded-2xl border border-indian-green/15 bg-gradient-to-b from-indian-green/5 to-white">
-              <div className="absolute inset-x-0 top-0 h-6 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
-              <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+            <div className="relative flex-1 min-h-[380px] lg:min-h-0">
+              <div className="absolute inset-0 overflow-hidden rounded-2xl border border-indian-green/15 bg-gradient-to-b from-indian-green/5 to-white shadow-xs">
+                <div className="absolute inset-x-0 top-0 h-6 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 
-              <div className="animate-ticker-up hover:[animation-play-state:paused] flex flex-col gap-2.5 p-3.5">
-                {[...tickerEvents, ...tickerEvents, ...tickerEvents].map((e, i) => (
-                  <Link
-                    key={`${e.id}-${i}`}
-                    to={`/news/${e.id}`}
-                    className="bg-white border-l-4 border-indian-green rounded-xl p-3 shadow-xs hover:shadow-md transition-all block group shrink-0"
-                  >
-                    <div className="font-semibold text-school-brown text-xs sm:text-sm leading-snug group-hover:text-indian-green transition-colors">{e.title}</div>
-                    <div className="text-[11px] text-indian-green mt-1 flex items-center gap-1.5 font-medium">
-                      <Calendar className="h-3 w-3" /> {e.date} • {e.category}
-                    </div>
-                  </Link>
-                ))}
+                <div className="animate-ticker-up hover:[animation-play-state:paused] flex flex-col gap-2.5 p-3.5">
+                  {[...tickerEvents, ...tickerEvents, ...tickerEvents].map((e, i) => (
+                    <Link
+                      key={`${e.id}-${i}`}
+                      to={`/news/${e.id}`}
+                      className="bg-white border-l-4 border-indian-green rounded-xl p-3 shadow-xs hover:shadow-md transition-all block group shrink-0"
+                    >
+                      <div className="font-semibold text-school-brown text-xs sm:text-sm leading-snug group-hover:text-indian-green transition-colors">{e.title}</div>
+                      <div className="text-[11px] text-indian-green mt-1 flex items-center gap-1.5 font-medium">
+                        <Calendar className="h-3 w-3" /> {e.date} • {e.category}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Centered Action Button */}
+        <div className="text-center mt-8">
+          <Button asChild className="bg-indian-green hover:bg-indian-green/90 text-white font-semibold px-6 shadow-sm hover:shadow-md transition-all">
+            <Link to="/news">
+              View All News & Events
+              <ChevronRight className="ml-1.5 h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
