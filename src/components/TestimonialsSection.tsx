@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
         </div>
 
         <Carousel
-          className="w-full mx-auto"
+          className="w-full max-w-5xl mx-auto"
           plugins={[Autoplay({ delay: 4500 })]}
           opts={{ align: "start", loop: true }}
         >
