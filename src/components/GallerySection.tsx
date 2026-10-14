@@ -6,11 +6,11 @@ import { schoolConfig } from "@/schoolConfig";
 
 const images = [
   { url: "/images/Photos/School Building/School Building1.jpg", caption: "Rajajinagar Campus Building" },
-  { url: "/images/Photos/classroom/1.jpg", caption: "Interactive Classroom" },
-  { url: "/images/Photos/Science Lab/1.jpg", caption: "Composite Science Laboratory" },
-  { url: "/images/Photos/Computer lab/1.jpg", caption: "Advanced Computer Lab" },
-  { url: "/images/Photos/Yoga/1.jpg", caption: "Yoga & Mindfulness Session" },
-  { url: "/images/Photos/Robotics/1.jpg", caption: "STEM Robotics Innovation" },
+  { url: "/images/Photos/classroom/DSC00683.JPG", caption: "Interactive Classroom" },
+  { url: "/images/Photos/Science Lab/DSC00884.JPG", caption: "Composite Science Laboratory" },
+  { url: "/images/Photos/Computer lab/DSC00838.JPG", caption: "Advanced Computer Lab" },
+  { url: "/images/Photos/Yoga/Yoga.JPG", caption: "Yoga & Mindfulness Session" },
+  { url: "/images/Photos/Robotics/DSC01539.JPG", caption: "STEM Robotics Innovation" },
   { url: "/images/Events/Krishna Janmastmi/WhatsApp Image 2026-10-01 at 13.37.09 (1).jpeg", caption: "Krishna Janmashtami Festivities" },
   { url: "/images/Events/Annual Sports Meet/FB_IMG_1791268754974.jpg", caption: "Annual Sports Meet Athletics" },
 ];
