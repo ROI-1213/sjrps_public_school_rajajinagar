@@ -5,7 +5,8 @@ import { Calendar, ChevronRight, Newspaper } from "lucide-react";
 import { schoolEvents } from "@/data/events";
 
 const NewsEventsHomeSection = () => {
-  const latestEvents = schoolEvents.slice(0, 2);
+  // Display all authentic Rajajinagar events with images on the left
+  const latestEvents = schoolEvents;
   const tickerEvents = schoolEvents;
 
   return (
@@ -36,6 +37,7 @@ const NewsEventsHomeSection = () => {
                       <img 
                         src={item.featuredImage} 
                         alt={item.title} 
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                         onError={(e) => {
                           (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
@@ -43,9 +45,14 @@ const NewsEventsHomeSection = () => {
                       />
                     </div>
                     <CardContent className="p-4 flex flex-col flex-1">
-                      <span className="text-[11px] font-semibold text-indian-green bg-indian-green/10 px-2.5 py-0.5 rounded-full self-start mb-2">
-                        {item.date}
-                      </span>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-[11px] font-semibold text-indian-green bg-indian-green/10 px-2.5 py-0.5 rounded-full">
+                          {item.date}
+                        </span>
+                        <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground">
+                          {item.category}
+                        </span>
+                      </div>
                       <h4 className="font-bold text-school-brown text-[15px] leading-snug mb-1.5 line-clamp-2 group-hover:text-indian-green transition-colors">
                         {item.title}
                       </h4>
@@ -57,7 +64,7 @@ const NewsEventsHomeSection = () => {
                 </Link>
               ))}
             </div>
-            <div className="mt-5">
+            <div className="mt-6">
               <Button asChild className="bg-indian-green hover:bg-indian-green/90 text-white">
                 <Link to="/news">
                   View All News & Events
@@ -80,14 +87,14 @@ const NewsEventsHomeSection = () => {
               <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
               <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 
-              <div className="animate-ticker-up flex flex-col gap-3 p-4">
+              <div className="animate-ticker-up hover:[animation-play-state:paused] flex flex-col gap-3 p-4">
                 {[...tickerEvents, ...tickerEvents].map((e, i) => (
                   <Link
                     key={`${e.id}-${i}`}
                     to={`/news/${e.id}`}
-                    className="bg-white border-l-4 border-indian-green rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow block"
+                    className="bg-white border-l-4 border-indian-green rounded-xl p-4 shadow-sm hover:shadow-md transition-all block group"
                   >
-                    <div className="font-semibold text-school-brown text-sm leading-snug">{e.title}</div>
+                    <div className="font-semibold text-school-brown text-sm leading-snug group-hover:text-indian-green transition-colors">{e.title}</div>
                     <div className="text-xs text-indian-green mt-1 flex items-center gap-1.5 font-medium">
                       <Calendar className="h-3.5 w-3.5" /> {e.date} • {e.category}
                     </div>
