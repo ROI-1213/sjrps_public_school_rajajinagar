@@ -86,7 +86,7 @@ const ApplicationProcess = () => {
             className="text-3xl md:text-4xl font-bold text-logo-navy text-center mb-12"
             style={{ fontFamily: "Poppins, sans-serif" }}
           >
-            Admission Journey (7 Simple Steps)
+            Admission Journey
           </h2>
           <div className="relative">
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-indian-green/20 md:-translate-x-1/2" />
