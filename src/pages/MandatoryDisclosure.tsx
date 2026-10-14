@@ -182,34 +182,46 @@ const MandatoryDisclosure = () => {
           <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse min-w-[560px]">
-                <thead>
-                  <tr className="bg-[#186a3b] text-white">
-                    <th scope="col" className="py-4 px-6 font-bold text-sm sm:text-base w-20 sm:w-24 text-left">
+                <thead className="mandatory-table-header" style={{ backgroundColor: "#176B3F", color: "#ffffff" }}>
+                  <tr className="mandatory-table-header" style={{ backgroundColor: "#176B3F", color: "#ffffff" }}>
+                    <th
+                      scope="col"
+                      className="py-4 px-6 font-bold text-sm sm:text-base w-20 sm:w-24 text-left"
+                      style={{ backgroundColor: "#176B3F", color: "#ffffff" }}
+                    >
                       <div className="leading-tight">Sl</div>
                       <div className="leading-tight">No</div>
                     </th>
-                    <th scope="col" className="py-4 px-6 font-bold text-sm sm:text-base text-left">
+                    <th
+                      scope="col"
+                      className="py-4 px-6 font-bold text-sm sm:text-base text-left"
+                      style={{ backgroundColor: "#176B3F", color: "#ffffff" }}
+                    >
                       Document Name
                     </th>
-                    <th scope="col" className="py-4 px-6 font-bold text-sm sm:text-base text-right pr-8 sm:pr-10">
+                    <th
+                      scope="col"
+                      className="py-4 px-6 font-bold text-sm sm:text-base text-right pr-8 sm:pr-12"
+                      style={{ backgroundColor: "#176B3F", color: "#ffffff" }}
+                    >
                       View
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-100 bg-white">
+                <tbody className="divide-y divide-gray-200/80 bg-white">
                   {mandatoryDocuments.map((doc, index) => (
                     <tr
                       key={doc.id}
-                      className="hover:bg-emerald-50/40 transition-colors"
+                      className="hover:bg-emerald-50/50 transition-colors"
                     >
-                      <td className="py-4 px-6 font-normal text-gray-800 text-sm sm:text-base whitespace-nowrap">
+                      <td className="py-4 px-6 font-medium text-gray-900 text-sm sm:text-base whitespace-nowrap">
                         {index + 1}
                       </td>
-                      <td className="py-4 px-6 text-gray-800 font-normal text-sm sm:text-base">
+                      <td className="py-4 px-6 text-gray-800 font-medium text-sm sm:text-base">
                         <button
                           type="button"
                           onClick={() => setPreviewPdf({ title: doc.title, url: doc.pdfUrl })}
-                          className="text-left text-gray-800 hover:text-[#186a3b] hover:underline transition-colors cursor-pointer"
+                          className="text-left text-gray-800 hover:text-[#176B3F] hover:underline transition-colors cursor-pointer"
                         >
                           {doc.title}
                         </button>
@@ -218,11 +230,12 @@ const MandatoryDisclosure = () => {
                         <button
                           type="button"
                           onClick={() => setPreviewPdf({ title: doc.title, url: doc.pdfUrl })}
-                          className="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-lg bg-[#186a3b] hover:bg-[#135830] text-white text-sm font-semibold transition-all shadow-xs cursor-pointer"
+                          className="mandatory-view-btn"
+                          style={{ backgroundColor: "#176B3F", color: "#ffffff" }}
                           title={`View ${doc.title}`}
                         >
-                          <Eye className="h-4 w-4" />
-                          <span>View</span>
+                          <Eye className="h-4 w-4 shrink-0" color="#ffffff" style={{ color: "#ffffff" }} />
+                          <span style={{ color: "#ffffff" }}>View</span>
                         </button>
                       </td>
                     </tr>
