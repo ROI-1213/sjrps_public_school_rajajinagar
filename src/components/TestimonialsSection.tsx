@@ -18,7 +18,7 @@ const TestimonialsSection = () => {
   const testimonials = useMemo(() => mergeTestimonialItems(adminTestimonials), [adminTestimonials]);
 
   return (
-    <section className="py-14 bg-gradient-to-br from-slate-50 to-white">
+    <section className="py-8 lg:py-10 bg-gradient-to-br from-slate-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10 max-w-3xl mx-auto">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-indian-green">Testimonials</span>
