@@ -24,11 +24,11 @@ dist-ssr
 *.sw?
 
 # Raw upload sources and large media (exceeds GitHub 100MB limit)
-Events/
-Old photos/
-Photos/
-Staff photo/
-video gallery/
-public/videos/
+/Events/
+/Old photos/
+/Photos/
+/Staff photo/
+/video gallery/
+/public/videos/
 *.mp4
 
