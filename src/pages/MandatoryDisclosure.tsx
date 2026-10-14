@@ -55,22 +55,22 @@ const institutionalInfo = [
   {
     icon: Users,
     title: "Management Details",
-    desc: "Governed by the prestigious Sri Jagadguru Renukacharya Education Society (SJRES), founded in 1945, committed to value-based education and institutional excellence.",
+    desc: "Governed by the SJR Education Society, committed to value-based education and academic excellence since inception.",
   },
   {
     icon: ClipboardList,
-    title: "School Management Committee",
-    desc: "An active School Management Committee comprising distinguished educators, parent representatives, and community members ensuring transparent governance.",
+    title: "School Committee",
+    desc: "An active School Management Committee comprising educators, parents, and community members ensuring transparent governance.",
   },
   {
     icon: GraduationCap,
-    title: "Academic Framework",
-    desc: "Comprehensive NCERT / CBSE curriculum delivered across Pre-Primary, Primary, and Secondary levels with qualified and experienced faculty.",
+    title: "Academic Information",
+    desc: "Comprehensive CBSE curriculum delivered across Pre-Primary, Primary, and Secondary levels with qualified faculty.",
   },
   {
     icon: Building,
-    title: "Infrastructure & Safety",
-    desc: "Safe, urban campus with smart interactive classrooms, composite science laboratories, computer labs, library, indoor sports, and CCTV surveillance.",
+    title: "Infrastructure Information",
+    desc: "Modern campus with smart classrooms, laboratories, library, sports facilities, auditorium, and safe transport services.",
   },
 ];
 
@@ -106,7 +106,7 @@ const MandatoryDisclosure = () => {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-3">
-            Institutional Information
+            School Information
           </h2>
           <div className="mx-auto h-1 w-20 bg-indian-green rounded-full mb-12" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -142,27 +142,26 @@ const MandatoryDisclosure = () => {
         </div>
       </section>
 
-      {/* Institutional Highlights */}
+      {/* Institutional Information */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-3">
-            Governance & Standards
+            Institutional Information
           </h2>
           <div className="mx-auto h-1 w-20 bg-indian-green rounded-full mb-12" />
           <div className="grid md:grid-cols-2 gap-6">
-            {institutionalInfo.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-2xl p-6 border border-indian-green/10 shadow-sm flex items-start gap-4"
-              >
-                <div className="w-12 h-12 rounded-xl bg-saffron-orange/10 text-saffron-orange flex items-center justify-center shrink-0">
-                  <item.icon className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-logo-navy mb-1.5">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
+            {institutionalInfo.map((it, i) => (
+              <Card key={i} className="border-l-4 border-l-indian-green hover:shadow-lg transition-all bg-white border-y border-r border-slate-100">
+                <CardContent className="p-6 flex gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-indian-green/10 flex items-center justify-center flex-shrink-0">
+                    <it.icon className="h-6 w-6 text-indian-green" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-black mb-2">{it.title}</h3>
+                    <p className="text-foreground/75 leading-relaxed">{it.desc}</p>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
