@@ -1,12 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { BookOpen, GraduationCap, Clock, ChevronRight, Award } from "lucide-react";
+import { BookOpen, GraduationCap, Clock, ChevronRight, UserCheck } from "lucide-react";
 import { staffMembers } from "@/data/staff";
 
 const HomeFacultySection = () => {
-  // Select 4 experienced faculty members from Rajajinagar
-  const featured = staffMembers.slice(3, 7);
+  // Display the top 4 official faculty leaders starting with Principal
+  const featured = staffMembers.slice(0, 4);
 
   return (
     <section className="py-14 bg-white">
@@ -25,9 +25,9 @@ const HomeFacultySection = () => {
           {featured.map((t) => (
             <Card
               key={t.id}
-              className="rounded-2xl border-none shadow-[0_8px_25px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full bg-white"
+              className="rounded-2xl border-none shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full bg-white group"
             >
-              <div className="aspect-[3/4] overflow-hidden bg-muted relative">
+              <div className="aspect-[3/4] overflow-hidden bg-slate-100 relative">
                 <img 
                   src={t.photo || "/placeholder.svg"} 
                   alt={`${t.name} - ${t.designation}`}
@@ -40,28 +40,54 @@ const HomeFacultySection = () => {
                   #{t.slNo.padStart(2, "0")}
                 </div>
               </div>
-              <CardContent className="p-5 flex flex-col flex-1 text-center justify-between">
+              <CardContent className="p-5 flex flex-col flex-1 text-left justify-between">
                 <div>
-                  <h3 className="text-lg font-bold text-logo-navy leading-tight">{t.name}</h3>
-                  <p className="text-sm font-semibold text-indian-green mt-1">{t.designation}</p>
-                  <div className="mt-4 pt-4 border-t space-y-2 text-xs text-foreground/80 text-left">
-                    <div className="flex items-center gap-2">
-                      <BookOpen className="h-3.5 w-3.5 text-indian-green flex-shrink-0" />
-                      <span className="line-clamp-1">{t.subject}</span>
-                    </div>
-                    {t.qualification && (
-                      <div className="flex items-center gap-2">
-                        <GraduationCap className="h-3.5 w-3.5 text-indian-green flex-shrink-0" />
-                        <span className="line-clamp-1">{t.qualification}</span>
+                  <h3 className="text-base sm:text-lg font-bold text-logo-navy leading-tight line-clamp-2">
+                    {t.name}
+                  </h3>
+                  <p className="text-xs sm:text-sm font-semibold text-indian-green mt-1">
+                    {t.designation}
+                  </p>
+
+                  <div className="mt-4 pt-3 border-t border-gray-100 space-y-2 text-xs text-foreground/80">
+                    {t.subject && (
+                      <div className="flex items-start gap-2">
+                        <BookOpen className="h-3.5 w-3.5 text-indian-green flex-shrink-0 mt-0.5" />
+                        <div>
+                          <span className="text-muted-foreground text-[10px] block uppercase font-medium">Subject / Area</span>
+                          <span className="font-medium text-foreground line-clamp-1">{t.subject}</span>
+                        </div>
                       </div>
                     )}
+
+                    {t.qualification && (
+                      <div className="flex items-start gap-2">
+                        <GraduationCap className="h-3.5 w-3.5 text-indian-green flex-shrink-0 mt-0.5" />
+                        <div>
+                          <span className="text-muted-foreground text-[10px] block uppercase font-medium">Qualification</span>
+                          <span className="font-medium text-foreground line-clamp-1">{t.qualification}</span>
+                        </div>
+                      </div>
+                    )}
+
                     {t.experience && (
-                      <div className="flex items-center gap-2">
-                        <Clock className="h-3.5 w-3.5 text-indian-green flex-shrink-0" />
-                        <span>{t.experience}</span>
+                      <div className="flex items-start gap-2">
+                        <Clock className="h-3.5 w-3.5 text-indian-green flex-shrink-0 mt-0.5" />
+                        <div>
+                          <span className="text-muted-foreground text-[10px] block uppercase font-medium">Experience</span>
+                          <span className="font-medium text-foreground">{t.experience}</span>
+                        </div>
                       </div>
                     )}
                   </div>
+                </div>
+
+                <div className="mt-4 pt-2.5 border-t border-dashed border-gray-100 flex items-center justify-between text-[11px] text-muted-foreground">
+                  <span className="inline-flex items-center gap-1 text-indian-green font-medium">
+                    <UserCheck className="h-3 w-3" />
+                    Verified Record
+                  </span>
+                  <span className="font-mono text-[10px]">AY 2026–27</span>
                 </div>
               </CardContent>
             </Card>
