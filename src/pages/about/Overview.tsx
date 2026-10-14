@@ -163,8 +163,8 @@ const Overview = () => {
         </div>
       </section>
 
-      {/* Glimpses of Our Glorious Past — Historical Gallery */}
-      <HistoricalGallerySection limit={6} showViewAllButton={true} />
+      {/* Historical Gallery — 3 Authentic Campus Moments */}
+      <HistoricalGallerySection limit={3} />
 
       {/* Our Journey Timeline */}
       <section className="py-16 bg-muted/40 border-y">
