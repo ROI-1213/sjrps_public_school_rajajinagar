@@ -36,9 +36,6 @@ const HomeFacultySection = () => {
                     (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
                   }}
                 />
-                <div className="absolute top-2.5 left-2.5 bg-black/60 backdrop-blur-md text-white text-[11px] font-mono px-2 py-0.5 rounded-full font-semibold">
-                  #{t.slNo.padStart(2, "0")}
-                </div>
               </div>
               <CardContent className="p-5 flex flex-col flex-1 text-left justify-between">
                 <div>

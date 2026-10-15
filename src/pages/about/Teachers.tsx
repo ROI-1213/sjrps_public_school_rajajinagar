@@ -99,17 +99,13 @@ const Teachers = () => {
                   />
 
                   {/* Top Badges */}
-                  <div className="absolute top-2.5 left-2.5 right-2.5 flex justify-between items-start pointer-events-none">
-                    <span className="bg-black/60 backdrop-blur-md text-white text-[11px] font-mono px-2 py-0.5 rounded-full font-semibold">
-                      #{staff.slNo.padStart(2, "0")}
-                    </span>
-
-                    {staff.note && (
+                  {staff.note && (
+                    <div className="absolute top-2.5 right-2.5 flex justify-end items-start pointer-events-none">
                       <span className="bg-amber-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm">
                         Superannuation
                       </span>
-                    )}
-                  </div>
+                    </div>
+                  )}
 
                   {/* Category Pill at bottom of image */}
                   <div className="absolute bottom-2.5 left-2.5 pointer-events-none">
