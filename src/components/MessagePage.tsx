@@ -47,18 +47,18 @@ const MessagePage = ({
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 max-w-6xl mx-auto items-stretch">
             {/* Portrait */}
-            <div className={`lg:col-span-2 flex ${compactImage ? "lg:self-start" : ""}`}>
-              <div className="rounded-2xl overflow-hidden shadow-xl border bg-white flex flex-col w-full">
-                <div className={compactImage ? (imageAspectRatio || "bg-muted aspect-[4/3]") : "flex-1 bg-muted"}>
+            <div className="lg:col-span-2 flex w-full">
+              <div className="rounded-2xl overflow-hidden shadow-xl border bg-white flex flex-col w-full h-full justify-between">
+                <div className={compactImage ? (imageAspectRatio || "bg-muted aspect-[4/3] w-full overflow-hidden") : "flex-1 bg-muted w-full overflow-hidden"}>
                   <img
                     src={imageUrl}
                     alt={name}
-                    className={imageClassName || `w-full h-full object-cover ${compactImage ? "object-top" : "object-center"}`}
+                    className={imageClassName || "w-full h-full object-cover object-center"}
                   />
                 </div>
 
                 {!hideProfileCard && (
-                  <div className="p-6 text-center bg-gradient-to-b from-white to-muted/40">
+                  <div className="p-6 text-center bg-gradient-to-b from-white to-muted/40 flex-1 flex flex-col justify-center">
                     <h3 className="text-xl font-bold text-logo-navy">{name}</h3>
                     <p className="text-saffron-orange font-semibold text-sm mt-1">
                       {designation}
@@ -74,9 +74,9 @@ const MessagePage = ({
             </div>
 
             {/* Content */}
-            <div className="lg:col-span-3 flex">
-              <div className="bg-white rounded-2xl border shadow-sm p-8 w-full flex flex-col">
-                <div className="space-y-5 text-foreground/90 leading-relaxed text-[15px]">
+            <div className="lg:col-span-3 flex w-full">
+              <div className="bg-white rounded-2xl border shadow-sm p-8 md:p-10 w-full h-full flex flex-col justify-center">
+                <div className="space-y-5 text-foreground/90 leading-relaxed text-[15px] sm:text-base">
                   {paragraphs.map((p, i) => (
                     <p key={i}>{p}</p>
                   ))}
