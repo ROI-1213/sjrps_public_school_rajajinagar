@@ -10,7 +10,8 @@ import {
   FlaskConical,
   Globe,
   Laptop,
-  Languages,
+  BookMarked,
+  ScrollText,
   Brain,
   Wrench,
   Lightbulb,
@@ -43,8 +44,8 @@ const classGroups = [
     ],
     subjects: [
       { title: "I Language- English", icon: BookOpen },
-      { title: "II Language- Kannada", icon: Languages },
-      { title: "III Language - Hindi", icon: Languages },
+      { title: "II Language- Kannada", icon: BookMarked },
+      { title: "III Language - Hindi", icon: ScrollText },
       { title: "Mathematics", icon: Calculator },
       { title: "Science", icon: FlaskConical },
       { title: "Social Science", icon: Globe },
@@ -64,7 +65,7 @@ const classGroups = [
     ],
     subjects: [
       { title: "I Language- English", icon: BookOpen },
-      { title: "II Language- Kannada / Hindi", icon: Languages },
+      { title: "II Language- Kannada / Hindi", icon: BookMarked },
       { title: "Mathematics", icon: Calculator },
       { title: "Mathematics Advanced", icon: Calculator },
       { title: "Science (Physics, Chemistry & Biology)", icon: FlaskConical },
@@ -92,7 +93,7 @@ const classGroups = [
     ],
     subjects: [
       { title: "I Language- English", icon: BookOpen },
-      { title: "II Language- Kannada / Hindi", icon: Languages },
+      { title: "II Language- Kannada / Hindi", icon: BookMarked },
       { title: "Mathematics", icon: Calculator },
       { title: "Science (Physics, Chemistry & Biology)", icon: FlaskConical },
       { title: "Social Science", icon: Globe },

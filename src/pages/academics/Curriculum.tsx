@@ -14,7 +14,7 @@ import {
   ClipboardCheck,
   Users,
   Cpu,
-  Languages,
+  BookMarked,
   Calculator,
   Atom,
   Palette,
@@ -41,7 +41,7 @@ const ncertFocus = [
 ];
 
 const ncertSubjects = [
-  { icon: Languages, title: "Languages" },
+  { icon: BookMarked, title: "Languages" },
   { icon: Calculator, title: "Mathematics" },
   { icon: Atom, title: "Science" },
   { icon: Globe2, title: "Social Science" },
