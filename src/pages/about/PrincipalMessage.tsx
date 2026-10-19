@@ -8,7 +8,9 @@ const PrincipalMessage = () => (
     breadcrumbPath="/about/principal-message"
     name={schoolConfig.principal.name}
     designation="Principal"
-    imageUrl="/images/Principal/principal-poornima-profile.jpg"
+    imageUrl="/images/Principal/principal-poornima-desk.jpg"
+    imageClassName="w-full h-full object-cover object-[center_20%]"
+    imageAspectRatio="bg-muted aspect-[3/4] w-full overflow-hidden"
     qualifications="M.Sc., B.Ed., PGDLET · 24 Years of Experience"
     compactImage={true}
     paragraphs={[

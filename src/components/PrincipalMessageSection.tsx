@@ -20,7 +20,7 @@ const PrincipalMessageSection = () => {
             <img 
               src={schoolConfig.principal.photo} 
               alt={`${schoolConfig.principal.name} — ${schoolConfig.principal.role}`} 
-              className="absolute inset-0 w-full h-full object-cover object-center" 
+              className="absolute inset-0 w-full h-full object-cover object-[center_20%]" 
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
               }}

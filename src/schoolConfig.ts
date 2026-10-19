@@ -93,7 +93,7 @@ export const schoolConfig = {
     name: "Mrs. Poornima N Kagali",
     role: "Principal, SJR Public School, Rajajinagar",
     designation: "Principal, SJR Public School, Rajajinagar",
-    photo: "/images/Principal/principal-poornima-hd.jpg",
+    photo: "/images/Principal/principal-poornima-desk.jpg",
     quote: "Education is not merely about preparing a child for examinations; it is about preparing a child for life.",
     vision: "To nurture confident, compassionate and responsible individuals who learn with purpose, live with integrity and grow into capable, resilient and lifelong learners.",
     mission: "We at SJR are committed to provide every child with meaningful learning, strong values and emotional well-being in a safe and supportive environment. We identify and nurture each child’s unique potential, develop character and life skills and prepare for a successful, fulfilling and responsible life.",
@@ -105,7 +105,7 @@ export const schoolConfig = {
       name: "Mrs. Poornima N Kagali",
       designation: "Principal, SJR Public School, Rajajinagar",
       role: "Principal, SJR Public School, Rajajinagar",
-      photo: "/images/Principal/principal-poornima-hd.jpg",
+      photo: "/images/Principal/principal-poornima-desk.jpg",
     }
   },
   
