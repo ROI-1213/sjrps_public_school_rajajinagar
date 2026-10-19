@@ -174,11 +174,6 @@ const classGroups: {
         desc: "Developing scientific temperament through structured laboratory activities and hands-on experiments.",
         icon: FlaskConical,
       },
-      {
-        title: "Board Examination Prep",
-        desc: "Comprehensive preparation for the CBSE Board Examination with regular tests, revision, and mentoring.",
-        icon: Award,
-      },
     ],
     subjects: [
       { title: "I Language- English", icon: BookOpen },
