@@ -19,22 +19,34 @@ const PrincipalMessageSection = () => {
 
         {/* 2-Column Grid */}
         <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
-          {/* Portrait & Profile Card */}
-          <div className="lg:col-span-5 flex flex-col rounded-2xl overflow-hidden shadow-lg border border-indian-green/15 bg-white">
-            <div className="relative flex-1 bg-slate-100 w-full overflow-hidden min-h-[280px] sm:min-h-[310px] flex items-center justify-center">
-              <img 
-                src={schoolConfig.principal.photo} 
-                alt={`${schoolConfig.principal.name} — ${schoolConfig.principal.role}`} 
-                className="w-full h-full object-cover object-top" 
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
-                }}
-              />
-            </div>
-            <div className="p-4 sm:p-5 text-center bg-gradient-to-b from-white to-slate-50 border-t border-slate-100 shrink-0">
-              <h3 className="text-lg sm:text-xl font-bold text-school-brown">{schoolConfig.principal.name}</h3>
-              <p className="text-xs sm:text-sm font-semibold text-indian-green mt-0.5">{schoolConfig.principal.role}</p>
-              <p className="text-[11px] sm:text-xs text-muted-foreground mt-0.5">M.Sc., B.Ed., PGDLET · 24 Years of Experience</p>
+          {/* Portrait Card with Name Overlay in marked section */}
+          <div className="lg:col-span-5 relative flex flex-col justify-end rounded-2xl overflow-hidden shadow-lg border border-indian-green/15 min-h-[380px] sm:min-h-[440px] bg-slate-100">
+            <img 
+              src={schoolConfig.principal.photo} 
+              alt={`${schoolConfig.principal.name} — ${schoolConfig.principal.role}`} 
+              className="absolute inset-0 w-full h-full object-cover object-top" 
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+              }}
+            />
+            {/* Gradient overlay for crystal-clear readability */}
+            <div 
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: "linear-gradient(to bottom, transparent 45%, rgba(0, 0, 0, 0.25) 65%, rgba(0, 0, 0, 0.88) 100%)"
+              }}
+            />
+            {/* Name and Designation Overlay in marked section */}
+            <div className="relative z-10 p-5 sm:p-6 text-white pointer-events-none">
+              <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight drop-shadow-sm">
+                {schoolConfig.principal.name}
+              </h3>
+              <p className="text-xs sm:text-sm font-semibold text-white/95 mt-1 drop-shadow-sm">
+                {schoolConfig.principal.role}
+              </p>
+              <p className="text-[11px] sm:text-xs text-white/80 mt-0.5">
+                M.Sc., B.Ed., PGDLET · 24 Years of Experience
+              </p>
             </div>
           </div>
 
