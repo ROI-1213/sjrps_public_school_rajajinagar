@@ -21,6 +21,11 @@ import {
   Heart,
   Award,
   CheckCircle2,
+  Target,
+  Search,
+  Atom,
+  ClipboardCheck,
+  type LucideIcon,
 } from "lucide-react";
 
 const fadeUp = {
@@ -34,13 +39,37 @@ const focusOverall = [
   { title: "Problem Solving", icon: Lightbulb, desc: "Developing structured approaches to real-world challenges." },
 ];
 
-const classGroups = [
+interface StageCardItem {
+  title: string;
+  desc: string;
+  icon: LucideIcon;
+}
+
+const classGroups: {
+  label: string;
+  focus: StageCardItem[];
+  subjects: { title: string; icon: LucideIcon }[];
+  features: StageCardItem[];
+  board: string;
+}[] = [
   {
     label: "Classes VI – VIII",
     focus: [
-      "Analytical thinking and application-based learning",
-      "Skill development and experiential learning",
-      "Development of problem-solving skills",
+      {
+        title: "Analytical Thinking",
+        desc: "Analytical thinking and application-based learning that fosters depth, inquiry, and critical reasoning.",
+        icon: Brain,
+      },
+      {
+        title: "Skill Development",
+        desc: "Skill development and hands-on experiential learning that bridges classroom knowledge with practical ability.",
+        icon: Wrench,
+      },
+      {
+        title: "Problem Solving",
+        desc: "Development of structured problem-solving skills to analyze and address real-world challenges.",
+        icon: Lightbulb,
+      },
     ],
     subjects: [
       { title: "I Language- English", icon: BookOpen },
@@ -51,17 +80,37 @@ const classGroups = [
       { title: "Social Science", icon: Globe },
       { title: "Computer Education", icon: Laptop },
     ],
-    features: [] as string[],
+    features: [],
     board: "",
   },
   {
     label: "Classes IX",
     focus: [
-      "Analytical thinking and application-based learning",
-      "Skill development and experiential learning",
-      "Emphasis on critical thinking",
-      "Investigatory projects based on real-life scenarios",
-      "Developing scientific temperament through laboratory activities",
+      {
+        title: "Analytical Thinking",
+        desc: "Analytical thinking and application-based learning that fosters depth, inquiry, and critical reasoning.",
+        icon: Brain,
+      },
+      {
+        title: "Skill Development",
+        desc: "Skill development and hands-on experiential learning that bridges classroom knowledge with practical ability.",
+        icon: Wrench,
+      },
+      {
+        title: "Critical Thinking",
+        desc: "Emphasis on critical thinking, independent inquiry, and logical reasoning across disciplines.",
+        icon: Target,
+      },
+      {
+        title: "Investigatory Projects",
+        desc: "Investigatory projects based on real-life scenarios that develop investigative and research skills.",
+        icon: Search,
+      },
+      {
+        title: "Scientific Temperament",
+        desc: "Developing scientific temperament through structured laboratory activities and hands-on experiments.",
+        icon: FlaskConical,
+      },
     ],
     subjects: [
       { title: "I Language- English", icon: BookOpen },
@@ -74,22 +123,62 @@ const classGroups = [
       { title: "Information Technology", icon: Laptop },
     ],
     features: [
-      "Practical-based science education",
-      "Project work and internal assessments",
-      "Introduction to coding and vocational skills",
-      "Strong emphasis on critical thinking",
+      {
+        title: "Practical Science",
+        desc: "Practical-based science education through hands-on laboratory experiments and observation.",
+        icon: Atom,
+      },
+      {
+        title: "Projects & Assessments",
+        desc: "Project work and continuous internal assessments that evaluate holistic learning outcomes.",
+        icon: ClipboardCheck,
+      },
+      {
+        title: "Coding & Vocational Skills",
+        desc: "Introduction to coding and vocational skills to build future-ready technological proficiency.",
+        icon: Laptop,
+      },
+      {
+        title: "Applied Critical Thinking",
+        desc: "Strong emphasis on critical thinking and problem-solving through application-oriented tasks.",
+        icon: Sparkles,
+      },
     ],
     board: "",
   },
   {
     label: "Classes X",
     focus: [
-      "Analytical thinking and application-based learning",
-      "Skill development and experiential learning",
-      "Emphasis on critical thinking",
-      "Investigatory projects based on real-life scenarios",
-      "Developing scientific temperament through laboratory activities",
-      "Preparation for the CBSE Board Examination",
+      {
+        title: "Analytical Thinking",
+        desc: "Analytical thinking and application-based learning that fosters depth, inquiry, and critical reasoning.",
+        icon: Brain,
+      },
+      {
+        title: "Skill Development",
+        desc: "Skill development and hands-on experiential learning that bridges classroom knowledge with practical ability.",
+        icon: Wrench,
+      },
+      {
+        title: "Critical Thinking",
+        desc: "Emphasis on critical thinking, independent inquiry, and logical reasoning across disciplines.",
+        icon: Target,
+      },
+      {
+        title: "Investigatory Projects",
+        desc: "Investigatory projects based on real-life scenarios that develop investigative and research skills.",
+        icon: Search,
+      },
+      {
+        title: "Scientific Temperament",
+        desc: "Developing scientific temperament through structured laboratory activities and hands-on experiments.",
+        icon: FlaskConical,
+      },
+      {
+        title: "Board Examination Prep",
+        desc: "Comprehensive preparation for the CBSE Board Examination with regular tests, revision, and mentoring.",
+        icon: Award,
+      },
     ],
     subjects: [
       { title: "I Language- English", icon: BookOpen },
@@ -100,10 +189,26 @@ const classGroups = [
       { title: "Information Technology", icon: Laptop },
     ],
     features: [
-      "Practical-based science education",
-      "Project work and internal assessments",
-      "Introduction to coding and vocational skills",
-      "Strong emphasis on critical thinking",
+      {
+        title: "Practical Science",
+        desc: "Practical-based science education through hands-on laboratory experiments and observation.",
+        icon: Atom,
+      },
+      {
+        title: "Projects & Assessments",
+        desc: "Project work and continuous internal assessments that evaluate holistic learning outcomes.",
+        icon: ClipboardCheck,
+      },
+      {
+        title: "Coding & Vocational Skills",
+        desc: "Introduction to coding and vocational skills to build future-ready technological proficiency.",
+        icon: Laptop,
+      },
+      {
+        title: "Applied Critical Thinking",
+        desc: "Strong emphasis on critical thinking and problem-solving through application-oriented tasks.",
+        icon: Sparkles,
+      },
     ],
     board: "Conducted by CBSE at the end of Class X.",
   },
@@ -250,66 +355,121 @@ const SecondaryStage = () => {
                   {group.label}
                 </h3>
 
-                {/* Focus list */}
-                <div className="max-w-3xl mx-auto mb-10">
-                  <h4 className="text-lg font-semibold mb-3 text-indian-green">Focus</h4>
-                  <ul className="space-y-2">
-                    {group.focus.map((f) => (
-                      <li key={f} className="flex items-start gap-2" style={{ color: "#333333" }}>
-                        <CheckCircle2 className="h-5 w-5 text-indian-green shrink-0 mt-0.5" />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {/* Focus section */}
+                {group.focus.length > 0 && (
+                  <div className="mb-12">
+                    <div className="text-center mb-6">
+                      <h4 className="text-xl md:text-2xl font-bold text-school-brown mb-2">
+                        Focus
+                      </h4>
+                      <div className="mx-auto h-[2.5px] w-12 bg-indian-green rounded-full" />
+                    </div>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {group.focus.map((item, i) => (
+                        <motion.div
+                          key={item.title}
+                          initial={{ opacity: 0, y: 16 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.45, delay: (i % 3) * 0.06 }}
+                          className="rounded-2xl p-6 bg-white border border-indian-green/20 border-l-4 border-l-indian-green shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all"
+                        >
+                          <div className="flex items-center gap-3 mb-2.5">
+                            <div className="w-10 h-10 rounded-lg bg-indian-green/10 flex items-center justify-center shrink-0">
+                              <item.icon className="h-5 w-5 text-indian-green" />
+                            </div>
+                            <h5 className="font-bold text-school-brown text-base sm:text-lg leading-snug">
+                              {item.title}
+                            </h5>
+                          </div>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            {item.desc}
+                          </p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* Core Subjects */}
-                <h4 className="text-lg font-semibold mb-4 text-center text-indian-green">
-                  Core Subjects
-                </h4>
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 mb-10">
-                  {group.subjects.map((s, i) => (
-                    <motion.div
-                      key={s.title}
-                      initial={{ opacity: 0, y: 16 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: (i % 4) * 0.05 }}
-                      className="rounded-2xl p-6 text-center border border-indian-green/20 bg-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all"
-                    >
-                      <div className="mx-auto w-14 h-14 rounded-full bg-indian-green/10 border border-indian-green/30 flex items-center justify-center mb-3">
-                        <s.icon className="h-6 w-6 text-indian-green" />
-                      </div>
-                      <h5 className="font-semibold text-sm" style={{ color: "#000000" }}>
-                        {s.title}
-                      </h5>
-                    </motion.div>
-                  ))}
+                <div className="mb-12">
+                  <div className="text-center mb-6">
+                    <h4 className="text-xl md:text-2xl font-bold text-school-brown mb-2">
+                      Core Subjects
+                    </h4>
+                    <div className="mx-auto h-[2.5px] w-12 bg-indian-green rounded-full" />
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+                    {group.subjects.map((s, i) => (
+                      <motion.div
+                        key={s.title}
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: (i % 4) * 0.05 }}
+                        className="rounded-2xl p-6 text-center border border-indian-green/20 bg-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all"
+                      >
+                        <div className="mx-auto w-14 h-14 rounded-full bg-indian-green/10 border border-indian-green/30 flex items-center justify-center mb-3">
+                          <s.icon className="h-6 w-6 text-indian-green" />
+                        </div>
+                        <h5 className="font-semibold text-sm" style={{ color: "#000000" }}>
+                          {s.title}
+                        </h5>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Features */}
                 {group.features.length > 0 && (
-                  <div className="max-w-3xl mx-auto mb-6">
-                    <h4 className="text-lg font-semibold mb-3 text-indian-green">Features</h4>
-                    <ul className="space-y-2">
-                      {group.features.map((f) => (
-                        <li key={f} className="flex items-start gap-2" style={{ color: "#333333" }}>
-                          <CheckCircle2 className="h-5 w-5 text-indian-green shrink-0 mt-0.5" />
-                          <span>{f}</span>
-                        </li>
+                  <div className="mb-10">
+                    <div className="text-center mb-6">
+                      <h4 className="text-xl md:text-2xl font-bold text-school-brown mb-2">
+                        Features
+                      </h4>
+                      <div className="mx-auto h-[2.5px] w-12 bg-indian-green rounded-full" />
+                    </div>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {group.features.map((item, i) => (
+                        <motion.div
+                          key={item.title}
+                          initial={{ opacity: 0, y: 16 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.45, delay: (i % 3) * 0.06 }}
+                          className="rounded-2xl p-6 bg-white border border-indian-green/20 border-l-4 border-l-indian-green shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all"
+                        >
+                          <div className="flex items-center gap-3 mb-2.5">
+                            <div className="w-10 h-10 rounded-lg bg-indian-green/10 flex items-center justify-center shrink-0">
+                              <item.icon className="h-5 w-5 text-indian-green" />
+                            </div>
+                            <h5 className="font-bold text-school-brown text-base sm:text-lg leading-snug">
+                              {item.title}
+                            </h5>
+                          </div>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            {item.desc}
+                          </p>
+                        </motion.div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 )}
 
                 {/* Board */}
                 {group.board && (
-                  <div className="max-w-3xl mx-auto">
-                    <div className="rounded-2xl p-6 bg-indian-green text-white flex items-center gap-4 shadow-lg">
-                      <Award className="h-8 w-8 text-golden-yellow shrink-0" />
+                  <div className="max-w-2xl mx-auto mt-6">
+                    <div className="rounded-2xl p-6 bg-white border border-indian-green/20 border-l-4 border-l-indian-green shadow-sm hover:shadow-lg transition-all flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-indian-green/10 flex items-center justify-center shrink-0">
+                        <Award className="h-5 w-5 text-indian-green" />
+                      </div>
                       <div>
-                        <h4 className="font-bold text-lg mb-1">Board Examination</h4>
-                        <p className="text-white/90">{group.board}</p>
+                        <h5 className="font-bold text-school-brown text-base sm:text-lg mb-1">
+                          Board Examination
+                        </h5>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {group.board}
+                        </p>
                       </div>
                     </div>
                   </div>
