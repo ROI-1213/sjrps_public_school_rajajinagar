@@ -91,10 +91,6 @@ const PrimaryLevel = () => (
       { title: "Problem Solving Skills", icon: Target },
       { title: "Creative Thinking", icon: Sparkles },
     ]}
-    coScholastic={{
-      label: "Classes III – V",
-      items: ["Art Education", "Physical Education", "Life Skills", "Value Education"],
-    }}
   />
 );
 
