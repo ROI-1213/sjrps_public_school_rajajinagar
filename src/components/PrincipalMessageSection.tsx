@@ -5,75 +5,76 @@ import { schoolConfig } from "@/schoolConfig";
 
 const PrincipalMessageSection = () => {
   return (
-    <section className="py-12 md:py-14 bg-white">
-      <div className="max-w-[1152px] mx-auto px-4 sm:px-6">
-        {/* Section Heading */}
-        <div className="text-center mb-9 sm:mb-10">
-          <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#14784F] mb-2">
+    <section className="py-12 sm:py-16 bg-white">
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-8 sm:mb-10 max-w-3xl mx-auto">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-indian-green mb-2">
             LEADERSHIP
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#65483D] tracking-tight leading-tight">
-            Principal's <span className="text-[#14784F]">Message</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-school-brown tracking-tight">
+            Principal's <span className="text-indian-green">Message</span>
           </h2>
         </div>
 
         {/* 2-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
-          {/* Left Column — Principal Photo Card */}
-          <div className="relative rounded-2xl overflow-hidden shadow-sm h-[380px] sm:h-[424px] bg-slate-100">
-            <img
-              src={schoolConfig.principal.photo}
-              alt={`${schoolConfig.principal.name} — ${schoolConfig.principal.role}`}
-              className="w-full h-full object-cover object-[center_35%]"
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
-              }}
-            />
-            {/* Gradient overlay */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(to bottom, transparent 48%, rgba(0, 0, 0, 0.12) 68%, rgba(0, 0, 0, 0.78) 100%)",
-              }}
-            />
-            {/* Photo text overlay */}
-            <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-7 z-10 pointer-events-none">
-              <h3 className="text-xl sm:text-[21px] font-bold text-white leading-tight">
-                {schoolConfig.principal.name}
-              </h3>
-              <p className="text-sm text-white/90 font-medium mt-1">
-                Principal — SJR Public School, Rajajinagar
-              </p>
+        <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
+          {/* Portrait & Profile Card */}
+          <div className="lg:col-span-5 flex flex-col rounded-2xl overflow-hidden shadow-lg border border-indian-green/15 bg-white">
+            <div className="relative flex-1 bg-slate-100 w-full overflow-hidden min-h-[280px] sm:min-h-[310px] flex items-center justify-center">
+              <img 
+                src={schoolConfig.principal.photo} 
+                alt={`${schoolConfig.principal.name} — ${schoolConfig.principal.role}`} 
+                className="w-full h-full object-cover object-top" 
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                }}
+              />
+            </div>
+            <div className="p-4 sm:p-5 text-center bg-gradient-to-b from-white to-slate-50 border-t border-slate-100 shrink-0">
+              <h3 className="text-lg sm:text-xl font-bold text-school-brown">{schoolConfig.principal.name}</h3>
+              <p className="text-xs sm:text-sm font-semibold text-indian-green mt-0.5">{schoolConfig.principal.role}</p>
+              <p className="text-[11px] sm:text-xs text-muted-foreground mt-0.5">M.Sc., B.Ed., PGDLET · 24 Years of Experience</p>
             </div>
           </div>
 
-          {/* Right Column — Message Card */}
-          <div className="rounded-2xl border border-[#DFE6E1] bg-[#FAF9F7] p-7 sm:p-8 flex flex-col justify-between h-auto lg:h-[424px] shadow-xs">
-            <div>
-              <Quote className="h-10 w-10 text-[#14784F] mb-3 stroke-[1.5]" />
-              <p className="text-[17px] sm:text-[18px] font-serif italic text-[#65483D] leading-snug sm:leading-relaxed mb-4">
-                "Education is not just about preparing children for examinations; it is about preparing a child for life."
-              </p>
-              <div className="space-y-3 text-[#65483D]/85 leading-relaxed text-[14px] sm:text-[15px]">
-                <p>
-                  At SJR Public School, Rajajinagar, we provide an atmosphere for multifaceted development where children are encouraged to channelize their potential in the pursuit of excellence.
+          {/* Content — button positioned up directly under text with no blank space */}
+          <div className="lg:col-span-7 flex flex-col justify-center bg-gradient-to-br from-indian-green/5 via-slate-50/50 to-tricolor-orange/5 p-6 sm:p-8 rounded-2xl border border-indian-green/15 shadow-sm">
+            <Quote className="h-8 w-8 text-indian-green mb-3 shrink-0" />
+            <p className="text-base sm:text-lg md:text-xl font-serif italic text-school-brown leading-snug mb-5">
+              "{schoolConfig.principal.quote}"
+            </p>
+
+            <div className="space-y-3.5 text-muted-foreground leading-relaxed text-sm">
+              <div>
+                <p className="font-bold text-indian-green text-xs uppercase tracking-wider mb-1">
+                  Our Vision
                 </p>
-                <p>
-                  Together, through collaborative effort, we nurture future-ready leaders — thinkers, doers and compassionate citizens.
+                <p className="text-slate-700 leading-normal">
+                  {schoolConfig.principal.vision}
                 </p>
               </div>
+
+              <div>
+                <p className="font-bold text-indian-green text-xs uppercase tracking-wider mb-1">
+                  Our Mission
+                </p>
+                <p className="text-slate-700 leading-normal">
+                  {schoolConfig.principal.mission}
+                </p>
+              </div>
+
+              <p className="font-semibold text-school-brown italic pt-2.5 border-t border-indian-green/20 text-xs sm:text-sm">
+                "{schoolConfig.principal.tagline}"
+              </p>
             </div>
 
-            {/* View Details Button */}
-            <div className="pt-4 mt-auto">
-              <Button
-                asChild
-                className="bg-[#14784F] hover:bg-[#0f5c3c] text-white rounded-[6px] px-6 h-[42px] text-sm font-semibold shadow-xs transition-colors"
-              >
-                <Link to="/about/principal-message" className="inline-flex items-center gap-1.5">
-                  View Details
-                  <ChevronRight className="h-4 w-4" />
+            {/* Read Full Message button placed directly below the tagline without empty space */}
+            <div className="pt-5">
+              <Button asChild className="bg-indian-green hover:bg-indian-green/90 text-white rounded-lg px-6 py-2.5 font-medium shadow-sm">
+                <Link to="/about/principal-message">
+                  Read Full Message
+                  <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
               </Button>
             </div>
