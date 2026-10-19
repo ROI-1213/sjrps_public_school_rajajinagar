@@ -14,42 +14,46 @@ const PrincipalMessageSection = () => {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10 lg:items-stretch w-full mx-auto">
-          {/* Image */}
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl min-h-[340px] sm:min-h-[460px] lg:min-h-[500px] bg-slate-100 flex items-center justify-center">
-            <img 
-              src={schoolConfig.principal.photo} 
-              alt={`${schoolConfig.principal.name} — ${schoolConfig.principal.role}`} 
-              className="absolute inset-0 w-full h-full object-cover object-[center_20%]" 
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-            <div className="absolute bottom-6 left-6 right-6 text-white">
-              <p className="text-2xl font-bold">{schoolConfig.principal.name}</p>
-              <p className="text-sm opacity-90 text-golden-yellow font-medium mt-0.5">{schoolConfig.principal.role}</p>
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-10 max-w-6xl mx-auto items-stretch">
+          {/* Portrait & Profile Card */}
+          <div className="lg:col-span-2 flex flex-col rounded-2xl overflow-hidden shadow-xl border border-indian-green/15 bg-white">
+            <div className="relative flex-1 bg-slate-100 w-full overflow-hidden min-h-[380px] sm:min-h-[440px] flex items-center justify-center">
+              <img 
+                src={schoolConfig.principal.photo} 
+                alt={`${schoolConfig.principal.name} — ${schoolConfig.principal.role}`} 
+                className="w-full h-full object-cover object-top" 
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                }}
+              />
+            </div>
+            <div className="p-5 text-center bg-gradient-to-b from-white to-muted/30 border-t border-slate-100">
+              <h3 className="text-xl sm:text-2xl font-bold text-school-brown">{schoolConfig.principal.name}</h3>
+              <p className="text-sm font-semibold text-indian-green mt-1">{schoolConfig.principal.role}</p>
+              <p className="text-xs text-muted-foreground mt-1">M.Sc., B.Ed., PGDLET · 24 Years of Experience</p>
             </div>
           </div>
 
           {/* Content */}
-          <div className="flex flex-col justify-center bg-gradient-to-br from-indian-green/5 to-tricolor-orange/5 p-5 sm:p-8 rounded-2xl border border-indian-green/10">
-            <Quote className="h-10 w-10 text-indian-green mb-4" />
-            <p className="text-xl font-serif italic text-school-brown leading-snug mb-4">
-              "{schoolConfig.principal.quote}"
-            </p>
-            <div className="space-y-4 text-muted-foreground leading-relaxed text-[15px]">
-              <div>
-                <p className="font-semibold text-indian-green text-sm uppercase tracking-wider mb-1">Our Vision</p>
-                <p>{schoolConfig.principal.vision}</p>
-              </div>
-              <div>
-                <p className="font-semibold text-indian-green text-sm uppercase tracking-wider mb-1">Our Mission</p>
-                <p>{schoolConfig.principal.mission}</p>
-              </div>
-              <p className="font-semibold text-school-brown italic pt-1 border-t border-indian-green/20">
-                "{schoolConfig.principal.tagline}"
+          <div className="lg:col-span-3 flex flex-col justify-between bg-gradient-to-br from-indian-green/5 to-tricolor-orange/5 p-6 sm:p-8 lg:p-10 rounded-2xl border border-indian-green/10 shadow-sm">
+            <div>
+              <Quote className="h-10 w-10 text-indian-green mb-4" />
+              <p className="text-xl sm:text-2xl font-serif italic text-school-brown leading-snug mb-6">
+                "{schoolConfig.principal.quote}"
               </p>
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-[15px]">
+                <div>
+                  <p className="font-semibold text-indian-green text-sm uppercase tracking-wider mb-1">Our Vision</p>
+                  <p>{schoolConfig.principal.vision}</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-indian-green text-sm uppercase tracking-wider mb-1">Our Mission</p>
+                  <p>{schoolConfig.principal.mission}</p>
+                </div>
+                <p className="font-semibold text-school-brown italic pt-2 border-t border-indian-green/20">
+                  "{schoolConfig.principal.tagline}"
+                </p>
+              </div>
             </div>
             <div className="pt-6">
               <Button asChild className="bg-indian-green hover:bg-indian-green/90 text-white px-6">
