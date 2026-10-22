@@ -98,7 +98,7 @@ const CoreTeam = () => {
                   <img
                     src={t.image}
                     alt={t.name}
-                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
                     }}
