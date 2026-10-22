@@ -23,8 +23,6 @@ import {
   CheckCircle2,
   Target,
   Search,
-  Atom,
-  ClipboardCheck,
   type LucideIcon,
 } from "lucide-react";
 
@@ -49,7 +47,6 @@ const classGroups: {
   label: string;
   focus: StageCardItem[];
   subjects: { title: string; icon: LucideIcon }[];
-  features: StageCardItem[];
   board: string;
 }[] = [
   {
@@ -80,7 +77,6 @@ const classGroups: {
       { title: "Social Science", icon: Globe },
       { title: "Computer Education", icon: Laptop },
     ],
-    features: [],
     board: "",
   },
   {
@@ -122,28 +118,6 @@ const classGroups: {
       { title: "Social Science", icon: Globe },
       { title: "Information Technology", icon: Laptop },
     ],
-    features: [
-      {
-        title: "Practical Science",
-        desc: "Practical-based science education through hands-on laboratory experiments and observation.",
-        icon: Atom,
-      },
-      {
-        title: "Projects & Assessments",
-        desc: "Project work and continuous internal assessments that evaluate holistic learning outcomes.",
-        icon: ClipboardCheck,
-      },
-      {
-        title: "Coding & Vocational Skills",
-        desc: "Introduction to coding and vocational skills to build future-ready technological proficiency.",
-        icon: Laptop,
-      },
-      {
-        title: "Applied Critical Thinking",
-        desc: "Strong emphasis on critical thinking and problem-solving through application-oriented tasks.",
-        icon: Sparkles,
-      },
-    ],
     board: "",
   },
   {
@@ -182,28 +156,6 @@ const classGroups: {
       { title: "Science (Physics, Chemistry & Biology)", icon: FlaskConical },
       { title: "Social Science", icon: Globe },
       { title: "Information Technology", icon: Laptop },
-    ],
-    features: [
-      {
-        title: "Practical Science",
-        desc: "Practical-based science education through hands-on laboratory experiments and observation.",
-        icon: Atom,
-      },
-      {
-        title: "Projects & Assessments",
-        desc: "Project work and continuous internal assessments that evaluate holistic learning outcomes.",
-        icon: ClipboardCheck,
-      },
-      {
-        title: "Coding & Vocational Skills",
-        desc: "Introduction to coding and vocational skills to build future-ready technological proficiency.",
-        icon: Laptop,
-      },
-      {
-        title: "Applied Critical Thinking",
-        desc: "Strong emphasis on critical thinking and problem-solving through application-oriented tasks.",
-        icon: Sparkles,
-      },
     ],
     board: "Conducted by CBSE at the end of Class X.",
   },
@@ -414,42 +366,6 @@ const SecondaryStage = () => {
                     ))}
                   </div>
                 </div>
-
-                {/* Features */}
-                {group.features.length > 0 && (
-                  <div className="mb-10">
-                    <div className="text-center mb-6">
-                      <h4 className="text-xl md:text-2xl font-bold text-school-brown mb-2">
-                        Features
-                      </h4>
-                      <div className="mx-auto h-[2.5px] w-12 bg-indian-green rounded-full" />
-                    </div>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {group.features.map((item, i) => (
-                        <motion.div
-                          key={item.title}
-                          initial={{ opacity: 0, y: 16 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.45, delay: (i % 3) * 0.06 }}
-                          className="rounded-2xl p-6 bg-white border border-indian-green/20 border-l-4 border-l-indian-green shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all"
-                        >
-                          <div className="flex items-center gap-3 mb-2.5">
-                            <div className="w-10 h-10 rounded-lg bg-indian-green/10 flex items-center justify-center shrink-0">
-                              <item.icon className="h-5 w-5 text-indian-green" />
-                            </div>
-                            <h5 className="font-bold text-school-brown text-base sm:text-lg leading-snug">
-                              {item.title}
-                            </h5>
-                          </div>
-                          <p className="text-muted-foreground text-sm leading-relaxed">
-                            {item.desc}
-                          </p>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-                )}
 
                 {/* Board */}
                 {group.board && (
