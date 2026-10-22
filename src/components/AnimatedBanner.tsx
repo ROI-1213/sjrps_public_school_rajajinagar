@@ -108,9 +108,10 @@ const AnimatedBanner = () => {
                 (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
               }}
             />
-            {/* Layered overlays for depth */}
-            <div className="absolute inset-0 bg-gradient-to-r from-school-brown/95 via-school-brown/70 to-school-brown/30 lg:to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30" />
+            {/* Layered overlays for maximum contrast and crystal-clear text readability */}
+            <div className="absolute inset-0 bg-black/45" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 via-55% to-black/35" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/55" />
             {/* Subtle pattern */}
             <div
               aria-hidden
@@ -147,10 +148,10 @@ const AnimatedBanner = () => {
                 </div>
 
                 <div className="space-y-2 sm:space-y-3">
-                  <p className="font-sans text-saffron-orange font-semibold text-xs sm:text-base tracking-widest uppercase">
+                  <p className="font-sans text-saffron-orange font-semibold text-xs sm:text-base tracking-widest uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
                     SJR Public School • Rajajinagar
                   </p>
-                  <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight drop-shadow-2xl">
+                  <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
                     <span className="block">{slides[currentSlide].title}</span>
                     <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-saffron-orange via-golden-yellow to-saffron-orange bg-clip-text text-transparent">
                       {slides[currentSlide].subtitle}
@@ -158,7 +159,7 @@ const AnimatedBanner = () => {
                   </h1>
                 </div>
 
-                <p className="font-sans text-sm sm:text-lg lg:text-xl text-white/90 leading-relaxed max-w-2xl line-clamp-3 sm:line-clamp-none">
+                <p className="font-sans text-sm sm:text-lg lg:text-xl text-white leading-relaxed max-w-2xl line-clamp-3 sm:line-clamp-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                   {slides[currentSlide].description}
                 </p>
 
