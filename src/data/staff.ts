@@ -57,8 +57,8 @@ export const staffMembers: StaffMember[] = [
     "experience": "24 years",
     "note": "",
     "rawDetails": "Principal \nScience\nM.Sc. B.Ed, PGDLET\n24 years",
-    "photo": "/images/Staff photo/1.%20Mrs.%20Poornima%20N%20Kagali%20-%20Principal.jpg",
-    "photoFilename": "1. Mrs. Poornima N Kagali - Principal.jpg",
+    "photo": "/images/Staff photo/1.%20Mrs.%20Poornima%20N%20Kagali%20-%20Principal-2026.jpg",
+    "photoFilename": "1. Mrs. Poornima N Kagali - Principal-2026.jpg",
     "photoDimensions": "2038x1800",
     "photoSize": 450933
   },

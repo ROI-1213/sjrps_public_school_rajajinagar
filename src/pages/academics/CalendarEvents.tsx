@@ -39,6 +39,7 @@ interface Ev {
   date: string;
   title: string;
   type: EventType;
+  tentative?: boolean;
 }
 
 interface MonthGroup {
@@ -53,7 +54,7 @@ const calendar: MonthGroup[] = [
       { date: "09 Feb", title: "Last exam – Class 8th & 9th", type: "exam" },
       { date: "13–14 Feb", title: "Teachers Workshop", type: "event" },
       { date: "16 Feb", title: "Annual Exam PTM – Class 8th, 9th & 11th", type: "event" },
-      { date: "18 Feb", title: "New Session – Class 9th, 10th & 12th", type: "event" },
+      { date: "18 Feb", title: "New Session – Class 9th & 10th", type: "event" },
       { date: "21 Feb", title: "Orientation Class 9th & 10th | UKG Graduation", type: "orientation" },
       { date: "28 Feb", title: "Science Day – Exhibition", type: "celebration" },
     ],
@@ -149,11 +150,10 @@ const calendar: MonthGroup[] = [
       { date: "12 Oct", title: "Mid-Term Last Exam", type: "exam" },
       { date: "13 Oct", title: "Dussehra Celebration for Teachers", type: "celebration" },
       { date: "14–15 Oct", title: "Workshop", type: "event" },
-      { date: "16 Oct", title: "Class 9th, 10th & 11th Trip", type: "event" },
       { date: "20 Oct", title: "Ayudha Pooje", type: "holiday" },
       { date: "21 Oct", title: "Vijayadashami", type: "holiday" },
+      { date: "22 Oct", title: "School Re-opens", type: "event" },
       { date: "26 Oct", title: "Valmiki Jayanthi", type: "holiday" },
-      { date: "27 Oct", title: "School Re-opens", type: "event" },
       { date: "31 Oct", title: "PTM – Class Nursery to 10th", type: "event" },
     ],
   },
@@ -165,15 +165,16 @@ const calendar: MonthGroup[] = [
       { date: "09 Nov", title: "Amavasye", type: "holiday" },
       { date: "10 Nov", title: "Balipadyami", type: "holiday" },
       { date: "13 Nov", title: "Children's Day Celebration", type: "celebration" },
-      { date: "25 Nov", title: "Annual Day – Pre-Primary & Primary", type: "event" },
-      { date: "26 Nov", title: "Annual Day – Secondary & Senior Secondary", type: "event" },
       { date: "27 Nov", title: "Kanakadasa Jayanthi", type: "holiday" },
+      { date: "28 Nov", title: "Annual Day – Pre-Primary & Primary", type: "event" },
+      { date: "29 Nov", title: "Annual Day – Secondary", type: "event" },
     ],
   },
   {
     month: "December 2026",
     events: [
-      { date: "07 Dec", title: "Sahodaya Pre-Finals – Class 9th & 11th", type: "exam" },
+      { date: "11–14 Dec", title: "Class 1st – 9th Trip", type: "event", tentative: true },
+      { date: "19–22 Dec", title: "Class 10th Trip", type: "event", tentative: true },
       { date: "23 Dec", title: "Christmas Celebration", type: "celebration" },
       { date: "24 Dec", title: "Christmas Vacation", type: "holiday" },
     ],
@@ -181,12 +182,12 @@ const calendar: MonthGroup[] = [
   {
     month: "January 2027",
     events: [
-      { date: "01 Jan", title: "School reopens – Pre-Primary to Class 12", type: "event" },
+      { date: "04 Jan", title: "School reopens – Pre-Primary to Class 10", type: "event" },
       { date: "06 Jan", title: "PT-3 – Class 1st to 7th / Pre-Finals – Class 8th", type: "exam" },
       { date: "13 Jan", title: "PT-3 Concludes", type: "exam" },
       { date: "14 Jan", title: "Sankranthi", type: "holiday" },
       { date: "18 Jan", title: "Pre-Finals Conclude – Class 8th", type: "exam" },
-      { date: "23 Jan", title: "Class X & XII Farewell", type: "celebration" },
+      { date: "23 Jan", title: "Class X Farewell", type: "celebration" },
       { date: "26 Jan", title: "Republic Day Celebration", type: "celebration" },
     ],
   },
@@ -195,8 +196,8 @@ const calendar: MonthGroup[] = [
     events: [
       { date: "01 Feb", title: "Final Exam – Class 8th, 9th & 11th", type: "exam" },
       { date: "12 Feb", title: "Final Exam Concludes – Class 8th, 9th & 11th", type: "exam" },
-      { date: "20 Feb", title: "PTM – Class 8th, 9th & 11th", type: "event" },
-      { date: "22 Feb", title: "New Session – Class 9th, 10th & 12th", type: "event" },
+      { date: "20 Feb", title: "PTM – Class 8th, 9th & 10th", type: "event" },
+      { date: "22 Feb", title: "New Session – Class 9th & 10th", type: "event" },
       { date: "27 Feb", title: "Science Exhibition", type: "celebration" },
     ],
   },
@@ -323,7 +324,14 @@ const CalendarEvents = () => {
                                 <Icon className="h-4.5 w-4.5 text-indian-green" />
                               </div>
                               <div>
-                                <p className="font-semibold text-black leading-tight">{ev.title}</p>
+                                <div className="flex items-center gap-2 flex-wrap">
+                                  <p className="font-semibold text-black leading-tight">{ev.title}</p>
+                                  {ev.tentative && (
+                                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-300">
+                                      Tentative
+                                    </span>
+                                  )}
+                                </div>
                                 <p className="text-xs text-foreground/60 mt-0.5">{ev.date}</p>
                               </div>
                             </div>

@@ -52,7 +52,7 @@ export const academicsContent = {
     affiliationLevel: "Secondary Level (Classes Pre-KG through Class 10)",
     pedagogy: "NCERT Framework with experiential learning and continuous comprehensive assessment.",
     subjectsOffered: [
-      { category: "Languages", list: "English (Core), Kannada (Second/Third Language), Hindi (Second/Third Language)" },
+      { category: "Languages", list: "English (I Language), Kannada (II Language), Hindi (III Language)" },
       { category: "Core STEM", list: "Mathematics, Integrated Science (Physics, Chemistry, Biology), Computer Applications / IT" },
       { category: "Humanities", list: "Social Science (History, Geography, Political Science, Economics)" },
       { category: "Skill Development", list: "Robotics, Abacus, Vedic Maths, AI Digital Literacy" },

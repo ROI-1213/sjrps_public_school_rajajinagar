@@ -58,8 +58,8 @@ const PrimaryLevel = () => (
         label: "Classes I – II",
         items: [
           { title: "I Language- English", icon: BookOpen },
-          { title: "II Language- Kannada", icon: BookMarked },
-          { title: "III Language - Hindi", icon: ScrollText },
+          { title: "II Language – Kannada", icon: BookMarked },
+          { title: "III Language – Hindi", icon: ScrollText },
           { title: "Mathematics", icon: Calculator },
           { title: "Environmental Studies (EVS)", icon: Leaf },
           { title: "Computer Education", icon: Laptop },
@@ -69,8 +69,8 @@ const PrimaryLevel = () => (
         label: "Classes III – V",
         items: [
           { title: "I Language- English", icon: BookOpen },
-          { title: "II Language- Kannada", icon: BookMarked },
-          { title: "III Language - Hindi", icon: ScrollText },
+          { title: "II Language – Kannada", icon: BookMarked },
+          { title: "III Language – Hindi", icon: ScrollText },
           { title: "Mathematics", icon: Calculator },
           { title: "Science", icon: FlaskConical },
           { title: "Computer Education", icon: Laptop },

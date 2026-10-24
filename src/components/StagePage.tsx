@@ -341,7 +341,7 @@ const StagePage = ({
             className="text-2xl md:text-3xl font-bold mb-3"
             style={{ fontFamily: "Poppins, sans-serif" }}
           >
-            Begin Your Child's Journey at SJRPS-HBR
+            Begin Your Child's Journey at SJRPS-Rajajinagar
           </h2>
           <p className="text-white/85 max-w-2xl mx-auto mb-6">
             Join a school where every learner is nurtured with care and inspired to excel.
