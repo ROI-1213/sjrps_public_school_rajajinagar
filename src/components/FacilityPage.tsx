@@ -200,21 +200,26 @@ const FacilityPage = ({
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {gallery.slice(0, 3).map((g, i) => (
+              {gallery.map((g, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="overflow-hidden rounded-xl shadow-lg bg-card"
+                  transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
+                  className="group overflow-hidden rounded-xl shadow-lg bg-card hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                 >
                   <img
                     src={g.src}
                     alt={g.alt}
                     loading="lazy"
-                    className="w-full h-[280px] object-cover"
+                    className="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  {g.alt && (
+                    <div className="p-3 bg-white/95 border-t border-border/40">
+                      <p className="text-xs text-muted-foreground font-medium truncate">{g.alt}</p>
+                    </div>
+                  )}
                 </motion.div>
               ))}
             </div>

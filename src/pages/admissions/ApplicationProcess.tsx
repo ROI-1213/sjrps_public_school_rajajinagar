@@ -1,6 +1,8 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ClipboardList,
@@ -20,6 +22,7 @@ import {
   Sparkles,
   Building2,
   Heart,
+  ExternalLink,
 } from "lucide-react";
 import { admissionsContent } from "@/content/admissions";
 import { schoolConfig } from "@/schoolConfig";
@@ -124,6 +127,24 @@ const ApplicationProcess = () => {
                       <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
                         {s.description}
                       </p>
+                      {s.step === 1 && (
+                        <div className={`mt-3 flex flex-wrap gap-2 ${i % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}>
+                          <Button asChild size="sm" className="bg-indian-green hover:bg-indian-green/90 text-white text-xs">
+                            <a
+                              href="https://corp47.myclassboard.com/OnlineEnquiryForm_New/B4E0210F-C2B5-4212-8B95-F4699561D8EA"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5"
+                            >
+                              <span>Online Enquiry Form</span>
+                              <ExternalLink className="h-3 w-3" />
+                            </a>
+                          </Button>
+                          <Button asChild size="sm" variant="outline" className="text-xs border-indian-green/30 text-indian-green hover:bg-indian-green/5">
+                            <Link to="/admissions/enquiry">Scan QR Flyer</Link>
+                          </Button>
+                        </div>
+                      )}
                     </div>
                     <div className="absolute left-2.5 md:left-1/2 top-1.5 w-6 h-6 bg-indian-green rounded-full border-4 border-white shadow flex items-center justify-center -translate-x-1/2 text-white">
                       <Icon className="h-3 w-3" />

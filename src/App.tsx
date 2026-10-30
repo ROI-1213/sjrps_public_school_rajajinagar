@@ -35,6 +35,7 @@ import MandatoryDisclosure from "./pages/MandatoryDisclosure";
 import ExaminationGuidelines from "./pages/academics/ExaminationGuidelines";
 import PromotionCriteria from "./pages/academics/PromotionCriteria";
 import Admissions from "./pages/Admissions";
+import AdmissionEnquiry from "./pages/admissions/AdmissionEnquiry";
 import ApplicationProcess from "./pages/admissions/ApplicationProcess";
 import SchoolPolicies from "./pages/admissions/SchoolPolicies";
 import EligibilityCriteria from "./pages/admissions/EligibilityCriteria";
@@ -124,6 +125,8 @@ const App = () => (
           <Route path="/academics/examination-guidelines" element={<ExaminationGuidelines />} />
           <Route path="/academics/promotion-criteria" element={<PromotionCriteria />} />
           <Route path="/admissions" element={<Admissions />} />
+          <Route path="/admissions/enquiry" element={<AdmissionEnquiry />} />
+          <Route path="/admissions/admission-enquiry" element={<Navigate to="/admissions/enquiry" replace />} />
           <Route path="/admissions/admissions-process" element={<ApplicationProcess />} />
           <Route path="/admissions/school-policies" element={<SchoolPolicies />} />
           <Route path="/admissions/eligibility-criteria" element={<EligibilityCriteria />} />

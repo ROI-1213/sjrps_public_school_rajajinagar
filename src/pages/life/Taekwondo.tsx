@@ -6,10 +6,19 @@ import {
   ShieldCheck, Target, Flame, Award, Users, Crown, Heart, Sparkles,
   Dumbbell, Brain, Handshake, Trophy, Zap, Compass,
 } from "lucide-react";
-const taekwondoImg = "/images/Photos/Taekwondo/DSC00704.JPG";
-const g1 = "/images/Photos/Taekwondo/DSC00704.JPG";
-const g2 = "/images/Photos/Yoga/DSC00904.JPG";
-const g3 = "/images/Photos/Sports/DSC01389.JPG";
+const taekwondoImg = "/images/Photos/Taekwondo/IMG-20261030-WA0004.jpg";
+
+const taekwondoGallery = [
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0004.jpg", alt: "Taekwondo students in training session" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0011.jpg", alt: "Taekwondo practice and demonstration" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0014.jpg", alt: "Taekwondo high-kick technique" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0017.jpg", alt: "Taekwondo defensive sparring stance" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0019.jpg", alt: "Taekwondo student focus and discipline" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0022.jpg", alt: "Martial arts stance and poise" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0025.jpg", alt: "Taekwondo kick precision training" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0026.jpg", alt: "Taekwondo student action move" },
+  { src: "/images/Photos/Taekwondo/DSC00704.JPG", alt: "Taekwondo outdoor assembly group" },
+];
 
 const whyItems = [
   { icon: Award, title: "Certified Coaching", desc: "Trained and certified instructors guide students through authentic Taekwondo techniques and forms." },
@@ -179,9 +188,26 @@ const Taekwondo = () => (
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground">Taekwondo Gallery</h2>
           <div className="mx-auto mt-3 h-1 w-20 bg-indian-green rounded-full" />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[g1, g2, g3].map((src, i) => (
-            <img key={i} src={src} alt={`Taekwondo ${i + 1}`} className="w-full h-[280px] object-cover rounded-xl shadow-md" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {taekwondoGallery.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
+              className="group overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card"
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                className="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="p-3 bg-white/95 border-t border-border/40">
+                <p className="text-xs text-muted-foreground font-medium truncate">{item.alt}</p>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

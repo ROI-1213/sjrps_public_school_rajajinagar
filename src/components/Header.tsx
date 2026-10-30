@@ -28,6 +28,7 @@ const menuItems: MenuItem[] = [
     title: "Admissions",
     path: "/admissions",
     submenu: [
+      { title: "Admission Enquiry", path: "/admissions/enquiry" },
       { title: "Admission Process", path: "/admissions/admissions-process" },
       { title: "School Policies", path: "/admissions/school-policies" },
       { title: "Eligibility Criteria", path: "/admissions/eligibility-criteria" },

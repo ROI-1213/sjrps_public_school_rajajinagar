@@ -31,4 +31,7 @@ dist-ssr
 /video gallery/
 /public/videos/
 *.mp4
+/Auditorium-*/
+/Taekwondo-*/
+/Yoga-*/
 
