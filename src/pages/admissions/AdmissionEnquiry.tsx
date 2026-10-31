@@ -108,6 +108,28 @@ const AdmissionEnquiry = () => {
                     You can either scan the QR code from the flyer with your smartphone or click the button below to open the official online enquiry form directly.
                   </p>
 
+                  {/* Direct QR Code Scanner Box */}
+                  <div className="flex flex-col sm:flex-row items-center gap-5 p-4 rounded-xl bg-white border border-indian-green/25 shadow-sm">
+                    <div className="relative group shrink-0 bg-white p-2 rounded-xl border-2 border-indian-green/20 shadow-md">
+                      <img
+                        src="/images/admissions/enquiry-qr-code.png"
+                        alt="SJRPS-Rajajinagar Admission Enquiry QR Code"
+                        className="w-36 h-36 object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="space-y-1.5 text-center sm:text-left">
+                      <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-indian-green">
+                        Instant Mobile Scan
+                      </span>
+                      <h4 className="font-bold text-foreground text-sm sm:text-base">
+                        Scan with your Mobile Camera
+                      </h4>
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        Point your phone camera or Google Lens at this QR code to open the official SJRPS-Rajajinagar admission enquiry form directly.
+                      </p>
+                    </div>
+                  </div>
+
                   <div className="pt-2">
                     <Button
                       asChild

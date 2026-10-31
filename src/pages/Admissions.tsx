@@ -63,8 +63,12 @@ const Admissions = () => {
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="rounded-2xl border-2 border-indian-green/30 bg-gradient-to-br from-indian-green/10 via-white to-golden-yellow/10 p-6 sm:p-8 shadow-xl flex flex-col md:flex-row items-center gap-6 justify-between">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-indian-green text-white flex items-center justify-center shrink-0 shadow-lg">
-                  <QrCode className="h-8 w-8" />
+                <div className="bg-white p-1.5 rounded-2xl border-2 border-indian-green/20 shadow-md shrink-0">
+                  <img
+                    src="/images/admissions/enquiry-qr-code.png"
+                    alt="Admission Enquiry QR Code"
+                    className="w-16 h-16 object-contain rounded-xl"
+                  />
                 </div>
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-indian-green">
@@ -77,7 +81,7 @@ const Admissions = () => {
                     Online Admission Enquiry
                   </h3>
                   <p className="text-sm text-muted-foreground mt-1 max-w-xl">
-                    Scan the QR code flyer or fill the online enquiry form to connect directly with the SJRPS-Rajajinagar admissions office.
+                    Scan the QR code with your phone camera or fill the online enquiry form to connect directly with the SJRPS-Rajajinagar admissions office.
                   </p>
                 </div>
               </div>
