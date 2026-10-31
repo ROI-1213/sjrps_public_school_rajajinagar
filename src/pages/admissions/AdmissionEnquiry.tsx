@@ -246,13 +246,13 @@ const AdmissionEnquiry = () => {
             Understand the step-by-step admission roadmap, required documents, eligibility criteria, and fee structure.
           </p>
           <div className="pt-2 flex flex-wrap justify-center gap-4">
-            <Button asChild className="bg-white text-indian-green hover:bg-golden-yellow hover:text-white font-semibold">
+            <Button asChild className="bg-white text-indian-green hover:bg-golden-yellow hover:text-white font-semibold shadow-md px-6">
               <Link to="/admissions/admissions-process">
                 <span>View Admission Process</span>
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
-            <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button asChild className="bg-white text-indian-green hover:bg-golden-yellow hover:text-white font-semibold shadow-md px-6">
               <Link to="/admissions/fees-structure">
                 <span>Fees Structure</span>
               </Link>
