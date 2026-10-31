@@ -53,20 +53,19 @@ const AdmissionEnquiry = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start max-w-5xl mx-auto w-full">
             {/* Left: Official Flyer */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-6 flex justify-center"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="w-full min-w-0 flex flex-col items-center"
             >
-              <div className="relative group max-w-md w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-border/50 bg-white">
+              <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-border/50 bg-white">
                 <img
                   src="/images/admissions/admission-enquiry.jpg"
                   alt="SJR Public School Rajajinagar - Enquiry for Admissions QR Code Flyer"
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="w-full h-auto object-contain"
                 />
                 <div className="p-4 bg-muted/40 text-center border-t border-border/50">
                   <p className="text-xs text-muted-foreground font-medium">
@@ -78,11 +77,10 @@ const AdmissionEnquiry = () => {
 
             {/* Right: Actions & Details */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-6 space-y-6"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="w-full min-w-0 space-y-6"
             >
               {/* Highlight Action Card */}
               <Card className="rounded-2xl border-2 border-indian-green/30 bg-gradient-to-br from-indian-green/5 via-background to-golden-yellow/5 shadow-xl p-6 sm:p-8">
