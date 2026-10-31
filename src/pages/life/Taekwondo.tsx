@@ -196,14 +196,22 @@ const Taekwondo = () => (
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
-              className="group overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card"
+              className="group overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-slate-100"
             >
-              <img
-                src={item.src}
-                alt={item.alt}
-                loading="lazy"
-                className="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+              <div className="relative w-full h-[320px] sm:h-[350px] overflow-hidden flex items-center justify-center bg-slate-900/5">
+                <img
+                  src={item.src}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 w-full h-full object-cover object-center blur-xl opacity-35 scale-110 pointer-events-none"
+                />
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  loading="lazy"
+                  className="relative z-10 max-h-full max-w-full object-contain object-center mx-auto transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
             </motion.div>
           ))}
         </div>
