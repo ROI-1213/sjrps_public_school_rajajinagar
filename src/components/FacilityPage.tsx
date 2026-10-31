@@ -215,11 +215,6 @@ const FacilityPage = ({
                     loading="lazy"
                     className="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  {g.alt && (
-                    <div className="p-3 bg-white/95 border-t border-border/40">
-                      <p className="text-xs text-muted-foreground font-medium truncate">{g.alt}</p>
-                    </div>
-                  )}
                 </motion.div>
               ))}
             </div>
