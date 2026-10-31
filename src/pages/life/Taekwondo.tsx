@@ -9,15 +9,15 @@ import {
 const taekwondoImg = "/images/Photos/Taekwondo/IMG-20261030-WA0004.jpg";
 
 const taekwondoGallery = [
-  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0004.jpg", alt: "Taekwondo students in training session" },
-  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0011.jpg", alt: "Taekwondo practice and demonstration" },
-  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0014.jpg", alt: "Taekwondo high-kick technique" },
-  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0017.jpg", alt: "Taekwondo defensive sparring stance" },
-  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0019.jpg", alt: "Taekwondo student focus and discipline" },
-  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0022.jpg", alt: "Martial arts stance and poise" },
-  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0025.jpg", alt: "Taekwondo kick precision training" },
-  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0026.jpg", alt: "Taekwondo student action move" },
-  { src: "/images/Photos/Taekwondo/DSC00704.JPG", alt: "Taekwondo outdoor assembly group" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0004.jpg", alt: "Taekwondo students in training session", position: "center" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0011.jpg", alt: "Taekwondo practice and demonstration", position: "center" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0014.jpg", alt: "Taekwondo high-kick technique", position: "center 20%" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0017.jpg", alt: "Taekwondo defensive sparring stance", position: "center 18%" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0019.jpg", alt: "Taekwondo student focus and discipline", position: "center 16%" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0022.jpg", alt: "Martial arts stance and poise", position: "center 10%" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0025.jpg", alt: "Taekwondo kick precision training", position: "center 20%" },
+  { src: "/images/Photos/Taekwondo/IMG-20261030-WA0026.jpg", alt: "Taekwondo student action move", position: "center 28%" },
+  { src: "/images/Photos/Taekwondo/DSC00704.JPG", alt: "Taekwondo outdoor assembly group", position: "center" },
 ];
 
 const whyItems = [
@@ -196,22 +196,15 @@ const Taekwondo = () => (
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
-              className="group overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-slate-100"
+              className="group overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card"
             >
-              <div className="relative w-full h-[320px] sm:h-[350px] overflow-hidden flex items-center justify-center bg-slate-900/5">
-                <img
-                  src={item.src}
-                  alt=""
-                  aria-hidden="true"
-                  className="absolute inset-0 w-full h-full object-cover object-center blur-xl opacity-35 scale-110 pointer-events-none"
-                />
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  className="relative z-10 max-h-full max-w-full object-contain object-center mx-auto transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                style={{ objectPosition: item.position || "center" }}
+                className="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
+              />
             </motion.div>
           ))}
         </div>

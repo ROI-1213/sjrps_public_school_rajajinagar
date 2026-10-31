@@ -207,22 +207,14 @@ const FacilityPage = ({
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
-                  className="group overflow-hidden rounded-xl shadow-lg bg-slate-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                  className="group overflow-hidden rounded-xl shadow-lg bg-card hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="relative w-full h-[280px] sm:h-[300px] overflow-hidden flex items-center justify-center bg-slate-900/5">
-                    <img
-                      src={g.src}
-                      alt=""
-                      aria-hidden="true"
-                      className="absolute inset-0 w-full h-full object-cover object-center blur-xl opacity-35 scale-110 pointer-events-none"
-                    />
-                    <img
-                      src={g.src}
-                      alt={g.alt}
-                      loading="lazy"
-                      className="relative z-10 max-h-full max-w-full object-contain object-center mx-auto transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
+                  <img
+                    src={g.src}
+                    alt={g.alt}
+                    loading="lazy"
+                    className="w-full h-[280px] object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  />
                 </motion.div>
               ))}
             </div>
