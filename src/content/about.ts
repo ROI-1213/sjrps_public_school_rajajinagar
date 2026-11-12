@@ -2,7 +2,7 @@ export const aboutContent = {
   overview: {
     eyebrow: "About Our School",
     heading: "Where Tradition Meets Tomorrow",
-    narrative: `SJR Public School, Rajajinagar (SJRPS-PS) is more than a school — it is a community of educators, parents and students united by a shared belief that great education shapes great human beings.
+    narrative: `SJR Public School, Rajajinagar is more than a school — it is a community of educators, parents and students united by a shared belief that great education shapes great human beings.
 
 Founded on the timeless ideals of the SJR Education Society, our school blends a rich heritage of value-based learning with a modern, future-ready curriculum. From the early years through senior school, every learner is nurtured with care, challenged with rigor, and inspired to discover their unique purpose. We are proud of our consistent academic results, our dedicated faculty, our vibrant co-curricular programs, and a safe, modern campus that supports holistic growth — academic, physical, emotional, and ethical.`,
     quote: "Empowering Young Minds, Inspiring Future Leaders, and Building a Legacy of Excellence Through Quality Education.",
