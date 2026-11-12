@@ -65,7 +65,7 @@ const AboutOurSchoolSection = () => {
 
             <div className="space-y-4 text-muted-foreground leading-relaxed text-[15px] lg:text-base">
               <p>
-                {schoolConfig.fullName} ({schoolConfig.shortName}) is more than a school — it is a community of educators, parents and students united by a shared belief that great education shapes great human beings.
+                {schoolConfig.fullName} is more than a school — it is a community of educators, parents and students united by a shared belief that great education shapes great human beings.
               </p>
               <p>
                 Founded on the timeless ideals of the SJR Education Society, our school blends a rich heritage of value-based learning with a modern, future-ready curriculum. From the early years through senior school, every learner is nurtured with care, challenged with rigor, and inspired to discover their unique purpose.
